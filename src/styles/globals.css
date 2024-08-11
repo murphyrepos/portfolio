@@ -2,32 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 30, 10%, 96%; /* Light mode background color */
+    --foreground: 0, 0%, 22%; /* Text color primary light mode */
+    --card: 0, 0%, 100%; /* Card background light mode */
+    --card-foreground: 0, 0%, 22%; /* Card text color light mode */
+    --popover: 0, 0%, 100%; /* Popover background light mode */
+    --popover-foreground: 0, 0%, 22%; /* Popover text color light mode */
+    --primary: 30, 10%, 96%; /* Primary color light mode */
+    --primary-foreground: 0, 0%, 22%; /* Primary text color light mode */
+    --secondary: 0, 0%, 100%; /* Secondary color light mode */
+    --secondary-foreground: 0, 0%, 17%; /* Secondary text color light mode */
+    --muted: 30, 10%, 96%; /* Muted background light mode */
+    --muted-foreground: 0, 0%, 71%; /* Muted text color light mode */
+    --accent: 30, 10%, 96%; /* Accent background light mode */
+    --accent-foreground: 0, 0%, 22%; /* Accent text color light mode */
+    --destructive: 15, 100%, 65%; /* Destructive color */
+    --destructive-foreground: 0, 0%, 100%; /* Destructive text color */
+    --border: 0, 0%, 90%; /* Border color light mode */
+    --input: 0, 0%, 90%; /* Input color light mode */
+    --ring: 0, 0%, 15%; /* Ring color light mode */
+    --radius: 0.5rem;
+    --chart-1: 12, 76%, 61%;
+    --chart-2: 173, 58%, 39%;
+    --chart-3: 197, 37%, 24%;
+    --chart-4: 43, 74%, 66%;
+    --chart-5: 27, 87%, 67%;
+  }
+
+  .dark {
+    --background: 0, 0%, 15%; /* Background dark mode */
+    --foreground: 0, 0%, 11%; /* Text color primary dark mode */
+    --card: 0, 0%, 15%; /* Card background dark mode */
+    --card-foreground: 0, 0%, 11%; /* Card text color dark mode */
+    --popover: 0, 0%, 15%; /* Popover background dark mode */
+    --popover-foreground: 0, 0%, 11%; /* Popover text color dark mode */
+    --primary: 0, 0%, 15%; /* Primary color dark mode */
+    --primary-foreground: 0, 0%, 90%; /* Primary text color dark mode */
+    --secondary: 0, 0%, 17%; /* Secondary color dark mode */
+    --secondary-foreground: 0, 0%, 76%; /* Secondary text color dark mode */
+    --muted: 0, 0%, 17%; /* Muted background dark mode */
+    --muted-foreground: 0, 0%, 71%; /* Muted text color dark mode */
+    --accent: 0, 0%, 17%; /* Accent background dark mode */
+    --accent-foreground: 0, 0%, 76%; /* Accent text color dark mode */
+    --destructive: 15, 100%, 65%; /* Destructive color */
+    --destructive-foreground: 0, 0%, 100%; /* Destructive text color dark mode */
+    --border: 0, 0%, 17%; /* Border color dark mode */
+    --input: 0, 0%, 17%; /* Input color dark mode */
+    --ring: 0, 0%, 71%; /* Ring color dark mode */
+    --chart-1: 220, 70%, 50%;
+    --chart-2: 160, 60%, 45%;
+    --chart-3: 30, 80%, 55%;
+    --chart-4: 280, 65%, 60%;
+    --chart-5: 340, 75%, 55%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.social-links {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.social-links:hover {
+  color: var(--primary);
+  text-decoration: underline;
 }
