@@ -17,10 +17,10 @@ export default function Home() {
       <div className='flex w-full rounded-b-[6rem] border-b bg-secondary px-2 py-12'>
         <CarouselSection />
       </div>
-      <div className='px-2 py-24'>
+      <div className='mx-auto max-w-screen-2xl px-2 py-24'>
         <ServicesSection />
       </div>
-      <div className='flex h-full w-full flex-1 px-2'>
+      <div className='flex h-full w-full flex-1'>
         <FooterSection />
       </div>
     </div>

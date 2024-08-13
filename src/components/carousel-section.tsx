@@ -11,7 +11,7 @@ import Autoplay from 'embla-carousel-autoplay';
 
 const CarouselSection = () => {
   return (
-    <div className='flex min-h-full w-full items-center justify-center'>
+    <div className='mx-auto flex min-h-full w-full max-w-screen-2xl items-center justify-center'>
       <Carousel
         opts={{
           startIndex: 3, // Start from the 5th slide
