@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/carousel';
 const ClientTestimonial = () => {
   return (
-    <div className='flex w-full flex-col bg-neutral-100 py-14'>
+    <div className='flex h-[60vh] w-full flex-col items-center justify-center bg-neutral-100 py-14'>
       <div className='mx-auto mb-10 w-full text-center'>
         <p className='text-2xl font-medium'>Clients Testimonial</p>
       </div>
