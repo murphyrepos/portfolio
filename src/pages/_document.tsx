@@ -6,7 +6,7 @@ export default function Document() {
       <Head />
       <ThemeProvider
         attribute='class'
-        defaultTheme='dark'
+        defaultTheme='light'
         enableSystem
         disableTransitionOnChange
       >
