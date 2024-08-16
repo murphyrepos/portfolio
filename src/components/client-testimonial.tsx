@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/carousel';
 const ClientTestimonial = () => {
   return (
-    <div className='flex w-full flex-col bg-neutral-100 py-14'>
+    <div className='flex w-full flex-col bg-white py-14'>
       <div className='mx-auto mb-10 w-full text-center'>
         <p className='text-2xl font-medium'>Clients Testimonial</p>
       </div>
-      <div className='mx-auto flex w-[80%] max-w-screen-xl flex-row items-center justify-between space-x-5'>
+      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-row items-center justify-between space-x-5'>
         <Carousel
           opts={{
             align: 'start',

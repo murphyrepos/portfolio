@@ -6,8 +6,8 @@ import Icons from './icons';
 
 const ReviewCard = () => {
   return (
-    <Card className='rounded-xl border-none shadow-none'>
-      <CardContent className='mx-auto flex w-full flex-col justify-between space-y-16 py-4'>
+    <Card className='rounded-xl border-none bg-neutral-100 shadow-none'>
+      <CardContent className='mx-auto flex w-full flex-col justify-between space-y-16 py-6'>
         <div className='flex flex-col items-start justify-start space-y-4'>
           <CommentRatings
             rating={4.5}

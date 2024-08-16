@@ -2,6 +2,34 @@ import React from 'react';
 type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
+  arrows: (props: IconProps) => (
+    <svg
+      width='223'
+      height='49'
+      viewBox='0 0 223 49'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
+      <g opacity='0.4'>
+        <path
+          d='M0.999997 40.8082C0.999997 40.8082 43.9587 1.00001 108.877 1.00001C173.795 1.00001 216.754 40.8083 216.754 40.8083'
+          stroke='#0A65CC'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeDasharray='12 8'
+        />
+        <path
+          d='M215.551 28.6097L217.502 41.5912L204.555 43.4272'
+          stroke='#0A65CC'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+      </g>
+    </svg>
+  ),
   illustration: (props: IconProps) => (
     <svg
       width='492'
@@ -9,6 +37,7 @@ export const Icons = {
       viewBox='0 0 492 382'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      {...props}
     >
       <g clipPath='url(#clip0_1_346)'>
         <path

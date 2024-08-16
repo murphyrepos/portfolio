@@ -1,20 +1,13 @@
 import React from 'react';
 import Icons from './icons';
 import { Input } from './ui/input';
-import {
-  Briefcase,
-  LocateIcon,
-  LocateOffIcon,
-  MapPin,
-  Navigation2Icon,
-  SearchIcon,
-} from 'lucide-react';
+import { Briefcase, MapPin, SearchIcon } from 'lucide-react';
 import { Button } from './ui/button';
 
 const HeroSection = () => {
   return (
-    <div className='flex w-full flex-col bg-neutral-100 py-14'>
-      <div className='mx-auto flex w-[80%] max-w-screen-xl flex-row items-center justify-between space-x-5'>
+    <div className='flex min-h-screen w-full flex-col items-center justify-center bg-neutral-100 py-14'>
+      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-row items-center justify-between space-x-5'>
         <div className='flex w-3/5 flex-col items-start justify-center space-y-6'>
           <div className='flex w-[75%] flex-col items-start justify-center space-y-6'>
             <p className='text-5xl'>
@@ -59,7 +52,7 @@ const HeroSection = () => {
           <Icons.illustration />
         </div>
       </div>
-      <div className='mx-auto my-10 grid w-[80%] max-w-screen-xl grid-cols-4 gap-2'>
+      <div className='mx-auto my-10 grid w-[90%] max-w-screen-xl grid-cols-4 gap-2'>
         <div className='col-span-1 flex space-x-2 rounded-sm bg-white hover:shadow-md'>
           <div className='mx-2 my-2 flex h-14 w-14 items-center justify-center rounded-sm bg-blue-400 bg-opacity-20 text-primary hover:bg-primary hover:text-white'>
             <Briefcase size={24} />
