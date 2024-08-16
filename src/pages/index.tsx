@@ -1,13 +1,18 @@
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
+import ClientTestimonial from '@/components/client-testimonial';
 import HeroSection from '@/components/hero-section';
+import Services from '@/components/services';
+import WorkFlow from '@/components/work-flow';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div className='flex w-full flex-1 flex-col'>
+    <div>
       <HeroSection />
+      <Services />
+      <WorkFlow />
+      <ClientTestimonial />
     </div>
   );
 }
