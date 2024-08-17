@@ -4,7 +4,10 @@ import Icons from './icons';
 
 const WorkFlow = () => {
   return (
-    <div className='mx-auto flex w-full flex-col bg-neutral-100 py-20'>
+    <div
+      className='mx-auto flex w-full flex-col bg-neutral-100 py-20'
+      data-scroll-section
+    >
       <div className='mx-auto flex w-[90%] flex-col items-center justify-center space-y-10'>
         <p className='text-2xl font-semibold'>How JobPilot Works</p>
         <div className='flex items-center justify-between'>
