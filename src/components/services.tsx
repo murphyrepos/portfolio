@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import WorkFlowCard from './work-flow-card';
 import { Card } from './ui/card';
 
@@ -46,37 +45,37 @@ const Services = () => {
           <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+              className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
