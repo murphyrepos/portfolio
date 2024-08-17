@@ -4,6 +4,10 @@ export enum DeviceType {
 }
 
 export function detectDevice(): DeviceType {
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+    return DeviceType.Desktop;
+  }
+
   const userAgent: string =
     navigator.userAgent || navigator.vendor || (window as any).opera;
 
