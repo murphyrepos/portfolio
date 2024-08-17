@@ -7,10 +7,15 @@ import { Card } from './ui/card';
 const Services = () => {
   return (
     <div
-      className='mx-auto flex w-[90%] justify-evenly py-10'
+      className='mx-auto flex w-[90%] flex-col justify-evenly py-10 lg:flex-row'
       data-scroll-section
     >
-      <div id='fixed' className='w-1/2' data-scroll data-scroll-speec='2'>
+      <div
+        id='fixed'
+        className='w-full lg:w-1/2'
+        data-scroll
+        data-scroll-speec='2'
+      >
         <div
           data-scroll-sticky
           data-scroll
@@ -36,39 +41,42 @@ const Services = () => {
           </Button>
         </div>
       </div>
-      <div className='flex w-full flex-1 px-10'>
-        <div className='flex w-full flex-col rounded-md border border-none px-4 shadow-none'>
-          <div className='flex-col justify-end space-y-10'>
-            <Card data-scroll className='my-4 border-none px-20 shadow-sm'>
-              <WorkFlowCard invertColor />
-            </Card>
+      <div className='flex w-full flex-1 lg:px-10'>
+        <div className='flex w-full rounded-md border border-none px-4 shadow-none xl:flex-col'>
+          <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
             <Card
               data-scroll
-              className='min-h-50 mx-20 my-4 rounded-xl border-none shadow-sm'
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 mx-20 my-4 rounded-xl border-none shadow-sm'
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 mx-20 my-4 rounded-xl border-none shadow-sm'
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 mx-20 my-4 rounded-xl border-none shadow-sm'
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>
             <Card
               data-scroll
-              className='min-h-50 mx-20 my-4 rounded-xl border-none shadow-sm'
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
+            >
+              <WorkFlowCard invertColor />
+            </Card>
+            <Card
+              data-scroll
+              className='min-h-50 my-4 rounded-xl border-none shadow-sm md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
             >
               <WorkFlowCard invertColor />
             </Card>

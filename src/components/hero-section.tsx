@@ -6,11 +6,14 @@ import { Button } from './ui/button';
 
 const HeroSection = () => {
   return (
-    <div className='flex h-screen w-full flex-col items-center justify-center bg-neutral-100 py-14' data-scroll-section>
-      <div className='mx-auto flex w-[80%] max-w-screen-xl flex-row items-center justify-between space-x-5'>
-        <div className='flex w-3/5 flex-col items-start justify-center space-y-6'>
-          <div className='flex w-[75%] flex-col items-start justify-center space-y-6'>
-            <p className='text-5xl' data-scroll>
+    <div
+      className='flex h-screen w-full flex-col items-center justify-center bg-neutral-100 py-14'
+      data-scroll-section
+    >
+      <div className='max-w-screen-x mx-auto flex w-[80%] flex-col-reverse items-center justify-between lg:flex-row md:space-x-5'>
+        <div className='flex w-full flex-col items-start justify-center md:space-y-6 lg:w-3/5'>
+          <div className='flex w-full flex-col items-start justify-center md:w-[75%] md:space-y-6'>
+            <p className='text-3xl md:text-5xl' data-scroll>
               Finad a job that suits your interest & skills.
             </p>
             <p className='text-muted-foreground' data-scroll>
@@ -24,7 +27,7 @@ const HeroSection = () => {
             Video, Animation.
           </p>
         </div>
-        <div className='flex w-2/5 justify-end' data-scroll>
+        <div className='flex w-full justify-end lg:w-2/5' data-scroll>
           <Icons.illustration />
         </div>
       </div>
