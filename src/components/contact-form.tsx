@@ -14,6 +14,7 @@ const ContactForm = () => {
   const { toast } = useToast();
   const contactForm = useForm<Contact>({
     resolver: zodResolver(contactFormSchema),
+    mode: 'onBlur',
   });
 
   function onContactSubmit(data: Contact) {
@@ -47,7 +48,8 @@ const ContactForm = () => {
                     type='text'
                     className={cn(
                       'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
-                      fieldState.error && 'border border-solid border-red-500'
+                      fieldState.error &&
+                        'border border-solid ring-2 ring-red-400'
                     )}
                     placeholder='Full Name'
                     {...field}
@@ -66,7 +68,8 @@ const ContactForm = () => {
                     type='text'
                     className={cn(
                       'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
-                      fieldState.error && 'border border-solid border-red-500'
+                      fieldState.error &&
+                        'border border-solid ring-2 ring-red-400'
                     )}
                     placeholder='Email'
                     {...field}
@@ -85,7 +88,8 @@ const ContactForm = () => {
                     type='number'
                     className={cn(
                       'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
-                      fieldState.error && 'border border-solid border-red-500'
+                      fieldState.error &&
+                        'border border-solid ring-2 ring-red-400'
                     )}
                     placeholder='Phone'
                     {...field}
@@ -105,7 +109,8 @@ const ContactForm = () => {
                     placeholder='Message'
                     className={cn(
                       'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
-                      fieldState.error && 'border border-solid border-red-500'
+                      fieldState.error &&
+                        'border border-solid ring-2 ring-red-400'
                     )}
                     {...field}
                   />
@@ -138,9 +143,12 @@ const contactFormSchema = z.object({
     .email({
       message: 'Please enter a valid email address',
     }),
-  number: z.string({
-    message: 'Please enter a valid number',
-  }),
+  number: z
+    .string({
+      message: 'Please enter a valid number',
+    })
+    .regex(new RegExp('[d]{2,}'), 'Please enter valid phone')
+    .optional(),
   message: z.string({
     message: 'Please enter a message',
   }),
