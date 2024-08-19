@@ -40,7 +40,7 @@ const ContactForm = () => {
           <FormField
             control={contactForm.control}
             name='fullName'
-            render={({ field }) => (
+            render={({ field, fieldState: { invalid } }) => (
               <FormItem className='w-full'>
                 <FormControl>
                   <Input

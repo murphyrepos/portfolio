@@ -5,7 +5,10 @@ import ContactForm from './contact-form';
 
 const Footer = () => {
   return (
-    <div className='flex w-full flex-col items-center justify-center bg-neutral-100 py-20'>
+    <div
+      className='flex w-full flex-col items-center justify-center bg-neutral-100 py-20'
+      data-scroll-section
+    >
       <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between space-x-5 md:flex-row'>
         <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-3/5'>
           <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-[65%]'>
