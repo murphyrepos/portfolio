@@ -35,9 +35,14 @@ const Services = () => {
             enterprises. Trust us to help you achieve success with our
             tailor-made software development methodology.
           </p>
-          <Button className='x-10 rounded-full py-6 text-xl' variant={'ghost'}>
-            Contact Us
-          </Button>
+          <a href='#footer' data-scroll-to>
+            <Button
+              className='x-10 rounded-full py-6 text-xl transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
+              variant={'default'}
+            >
+              Contact Us
+            </Button>
+          </a>
         </div>
       </div>
       <div className='flex w-full flex-1 lg:px-10'>
