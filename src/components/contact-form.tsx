@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { cn } from '@/lib/utils';
-import { FormControl, FormField, FormItem, FormMessage, Form } from './ui/form';
+import { FormControl, FormField, FormItem, Form } from './ui/form';
 import { Textarea } from './ui/textarea';
 import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/ui/use-toast';
@@ -40,57 +40,57 @@ const ContactForm = () => {
           <FormField
             control={contactForm.control}
             name='fullName'
-            render={({ field, fieldState: { invalid } }) => (
+            render={({ field, fieldState }) => (
               <FormItem className='w-full'>
                 <FormControl>
                   <Input
                     type='text'
                     className={cn(
-                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0'
+                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      fieldState.error && 'border border-solid border-red-500'
                     )}
                     placeholder='Full Name'
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={contactForm.control}
             name='email'
-            render={({ field }) => (
+            render={({ field, fieldState }) => (
               <FormItem className='w-full'>
                 <FormControl>
                   <Input
                     type='text'
                     className={cn(
-                      'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0'
+                      'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      fieldState.error && 'border border-solid border-red-500'
                     )}
                     placeholder='Email'
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
           <FormField
             control={contactForm.control}
             name='number'
-            render={({ field }) => (
+            render={({ field, fieldState }) => (
               <FormItem className='w-full'>
                 <FormControl>
                   <Input
                     type='number'
                     className={cn(
-                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0'
+                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      fieldState.error && 'border border-solid border-red-500'
                     )}
                     placeholder='Phone'
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
@@ -98,18 +98,18 @@ const ContactForm = () => {
           <FormField
             control={contactForm.control}
             name='message'
-            render={({ field }) => (
+            render={({ field, fieldState }) => (
               <FormItem className='w-full'>
                 <FormControl>
                   <Textarea
                     placeholder='Message'
                     className={cn(
-                      'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0'
+                      'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      fieldState.error && 'border border-solid border-red-500'
                     )}
                     {...field}
                   />
                 </FormControl>
-                <FormMessage />
               </FormItem>
             )}
           />
