@@ -3,11 +3,8 @@ import Icons from './icons';
 
 const HeroSection = () => {
   return (
-    <div
-      className='flex h-screen w-full flex-col items-center justify-center bg-neutral-100 py-14'
-      data-scroll-section
-    >
-      <div className='max-w-screen-x mx-auto flex w-[80%] flex-col-reverse items-center justify-between lg:flex-row md:space-x-5'>
+    <div className='flex h-screen w-full flex-col items-center justify-center bg-neutral-100 py-14'>
+      <div className='max-w-screen-x mx-auto flex w-[80%] flex-col-reverse items-center justify-between md:space-x-5 lg:flex-row'>
         <div className='flex w-full flex-col items-start justify-center md:space-y-6 lg:w-3/5'>
           <div className='flex w-full flex-col items-start justify-center md:w-[75%] md:space-y-6'>
             <p className='text-3xl md:text-5xl' data-scroll>
