@@ -10,12 +10,7 @@ const Services = () => {
       className='mx-auto flex w-[90%] flex-col justify-evenly py-10 lg:flex-row'
       data-scroll-section
     >
-      <div
-        id='fixed'
-        className='w-full lg:w-1/2'
-        data-scroll
-        data-scroll-speec='2'
-      >
+      <div id='fixed' className='w-full lg:w-1/2' data-scroll>
         <div
           data-scroll-sticky
           data-scroll
