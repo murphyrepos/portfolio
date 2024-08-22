@@ -1,8 +1,5 @@
 import React from 'react';
 import Icons from './icons';
-import { Input } from './ui/input';
-import { Briefcase, MapPin, SearchIcon } from 'lucide-react';
-import { Button } from './ui/button';
 
 const HeroSection = () => {
   return (

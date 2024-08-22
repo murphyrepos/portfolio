@@ -11,7 +11,7 @@ import {
 const ClientTestimonial = () => {
   return (
     <div
-      className='flex h-[60vh] w-full flex-col items-center justify-center bg-white py-14'
+      className='flex h-[90vh] w-full flex-col items-center justify-center bg-white lg:h-[70vh]'
       data-scroll-section
     >
       <div className='mx-auto mb-10 w-full text-center' data-scroll>
