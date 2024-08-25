@@ -3,14 +3,15 @@ import { Button } from './ui/button';
 import WorkFlowCard from './work-flow-card';
 import { Card } from './ui/card';
 import Link from 'next/link';
+import { services } from '@/utils/constants/services.content';
 
 const Services = () => {
   return (
     <div
-      className='mx-auto flex w-[90%] flex-col justify-evenly py-10 lg:flex-row'
+      className='mx-auto mb-10 flex w-[90%] flex-col justify-evenly py-10 lg:flex-row'
       data-scroll-section
     >
-      <div id='fixed' className='w-full lg:w-1/2' data-scroll>
+      <div id='fixed' className='w-full lg:w-1/2 lg:py-8' data-scroll>
         <div
           data-scroll-sticky
           data-scroll
@@ -44,46 +45,21 @@ const Services = () => {
       <div className='flex w-full flex-1 lg:px-10'>
         <div className='flex w-full rounded-md border border-none px-4 shadow-none xl:flex-col'>
           <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
-            <Link href='/services/web-development'>
-              <Card
-                data-scroll
-                className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
-              >
-                <WorkFlowCard invertColor />
-              </Card>
-            </Link>
-            <Link href='/services/web-development'>
-              <Card
-                data-scroll
-                className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
-              >
-                <WorkFlowCard invertColor />
-              </Card>
-            </Link>
-            <Link href='/services/web-development'>
-              <Card
-                data-scroll
-                className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
-              >
-                <WorkFlowCard invertColor />
-              </Card>
-            </Link>
-            <Link href='/services/web-development'>
-              <Card
-                data-scroll
-                className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
-              >
-                <WorkFlowCard invertColor />
-              </Card>
-            </Link>
-            <Link href='/services/web-development'>
-              <Card
-                data-scroll
-                className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-10 xl:mx-20'
-              >
-                <WorkFlowCard invertColor />
-              </Card>
-            </Link>
+            {services.map(({ title, description, url }, index) => (
+              <Link href={url} key={index}>
+                <Card
+                  data-scroll
+                  className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-5 xl:mx-10'
+                >
+                  <WorkFlowCard
+                    invertColor
+                    title={title}
+                    description={description}
+                    descriptionClassNames='text-justify'
+                  />
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

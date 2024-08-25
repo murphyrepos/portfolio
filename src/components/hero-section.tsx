@@ -13,7 +13,7 @@ const HeroSection = () => {
       >
         <div className='flex w-full flex-col items-start justify-center space-y-6 lg:w-3/5'>
           <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-[75%]'>
-            <p className='text-3xl md:text-5xl' data-scroll>
+            <p className='text-xl md:text-5xl' data-scroll>
               Find a solution that suits your business needs
             </p>
             <p className='text-muted-foreground' data-scroll>
@@ -21,7 +21,7 @@ const HeroSection = () => {
               your next big application
             </p>
           </div>
-          <p className='text-sm' data-scroll>
+          <p className='text-xs md:text-sm' data-scroll>
             <span className='text-muted-foreground'>We are expert in:</span>{' '}
             <span className='text-primary'>
               Web Development, Mobile Development, Custom Software Solutions,
