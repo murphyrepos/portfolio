@@ -6,8 +6,16 @@ import { Card } from './ui/card';
 
 interface WorkFlowCardProps {
   invertColor?: boolean;
+  title: string;
+  description: string;
+  descriptionClassNames?: string;
 }
-const WorkFlowCard = ({ invertColor }: WorkFlowCardProps) => {
+const WorkFlowCard = ({
+  invertColor,
+  title,
+  description,
+  descriptionClassNames = '',
+}: WorkFlowCardProps) => {
   return (
     <div
       className={cn(
@@ -23,12 +31,14 @@ const WorkFlowCard = ({ invertColor }: WorkFlowCardProps) => {
       >
         <UserIcon size={32} />
       </div>
-      <p className='text-xl'>Create Account</p>
-      <p className='text-center text-sm text-muted-foreground'>
-        We use effective communication to gather detailed requirements and
-        exceed clients’ expectations. We work closely with clients to understand
-        their unique needs and make necessary adjustments throughout the
-        development process, enabling us to provide the best solutions possible.
+      <p className='text-xl'>{title}</p>
+      <p
+        className={cn(
+          'text-center text-sm text-muted-foreground',
+          descriptionClassNames
+        )}
+      >
+        {description}
       </p>
     </div>
   );

@@ -13,18 +13,20 @@ const HeroSection = () => {
       >
         <div className='flex w-full flex-col items-start justify-center space-y-6 lg:w-3/5'>
           <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-[75%]'>
-            <p className='text-3xl md:text-5xl' data-scroll>
-              Finad a job that suits your interest & skills.
+            <p className='text-xl md:text-5xl' data-scroll>
+              Find a solution that suits your business needs
             </p>
             <p className='text-muted-foreground' data-scroll>
-              Aliquam vitae turpis in diam convallis finibus in at risus. Nullam
-              in scelerisque leo, eget sollicitudin velit bestibulum.
+              Murphy repos is always on toes to provide best services to build
+              your next big application
             </p>
           </div>
-          <p className='text-xs' data-scroll>
-            <span className='text-muted-foreground'>Suggestion:</span> Designer,
-            Programing, <span className='text-primary'>Digital Marketing</span>,
-            Video, Animation.
+          <p className='text-xs md:text-sm' data-scroll>
+            <span className='text-muted-foreground'>We are expert in:</span>{' '}
+            <span className='text-primary'>
+              Web Development, Mobile Development, Custom Software Solutions,
+              Cloud Solutions
+            </span>
           </p>
         </div>
         <div className='flex w-full justify-end lg:w-2/5' data-scroll>
