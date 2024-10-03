@@ -30,12 +30,12 @@ const HeroSection = () => {
               Cloud Solutions
             </span>
           </p>
-          <Button
+          {/* <Button
             className='x-10 rounded-full py-6 text-xl transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
             variant={'default'}
           >
             <Link href='/profile'>Profile</Link>
-          </Button>
+          </Button> */}
         </div>
         <div className='flex w-full justify-end lg:w-2/5' data-scroll>
           <Icons.illustration />
