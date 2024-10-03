@@ -1,5 +1,7 @@
 import React from 'react';
 import Icons from './icons';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -28,6 +30,12 @@ const HeroSection = () => {
               Cloud Solutions
             </span>
           </p>
+          {/* <Button
+            className='x-10 rounded-full py-6 text-xl transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
+            variant={'default'}
+          >
+            <Link href='/profile'>Profile</Link>
+          </Button> */}
         </div>
         <div className='flex w-full justify-end lg:w-2/5' data-scroll>
           <Icons.illustration />
