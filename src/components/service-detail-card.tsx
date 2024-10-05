@@ -1,17 +1,26 @@
 import React from 'react';
 import { Button } from './ui/button';
+import { spaceGrotesk } from '@/pages';
 
-const ServiceDetailCard = () => {
+const ServiceDetailCard = (data: any) => {
+  const testimonialConstants = data.data.reduce((acc: any, item: any) => {
+    return { ...acc, ...item };
+  }, {});
   return (
-    <div className='flex w-[100%] flex-col items-start justify-center space-y-4 bg-neutral-100 py-14'>
-      <div className='mx-auto mt-14 flex w-[90%] flex-col items-start justify-center space-y-4'>
-        <p className='text-4xl font-bold'>Web Development</p>
-        <p className='w-[70%] text-xl'>
-          We create responsive web applications leveraging the most robust
-          technologies to help you boost your business
+    <div
+      className={`flex w-[100%] flex-col items-start justify-center space-y-4 bg-neutral-100 py-14`}
+    >
+      <div
+        className={`${spaceGrotesk.className} mx-auto mt-14 flex w-[90%] flex-col items-start justify-center space-y-4`}
+      >
+        <p className={`text-4xl font-bold`}>{testimonialConstants?.title}</p>
+        <p className={`${spaceGrotesk.className} w-[70%] text-xl`}>
+          {testimonialConstants.description}
         </p>
-        <Button className='rounded-none px-12 py-7 text-lg capitalize'>
-          See our Work
+        <Button
+          className={`${spaceGrotesk.className} rounded-none px-12 py-7 text-lg capitalize`}
+        >
+          {testimonialConstants.buttonTitle}
         </Button>
       </div>
     </div>
