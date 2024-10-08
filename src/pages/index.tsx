@@ -8,8 +8,7 @@ import { useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
-const inter = Inter({ subsets: ['latin'] });
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+export const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);

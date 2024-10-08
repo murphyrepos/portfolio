@@ -1,19 +1,30 @@
-import FavoriteChoices from '@/components/favorite-choices';
-import HeroSection from '@/components/hero-section';
-import ServiceApplicationType from '@/components/service-application-type';
-import ServiceDetailCard from '@/components/service-detail-card';
-import Technologies from '@/components/technologies';
 import React from 'react';
-
-const Service = () => {
+import { useRouter } from 'next/router';
+const componentsMap: any = {
+  'web-development': React.lazy(
+    () => import('@components/providedServices/web-development')
+  ),
+  'mobile-development': React.lazy(
+    () => import('@components/providedServices/modile-development')
+  ),
+  'ui-ux-services': React.lazy(
+    () => import('@components/providedServices/ui-ux-services')
+  ),
+  'custom-solutions': React.lazy(
+    () => import('@components/providedServices/custom-solutions')
+  ),
+};
+const ServiceDetail = () => {
+  const router = useRouter();
+  const { service } = router.query;
+  const ServiceComponent = componentsMap[service as string];
+  if (!service) return <div>Loading...</div>;
+  if (!ServiceComponent) return <div>Service not found</div>;
   return (
-    <div className='flex w-full flex-col items-center justify-center space-y-14'>
-      <ServiceDetailCard />
-      <FavoriteChoices />
-      <ServiceApplicationType />
-      <Technologies />
-    </div>
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <ServiceComponent />
+    </React.Suspense>
   );
 };
 
-export default Service;
+export default ServiceDetail;
