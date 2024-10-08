@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -173,6 +174,7 @@ export const CommentRatings = ({
         )}
         {partialStar}
         {[
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           ...Array(Math.max(0, totalStars - fullStars - (partialStar ? 1 : 0))),
         ].map((_, i) =>
           React.cloneElement(Icon, {

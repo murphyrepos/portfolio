@@ -9,6 +9,7 @@
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked"
   ],
+
   "rules": {
     "@typescript-eslint/no-unused-vars": [
       "warn",
@@ -24,5 +25,44 @@
         }
       }
     ]
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        // Apply these rules only to .ts and .tsx files
+
+        "@typescript-eslint/array-type": [
+          "error",
+          {
+            "default": "array-simple"
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/no-misused-promises": [
+          2,
+          {
+            "checksVoidReturn": {
+              "attributes": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/components/ui/**/*.{ts,tsx}"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/no-empty-interface": "off"
+      }
+    }
+  ]
 }
