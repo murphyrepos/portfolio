@@ -1,11 +1,20 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { spaceGrotesk } from '@/pages';
 
-const ServiceDetailCard = (data: any) => {
-  const testimonialConstants = data.data.reduce((acc: any, item: any) => {
-    return { ...acc, ...item };
-  }, {});
+import { ServiceDetailType } from './type';
+import { spaceGrotesk } from 'src/pages';
+
+const ServiceDetailCard = (data: ServiceDetailType) => {
+  const testimonialConstants = data.data.reduce(
+    (
+      acc: Partial<{ title: string; description: string; buttonTitle: string }>,
+      item: { title?: string; description?: string; buttonTitle?: string }
+    ) => ({
+      ...acc,
+      ...item,
+    }),
+    {}
+  );
   return (
     <div
       className={`flex w-[100%] flex-col items-start justify-center space-y-4 bg-neutral-100 py-14`}

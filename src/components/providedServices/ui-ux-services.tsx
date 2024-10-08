@@ -1,16 +1,16 @@
 import React from 'react';
 import CradLayout from '../servicesCard';
-import { uiDevConstants } from '@/utils/constants/services.constant';
 import ServiceDetailCard from '../service-detail-card';
 import Technologies from '../technologies';
 import FavoriteChoices from '../favorite-choices';
+import { uiDevConstants } from 'src/utils/constants/services.constant';
 
 const UiUxDevelopment = () => {
   return (
     <>
       <ServiceDetailCard data={uiDevConstants.testominalConstants} />
       <FavoriteChoices data={uiDevConstants.favourites} />
-      <CradLayout data={uiDevConstants} />
+      <CradLayout cards={uiDevConstants.cards} />
       <Technologies techcologies={uiDevConstants.technologiesConstant} />
     </>
   );

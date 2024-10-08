@@ -112,7 +112,7 @@ export const mobDevConstants = {
     'GraphQL',
     'Typescript',
   ],
-  favourites: ['Swift', 'Kotlin', 'Flutter', 'Node.js'],
+  favourites: ['Swift', 'Kotlin', 'React Native', 'Node.js'],
 };
 
 export const uiDevConstants = {
@@ -165,7 +165,6 @@ export const uiDevConstants = {
     'Vue.js',
     'Next.js',
     'Tailwind CSS',
-    'Bootstrap',
   ],
   favourites: ['Figma', 'Adobe XD', 'React', 'Next.js', 'Tailwind CSS'],
 };

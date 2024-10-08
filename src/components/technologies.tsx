@@ -1,8 +1,9 @@
-import { spaceGrotesk } from '@/pages';
 import React from 'react';
 import StackIcon from 'tech-stack-icons';
+import { TechnologiesType } from './type';
+import { spaceGrotesk } from 'src/pages';
 
-const Technologies = (techcologies: any) => {
+const Technologies = (techcologies: TechnologiesType) => {
   return (
     <div className='m-auto flex w-[90%] flex-col items-start space-y-10 py-8'>
       <p className={`${spaceGrotesk.className} text-4xl`}>Technolgies</p>
@@ -15,9 +16,11 @@ const Technologies = (techcologies: any) => {
             >
               <StackIcon
                 name={
-                  tech === 'React'
+                  tech === 'React' || tech == 'React Native'
                     ? 'reactjs'
-                    : tech.replace(/\./g, '').replace(/\s/g, '').toLowerCase()
+                    : tech === 'Adobe XD'
+                      ? 'adobe'
+                      : tech.replace(/\./g, '').replace(/\s/g, '').toLowerCase()
                 }
               />
               <p className={`${spaceGrotesk.className} font-medium`}>{tech}</p>

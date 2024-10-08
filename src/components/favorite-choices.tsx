@@ -1,8 +1,8 @@
 import React from 'react';
-import Icons from './icons';
 import StackIcon from 'tech-stack-icons';
+import { FavouritesType } from './type';
 
-const FavoriteChoices = (favourites: any) => {
+const FavoriteChoices = (favourites: FavouritesType) => {
   return (
     <div className='flex flex-col items-center justify-center space-y-8 py-8'>
       <p className='text-2xl font-medium'>Our Favorite Choices</p>
@@ -12,9 +12,11 @@ const FavoriteChoices = (favourites: any) => {
             <div className='flex flex-col items-center justify-center space-y-2'>
               <StackIcon
                 name={
-                  fav === 'React'
+                  fav === 'React' || fav == 'React Native'
                     ? 'reactjs'
-                    : fav.replace(/\./g, '').replace(/\s/g, '').toLowerCase()
+                    : fav === 'Adobe XD'
+                      ? 'adobe'
+                      : fav.replace(/\./g, '').replace(/\s/g, '').toLowerCase()
                 }
               />
               <p className='font-medium'>{fav}</p>

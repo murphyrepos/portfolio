@@ -2,16 +2,16 @@ import React from 'react';
 import { useRouter } from 'next/router';
 const componentsMap: any = {
   'web-development': React.lazy(
-    () => import('../../../components/providedServices/web-development')
+    () => import('@components/providedServices/web-development')
   ),
   'mobile-development': React.lazy(
-    () => import('../../../components/providedServices/modile-development')
+    () => import('@components/providedServices/modile-development')
   ),
   'ui-ux-services': React.lazy(
-    () => import('../../../components/providedServices/ui-ux-services')
+    () => import('@components/providedServices/ui-ux-services')
   ),
   'custom-solutions': React.lazy(
-    () => import('../../../components/providedServices/custom-solutions')
+    () => import('@components/providedServices/custom-solutions')
   ),
 };
 const ServiceDetail = () => {
