@@ -3,7 +3,7 @@ import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
 import WorkFlow from '@/components/work-flow';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import { useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';

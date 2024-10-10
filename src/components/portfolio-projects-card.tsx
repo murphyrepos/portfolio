@@ -13,7 +13,7 @@ const CardComponent: React.FC<CardProps> = ({
       <p className='mb-4 text-gray-600'>{description}</p>
       <h3 className='mb-1 font-semibold'>Technologies</h3>
       <div className='flex flex-wrap gap-2'>
-        {technologies.map((tech, index) => (
+        {technologies?.data?.data?.map((tech: string, index: number) => (
           <span
             key={index}
             className='rounded bg-blue-100 px-2.5 py-0.5 text-sm font-medium text-blue-800'

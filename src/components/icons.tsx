@@ -1066,7 +1066,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  qoutes: (props: IconProps) => (
+  quotes: () => (
     <svg
       width='36'
       height='36'

@@ -2,7 +2,6 @@
 import { cn } from '@/lib/utils';
 import { UserIcon } from 'lucide-react';
 import React from 'react';
-import { Card } from './ui/card';
 
 interface WorkFlowCardProps {
   invertColor?: boolean;

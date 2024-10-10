@@ -1,7 +1,8 @@
 // pages/profile/index.tsx
-import CardComponent from '@/components/profile-card';
+
 import React from 'react';
 import { details } from '@/utils/constants/portfolio.content';
+import CardComponent from '@/components/portfolio-projects-card';
 
 const ProfilePage = () => {
   return (
@@ -12,7 +13,7 @@ const ProfilePage = () => {
             key={index}
             title={title}
             description={description}
-            technologies={technologies}
+            technologies={{ data: technologies }}
           />
         );
       })}

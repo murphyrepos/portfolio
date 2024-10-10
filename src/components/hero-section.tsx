@@ -1,7 +1,5 @@
 import React from 'react';
 import Icons from './icons';
-import { Button } from './ui/button';
-import Link from 'next/link';
 
 const HeroSection = () => {
   return (

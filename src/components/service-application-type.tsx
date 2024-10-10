@@ -1,9 +1,9 @@
 import React from 'react';
-import CradLayout from './servicesCard';
+import CardLayout from './servicesCard';
 import { webDevConstants } from '@/utils/constants/services.constant';
 
 const ServiceApplicationType = () => {
-  return <CradLayout data={webDevConstants} />;
+  return <CardLayout cards={webDevConstants} />;
 };
 
 export default ServiceApplicationType;

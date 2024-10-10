@@ -1,28 +1,35 @@
+interface StringArrayData {
+  data: string[];
+}
+export interface ExtendedNavigator extends Navigator {
+  customProperty?: string;
+}
+
+export interface DataContainer {
+  data: StringArrayData;
+}
+
 export interface CardProps {
   title: string;
   description: string;
-  technologies: string[];
+  technologies: DataContainer;
 }
 
-export type FavouritesType = {
-  data: string[];
-};
-
-export type TechnologiesType = {
-  techcologies: string[];
-};
-
-export type ServiceDetailType = {
-  data: {
+export interface ServiceDetailType {
+  data: Array<{
     title?: string;
     description?: string;
     buttonTitle?: string;
-  }[];
-};
+  }>;
+}
 
-export type CardType = {
-  cards: {
+export interface CardType {
+  cards: Array<{
     title: string;
-    points: string[];
-  }[];
-};
+    points: StringArrayData;
+  }>;
+}
+
+export interface ServiceDetailProps {
+  service: string | null;
+}

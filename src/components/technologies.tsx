@@ -1,14 +1,14 @@
 import React from 'react';
 import StackIcon from 'tech-stack-icons';
-import { TechnologiesType } from './type';
+import { DataContainer } from './type';
 import { spaceGrotesk } from 'src/pages';
 
-const Technologies = (techcologies: TechnologiesType) => {
+const Technologies = (technologies: DataContainer) => {
   return (
     <div className='m-auto flex w-[90%] flex-col items-start space-y-10 py-8'>
       <p className={`${spaceGrotesk.className} text-4xl`}>Technolgies</p>
       <div className='mx-auto grid w-[90%] grid-cols-6 gap-8'>
-        {techcologies.techcologies.map((tech: string, index: any) => {
+        {technologies?.data?.data?.map((tech: string, index: number) => {
           return (
             <div
               key={index}
