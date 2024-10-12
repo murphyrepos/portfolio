@@ -4,7 +4,7 @@ import { DataContainer } from './type';
 
 const FavoriteChoices = (favorites: DataContainer) => {
   return (
-    <div className='flex flex-col items-center justify-center space-y-8 py-8'>
+    <div className='mx-auto flex max-w-7xl flex-col items-center justify-center space-y-8 py-8'>
       <p className='text-2xl font-medium'>Our Favorite Choices</p>
       <div className='flex items-center justify-center space-x-12'>
         {favorites?.data?.data?.map((fav: string, index: number) => {

@@ -21,7 +21,7 @@ const HeroSection = () => {
               your next big application
             </p>
           </div>
-          <p className='text-xs md:text-sm' data-scroll>
+          <p className='text-sm lg:text-base' data-scroll>
             <span className='text-muted-foreground'>We are expert in:</span>{' '}
             <span className='text-primary'>
               Web Development, Mobile Development, Custom Software Solutions,

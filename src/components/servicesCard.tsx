@@ -4,7 +4,7 @@ import { spaceGrotesk } from 'src/pages';
 
 const CardLayout = ({ cards }: { cards: CardType }) => {
   return (
-    <div className='m-auto flex w-[90%] flex-col items-start space-y-10 py-8'>
+    <div className='space-y-4x m-auto mx-auto flex w-[90%] max-w-7xl flex-col items-start py-8'>
       <p className={`${spaceGrotesk.className} text-4xl`}>
         Modern, Fast & Stable Apps
       </p>
