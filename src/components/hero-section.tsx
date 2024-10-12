@@ -8,7 +8,7 @@ const HeroSection = () => {
       data-scroll-section
     >
       <div
-        className='max-w-screen-x mx-auto flex w-[80%] flex-col-reverse items-center justify-between md:space-x-5 lg:flex-row'
+        className='max-w-screen-x mx-auto flex w-[80%] max-w-7xl flex-col-reverse items-center justify-between md:space-x-5 lg:flex-row'
         data-scroll
       >
         <div className='flex w-full flex-col items-start justify-center space-y-6 lg:w-3/5'>

@@ -12,7 +12,8 @@ export interface DataContainer {
 export interface CardProps {
   title: string;
   description: string;
-  technologies: DataContainer;
+  technologies: string[];
+  image: string;
 }
 
 export interface ServiceDetailType {
