@@ -1,4 +1,4 @@
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const Service = () => {
   const router = useRouter();

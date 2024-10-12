@@ -1,6 +1,5 @@
 import React from 'react';
 import WorkFlowCard from './work-flow-card';
-import Icons from './icons';
 import { workflow } from '@/utils/constants/workflow.content';
 
 const WorkFlow = () => {

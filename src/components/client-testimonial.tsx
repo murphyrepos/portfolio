@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReviewCard from './review-card';
 import {
   Carousel,
-  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+
 const ClientTestimonial = () => {
   return (
     <div

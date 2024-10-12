@@ -1,3 +1,5 @@
+import { ExtendedNavigator } from '@/components/type';
+
 export enum DeviceType {
   Mobile = 'mobile',
   Desktop = 'desktop',
@@ -8,8 +10,11 @@ export function detectDevice(): DeviceType {
     return DeviceType.Desktop;
   }
 
-  const userAgent: string =
-    navigator.userAgent || navigator.vendor || (window as any).opera;
+  const userAgent =
+    (navigator as ExtendedNavigator).userAgent ||
+    (navigator as ExtendedNavigator).vendor ||
+    (window as Record<string, string> & Window & typeof globalThis).opera ||
+    '';
 
   // List of mobile user agent strings to match against
   const mobileRegex =

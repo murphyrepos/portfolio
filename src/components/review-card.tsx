@@ -33,7 +33,7 @@ const ReviewCard = () => {
               <p className='text-xs text-muted-foreground'>UI/UX designer</p>
             </div>
           </div>
-          <Icons.qoutes />
+          <Icons.quotes />
         </div>
       </CardContent>
     </Card>
