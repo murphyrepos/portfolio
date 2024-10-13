@@ -1,12 +1,11 @@
 import React from 'react';
 import StackIcon from 'tech-stack-icons';
 import { DataContainer } from './type';
-import { spaceGrotesk } from 'src/pages';
 
 const Technologies = (technologies: DataContainer) => {
   return (
     <div className='m-auto flex w-[90%] max-w-7xl flex-col items-start space-y-4 py-8'>
-      <p className={`${spaceGrotesk.className} text-4xl`}>Technolgies</p>
+      <p className={`text-4xl`}>Technolgies</p>
       <div className='grid w-full grid-cols-6 gap-x-6 gap-y-8'>
         {technologies?.data?.data?.map((tech: string, index: number) => {
           return (
@@ -23,7 +22,7 @@ const Technologies = (technologies: DataContainer) => {
                       : tech.replace(/\./g, '').replace(/\s/g, '').toLowerCase()
                 }
               />
-              <p className={`${spaceGrotesk.className} font-medium`}>{tech}</p>
+              <p className={`font-medium`}>{tech}</p>
             </div>
           );
         })}

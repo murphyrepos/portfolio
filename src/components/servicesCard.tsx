@@ -1,13 +1,10 @@
 import React from 'react';
 import { CardType } from './type';
-import { spaceGrotesk } from 'src/pages';
 
 const CardLayout = ({ cards }: { cards: CardType }) => {
   return (
     <div className='space-y-4x m-auto mx-auto flex w-[90%] max-w-7xl flex-col items-start py-8'>
-      <p className={`${spaceGrotesk.className} text-4xl`}>
-        Modern, Fast & Stable Apps
-      </p>
+      <p className={`text-4xl`}>Modern, Fast & Stable Apps</p>
       <div className='grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3'>
         {cards?.cards?.map(
           (
@@ -15,17 +12,10 @@ const CardLayout = ({ cards }: { cards: CardType }) => {
             index: number
           ) => (
             <div key={index} className='rounded-md bg-gray-100 p-6 shadow-md'>
-              <h2
-                className={`${spaceGrotesk.className} mb-4 text-2xl font-semibold`}
-              >
-                {point.title}
-              </h2>
+              <h2 className={`mb-4 text-2xl font-semibold`}>{point.title}</h2>
               <ul className='list-inside list-disc space-y-2'>
                 {point?.points?.data?.map((pt: string, index: number) => (
-                  <li
-                    key={index}
-                    className={`${spaceGrotesk.className} text-gray-800`}
-                  >
+                  <li key={index} className={`text-gray-800`}>
                     {pt}
                   </li>
                 ))}

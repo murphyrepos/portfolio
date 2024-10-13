@@ -4,13 +4,10 @@ import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
 import WorkFlow from '@/components/work-flow';
-import { Space_Grotesk } from 'next/font/google';
 import { useEffect, useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { useRouter } from 'next/router';
-
-export const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
 export default function Home() {
   const { asPath } = useRouter(); // Get
@@ -43,11 +40,7 @@ export default function Home() {
       watch={[asPath]}
       containerRef={containerRef}
     >
-      <div
-        className={spaceGrotesk.className}
-        ref={containerRef}
-        data-scroll-container
-      >
+      <div ref={containerRef} data-scroll-container>
         <HeroSection />
         <Services />
         <WorkFlow />
