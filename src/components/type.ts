@@ -14,6 +14,7 @@ export interface CardProps {
   description: string;
   technologies: string[];
   image: string;
+  role: string;
 }
 
 export interface ServiceDetailType {
