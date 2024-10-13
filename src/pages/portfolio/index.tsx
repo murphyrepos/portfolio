@@ -12,6 +12,7 @@ const Portfolio = () => {
           description={detail.description}
           technologies={detail.technologies}
           image={detail.image}
+          role={detail.role}
         />
       ))}
     </div>
