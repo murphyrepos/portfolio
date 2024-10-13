@@ -69,6 +69,6 @@ export const details = [
       ' CI/CD',
     ],
 
-    image: '/images/strike-crypto-currency.png',
+    image: '/images/strike-crypto.png',
   },
 ];
