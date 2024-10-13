@@ -10,7 +10,7 @@ export const details = [
   {
     title: 'Maahdha',
     description:
-      'Maahdaah is a web platform designed to foster political awareness and public engagement. It provides users with access to the manifestos of various local political parties, up-to-date government news, and information about political leaders and government bodies. The platform also allows the public to participate in polls, share opinions, and track the popularity of political figures.',
+      'Maahdha is a web platform designed to foster political awareness and public engagement. It provides users with access to the manifestos of various local political parties, up-to-date government news, and information about political leaders and government bodies. The platform also allows the public to participate in polls, share opinions, and track the popularity of political figures.',
     technologies: [
       'NestJS ',
       ' React ',
@@ -25,7 +25,7 @@ export const details = [
   {
     title: 'Nala Prep',
     description:
-      'NALA-PREP is a cutting-edge SAT preparation platform designed to help students achieve top SAT scores by providing over 10,000 high-quality SAT questions. The platform incorporates the best teaching strategies from Korea, China, and the U.S., ensuring students are equipped with the tools and knowledge needed to excel in the newly announced digital SAT format.',
+      'Nala-Prep is a cutting-edge SAT preparation platform designed to help students achieve top SAT scores by providing over 10,000 high-quality SAT questions. The platform incorporates the best teaching strategies from Korea, China, and the U.S., ensuring students are equipped with the tools and knowledge needed to excel in the newly announced digital SAT format.',
     technologies: [
       'NestJS ',
       ' React ',
