@@ -68,11 +68,6 @@ export const details = [
       'AWS ',
       ' CI/CD',
     ],
-
-<<<<<<< HEAD
-    image: '/images/strike-crypto.png',
-=======
     image: '/images/strike-crypto-currency.png',
->>>>>>> c3f46a0 (portfolio page completed)
   },
 ];
