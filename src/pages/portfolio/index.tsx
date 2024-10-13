@@ -1,8 +1,8 @@
+import React from 'react';
 import CardComponent from '@/components/portfolio-projects-card';
 import { details } from '@/utils/constants/portfolio.content';
-import React from 'react';
 
-const index = () => {
+const Portfolio = () => {
   return (
     <div className='flex min-h-dvh w-full flex-col items-center justify-start space-y-10 bg-neutral-100 px-6 py-16 lg:px-16'>
       {details.map((detail, index) => (
@@ -18,4 +18,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Portfolio;
