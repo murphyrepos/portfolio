@@ -34,7 +34,7 @@ export const details = [
       'AWS ',
       ' CI/CD',
     ],
-    role: 'Developed and deployed online testing and mentoring system to onboard students and conducting mock test system. Alse designed an Learning Management System to administrate the product, student dashbaord for students to track progress and scoring history.',
+    role: 'Developed and deployed online testing and mentoring system to onboard students and conducting mock test system. Also designed an Learning Management System to administrate the product, student dashbaord for students to track progress and scoring history.',
     image: '/images/nala-prep.png',
   },
   {
