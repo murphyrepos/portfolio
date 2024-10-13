@@ -5,9 +5,9 @@ import { spaceGrotesk } from 'src/pages';
 
 const Technologies = (technologies: DataContainer) => {
   return (
-    <div className='m-auto flex w-[90%] flex-col items-start space-y-10 py-8'>
+    <div className='m-auto flex w-[90%] max-w-7xl flex-col items-start space-y-4 py-8'>
       <p className={`${spaceGrotesk.className} text-4xl`}>Technolgies</p>
-      <div className='mx-auto grid w-[90%] grid-cols-6 gap-8'>
+      <div className='grid w-full grid-cols-6 gap-x-6 gap-y-8'>
         {technologies?.data?.data?.map((tech: string, index: number) => {
           return (
             <div

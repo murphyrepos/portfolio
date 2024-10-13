@@ -8,7 +8,7 @@ import { services } from '@/utils/constants/services.content';
 const Services = () => {
   return (
     <div
-      className='mx-auto mb-10 flex w-[90%] flex-col justify-evenly py-10 lg:flex-row'
+      className='mx-auto mb-10 flex w-[90%] max-w-7xl flex-col justify-evenly py-10 lg:flex-row'
       data-scroll-section
     >
       <div id='fixed' className='w-full lg:w-1/2 lg:py-8' data-scroll>
@@ -34,7 +34,7 @@ const Services = () => {
           </p>
           <a href='#footer' data-scroll-to>
             <Button
-              className='x-10 rounded-full py-6 text-xl transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
+              className='rounded-full py-4 text-base transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
               variant={'default'}
             >
               Contact Us
@@ -42,7 +42,7 @@ const Services = () => {
           </a>
         </div>
       </div>
-      <div className='flex w-full flex-1 lg:px-10'>
+      <div className='flex w-full flex-1 md:mt-5 xl:px-10'>
         <div className='flex w-full rounded-md border border-none px-4 shadow-none xl:flex-col'>
           <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
             {services.map(({ title, description, url }, index) => (
@@ -55,7 +55,6 @@ const Services = () => {
                     invertColor
                     title={title}
                     description={description}
-                    descriptionClassNames='text-justify'
                   />
                 </Card>
               </Link>

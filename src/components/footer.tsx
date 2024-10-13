@@ -10,9 +10,9 @@ const Footer = () => {
       data-scroll-section
       id='footer'
     >
-      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between md:flex-row lg:space-x-5'>
-        <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-3/5'>
-          <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-[65%]'>
+      <div className='mx-auto flex h-full w-[90%] max-w-7xl flex-col items-center justify-between md:flex-row lg:space-x-5'>
+        <div className='flex w-full flex-col items-start justify-center space-y-6 md:mx-5 md:w-1/2'>
+          <div className='flex w-full flex-col items-start justify-center space-y-6 md:w-[100%]'>
             <p className='text-2xl md:text-5xl'>
               We will get back to you soon!
             </p>
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='mt-10 flex w-full justify-end md:relative md:mt-0 md:w-2/5'>
+        <div className='mt-10 flex w-full items-center justify-end md:relative md:mx-5 md:mt-0 md:w-1/2'>
           <ContactForm />
         </div>
       </div>

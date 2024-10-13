@@ -17,10 +17,10 @@ const ServiceDetailCard = (data: ServiceDetailType) => {
   );
   return (
     <div
-      className={`flex w-[100%] flex-col items-start justify-center space-y-4 bg-neutral-100 py-14`}
+      className={`flex w-full flex-col items-start justify-center space-y-4 bg-neutral-100 py-14`}
     >
       <div
-        className={`${spaceGrotesk.className} mx-auto mt-14 flex w-[90%] flex-col items-start justify-center space-y-4`}
+        className={`${spaceGrotesk.className} mx-auto mt-14 flex w-[90%] max-w-7xl flex-col items-start justify-center space-y-4`}
       >
         <p className={`text-4xl font-bold`}>{testimonialConstants?.title}</p>
         <p className={`${spaceGrotesk.className} w-[70%] text-xl`}>

@@ -8,7 +8,7 @@ const HeroSection = () => {
       data-scroll-section
     >
       <div
-        className='max-w-screen-x mx-auto flex w-[80%] flex-col-reverse items-center justify-between md:space-x-5 lg:flex-row'
+        className='max-w-screen-x mx-auto flex w-[80%] max-w-7xl flex-col-reverse items-center justify-between md:space-x-5 lg:flex-row'
         data-scroll
       >
         <div className='flex w-full flex-col items-start justify-center space-y-6 lg:w-3/5'>
@@ -21,7 +21,7 @@ const HeroSection = () => {
               your next big application
             </p>
           </div>
-          <p className='text-xs md:text-sm' data-scroll>
+          <p className='text-sm lg:text-base' data-scroll>
             <span className='text-muted-foreground'>We are expert in:</span>{' '}
             <span className='text-primary'>
               Web Development, Mobile Development, Custom Software Solutions,

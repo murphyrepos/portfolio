@@ -28,7 +28,7 @@ const ContactForm = () => {
     });
   }
   return (
-    <Card className='w-full flex-col items-center justify-center rounded-2xl bg-white px-5 py-6 md:absolute md:-top-80'>
+    <Card className='w-full flex-col items-center justify-center rounded-2xl bg-white px-5 py-6 md:-top-80 xl:absolute'>
       <p className='my-1 text-center text-xl text-primary'>Say Hello</p>
       <p className='text-neutral-foreground my-1 text-center text-2xl'>
         Contact Us
@@ -47,7 +47,7 @@ const ContactForm = () => {
                   <Input
                     type='text'
                     className={cn(
-                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      'h-14 w-full border-none bg-neutral-100 outline-none ring-0 focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0',
                       fieldState.error &&
                         'border border-solid ring-2 ring-red-400'
                     )}
@@ -67,7 +67,7 @@ const ContactForm = () => {
                   <Input
                     type='text'
                     className={cn(
-                      'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0',
                       fieldState.error &&
                         'border border-solid ring-2 ring-red-400'
                     )}
@@ -87,7 +87,7 @@ const ContactForm = () => {
                   <Input
                     type='number'
                     className={cn(
-                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0',
                       fieldState.error &&
                         'border border-solid ring-2 ring-red-400'
                     )}
@@ -108,7 +108,7 @@ const ContactForm = () => {
                   <Textarea
                     placeholder='Message'
                     className={cn(
-                      'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0',
+                      'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0',
                       fieldState.error &&
                         'border border-solid ring-2 ring-red-400'
                     )}
