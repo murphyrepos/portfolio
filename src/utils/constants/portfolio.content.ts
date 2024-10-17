@@ -1,3 +1,9 @@
+import image1 from '../../../public/images/care-for-u.png';
+import image2 from '../../../public/images/maahdha-4.png';
+import image3 from '../../../public/images/nala-prep.png';
+import image4 from '../../../public/images/restaurant-app.png';
+import image5 from '../../../public/images/strike-crypto.png';
+
 export const details = [
   {
     title: 'Cureforu',
@@ -5,7 +11,7 @@ export const details = [
       'A mobile platform designed to enable health workers to share and discuss rare medical cases globally. The app provides access to discussions on complex medical issues, educational material, information about upcoming medical events and conferences conducted by the platform and discussion forums for general knowledge sharing.',
     technologies: ['React Native', 'TypeScript', 'Firebase', 'Android', 'IOS'],
     role: 'Developed cross platform mobile application with real-time notifications for the users targeting both Android and IOS',
-    image: '/images/care-for-u.png',
+    image: image1,
   },
   {
     title: 'Maahdha',
@@ -20,7 +26,7 @@ export const details = [
       ' CI/CD',
     ],
     role: 'Developed public facing platform with admin dashboard for the puroduct manager to manage content, creating polls and displaying information to the users.',
-    image: '/images/maahdha-4.png',
+    image: image2,
   },
   {
     title: 'Nala Prep',
@@ -35,7 +41,7 @@ export const details = [
       ' CI/CD',
     ],
     role: 'Developed and deployed online testing and mentoring system to onboard students and conducting mock test system. Also designed an Learning Management System to administrate the product, student dashbaord for students to track progress and scoring history.',
-    image: '/images/nala-prep.png',
+    image: image3,
   },
   {
     title: 'Savora',
@@ -50,7 +56,7 @@ export const details = [
       ' CI/CD',
     ],
     role: 'Developed and deployed end to end platform to be used in the realtime for providing contactless servicing and restaurant management.',
-    image: '/images/restaurant-app.png',
+    image: image4,
   },
   {
     title: 'Strike',
@@ -65,6 +71,6 @@ export const details = [
       ' CI/CD',
     ],
     role: 'Revamped the public facing website for the end user, improving look and feel of overall product and making user expreince seamless.',
-    image: '/images/strike-crypto.png',
+    image: image5,
   },
 ];
