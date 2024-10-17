@@ -4,16 +4,19 @@ import { DataContainer } from './type';
 
 const Technologies = (technologies: DataContainer) => {
   return (
-    <div className='m-auto flex w-[90%] max-w-7xl flex-col items-start space-y-4 py-8'>
-      <p className={`text-4xl`}>Technolgies</p>
-      <div className='grid w-full grid-cols-6 gap-x-6 gap-y-8'>
+    <div className='mx-auto flex w-[90%] max-w-7xl flex-col items-center space-y-4 py-8 lg:items-start'>
+      <p className='text-center text-2xl font-medium lg:text-4xl'>
+        Technologies
+      </p>
+      <div className='flex flex-wrap items-center justify-center gap-12'>
         {technologies?.data?.data?.map((tech: string, index: number) => {
           return (
             <div
               key={index}
-              className='grid-col-1 flex flex-col items-center justify-center space-y-3'
+              className='flex flex-col items-center justify-center space-y-2'
             >
               <StackIcon
+                className='h-20 w-20 md:h-24 md:w-24'
                 name={
                   tech === 'React' || tech == 'React Native'
                     ? 'reactjs'

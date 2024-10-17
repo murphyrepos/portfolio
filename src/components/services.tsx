@@ -26,7 +26,7 @@ const Services = () => {
           </p>
           <p className='text-muted-foreground'>
             Taking a customized approach to every project we undertake, our
-            rock-solid process is tailored to suit our clients’ needs. Our
+            rock-solid process is tailored to suit our clients&apos; needs. Our
             refined methodology delivers the best possible results, streamlining
             business operations and driving growth for startups and large
             enterprises. Trust us to help you achieve success with our
@@ -53,6 +53,7 @@ const Services = () => {
                 >
                   <WorkFlowCard
                     invertColor
+                    showMore
                     title={title}
                     description={description}
                   />

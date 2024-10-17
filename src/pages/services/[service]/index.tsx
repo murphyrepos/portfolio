@@ -1,50 +1,78 @@
-import React, { LazyExoticComponent } from 'react';
+import React from 'react';
 import { GetServerSideProps } from 'next';
-import { ServiceDetailProps } from '@/components/type';
 
-const componentsMap: Record<
-  string,
-  LazyExoticComponent<React.ComponentType>
-> = {
-  'web-development': React.lazy(
-    () => import('@components/providedServices/web-development')
-  ),
-  'mobile-development': React.lazy(
-    () => import('@components/providedServices/mobile-development')
-  ),
-  'ui-ux-services': React.lazy(
-    () => import('@components/providedServices/ui-ux-services')
-  ),
-  'custom-solutions': React.lazy(
-    () => import('@components/providedServices/custom-solutions')
-  ),
-};
+import {
+  IServiceConstant,
+  servicesConstants,
+} from '@/utils/constants/services.constant';
+import ServiceDetailCard from '@/components/service-detail-card';
+import FavoriteChoices from '@/components/favorite-choices';
+import CardLayout from '@/components/servicesCard';
+import Technologies from '@/components/technologies';
+import { NextSeo } from 'next-seo';
 
-const ServiceDetail: React.FC<ServiceDetailProps> = ({ service }) => {
-  if (!service) return null;
-  const ServiceComponent: React.ComponentType = componentsMap[service];
-  return ServiceComponent ? (
-    <React.Suspense>
-      <ServiceComponent />
-    </React.Suspense>
-  ) : null;
+const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
+  return (
+    <>
+      <NextSeo
+        title={service.testimonialConstants.title || 'Service Detail'}
+        description={service.testimonialConstants.description}
+        canonical={`https://murphyrepos.com//service/${service.key}`}
+        openGraph={{
+          url: `https://murphyrepos.com//service/${service.key}`,
+          type: 'article',
+          title: service.testimonialConstants.title || 'Service Detail',
+          description:
+            service.testimonialConstants.description || 'Service Detail',
+          // images: [
+          //   {
+          //     url:
+          //       result?.images?.[0] ??
+          //       '/assets/default_image_polls.png' ??
+          //       result.user.profile.picture ??
+          //       '',
+          //     alt: result.user.profile.username,
+          //     width: 1200,
+          //     height: 630,
+          //   },
+          // ],
+        }}
+        // twitter={{
+        //   // handle: result.user.profile.username,
+        //   site: result.user.profile.username,
+        //   cardType: 'summary_large_image',
+        // }}
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content: service.technologiesConstant.data.join(', '),
+          },
+        ]}
+      />
+      <div>
+        <ServiceDetailCard data={service.testimonialConstants} />
+        <FavoriteChoices data={{ data: service.favorites }} />
+        <CardLayout cards={{ cards: service.cards }} />
+        <Technologies data={service.technologiesConstant} />
+      </div>
+    </>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return new Promise((res) => {
-    const service = context.params?.service;
-    const serviceString = Array.isArray(service) ? service[0] : service;
-    if (!serviceString || !(serviceString in componentsMap)) {
+    const service = context.params?.service as string;
+    if (
+      !service ||
+      !servicesConstants[service as keyof typeof servicesConstants]
+    ) {
       res({
-        redirect: {
-          destination: '/404',
-          permanent: false,
-        },
+        notFound: true,
       });
     }
     res({
       props: {
-        service: serviceString ?? null,
+        service: servicesConstants[service as keyof typeof servicesConstants],
       },
     });
   });
