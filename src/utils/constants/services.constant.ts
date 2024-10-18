@@ -1,12 +1,23 @@
+export interface IServiceConstant {
+  key: string;
+  testimonialConstants: {
+    title: string;
+    description: string;
+    buttonTitle: string;
+  };
+  cards: Array<{ title: string; points: { data: string[] } }>;
+  technologiesConstant: { data: string[] };
+  favorites: string[];
+}
+
 export const webDevConstants = {
-  testimonialConstants: [
-    { title: 'Web Development' },
-    {
-      description:
-        'We create responsive web applications leveraging the most robust technologies to help you boost your business',
-    },
-    { buttonTitle: 'See Our work!' },
-  ],
+  key: 'web-development',
+  testimonialConstants: {
+    title: 'Web Development',
+    description:
+      'We create responsive web applications leveraging the most robust technologies to help you boost your business',
+    buttonTitle: 'See Our work!',
+  },
   cards: [
     {
       title: 'Progressive Web Apps',
@@ -68,14 +79,13 @@ export const webDevConstants = {
 };
 
 export const mobDevConstants = {
-  testimonialConstants: [
-    { title: 'Mobile Development' },
-    {
-      description:
-        'We craft high-performing mobile applications across iOS and Android platforms, leveraging native and cross-platform technologies for seamless user experiences and optimal performance.',
-    },
-    { buttonTitle: 'Explore Our Work!' },
-  ],
+  key: 'mobile-development',
+  testimonialConstants: {
+    title: 'Mobile Development',
+    description:
+      'We craft high-performing mobile applications across iOS and Android platforms, leveraging native and cross-platform technologies for seamless user experiences and optimal performance.',
+    buttonTitle: 'Explore Our Work!',
+  },
   cards: [
     {
       title: 'Native Apps',
@@ -136,14 +146,13 @@ export const mobDevConstants = {
 };
 
 export const uiDevConstants = {
-  testimonialConstants: [
-    { title: 'UI/UX Design' },
-    {
-      description:
-        'We transform concepts into visually stunning and highly usable designs, ensuring a seamless user journey from wireframe to final product.',
-    },
-    { buttonTitle: 'View Our Designs!' },
-  ],
+  key: 'ui-ux-services',
+  testimonialConstants: {
+    title: 'UI/UX Design',
+    description:
+      'We transform concepts into visually stunning and highly usable designs, ensuring a seamless user journey from wireframe to final product.',
+    buttonTitle: 'View Our Designs!',
+  },
   cards: [
     {
       title: 'User Interface (UI)',
@@ -200,14 +209,13 @@ export const uiDevConstants = {
 };
 
 export const customerServicesConstants = {
-  testimonialConstants: [
-    { title: 'Cloud Services and Solutions' },
-    {
-      description:
-        'We offer a full range of cloud services, from infrastructure setup to application deployment and optimization. Our solutions help businesses scale, enhance performance, and reduce costs by leveraging modern cloud technologies.',
-    },
-    { buttonTitle: 'See Our Solutions!' },
-  ],
+  key: 'custom-solutions',
+  testimonialConstants: {
+    title: 'Cloud Services and Solutions',
+    description:
+      'We offer a full range of cloud services, from infrastructure setup to application deployment and optimization. Our solutions help businesses scale, enhance performance, and reduce costs by leveraging modern cloud technologies.',
+    buttonTitle: 'See Our Solutions!',
+  },
   cards: [
     {
       title: 'Infrastructure as a Service (IaaS)',
@@ -264,4 +272,11 @@ export const customerServicesConstants = {
     ],
   },
   favorites: ['AWS', 'Azure', 'React', 'Nest.js', 'Node.js', 'GraphQL'],
+};
+
+export const servicesConstants = {
+  'web-development': webDevConstants,
+  'mobile-development': mobDevConstants,
+  'ui-ux-services': uiDevConstants,
+  'custom-solutions': customerServicesConstants,
 };

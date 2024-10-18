@@ -18,11 +18,11 @@ export interface CardProps {
 }
 
 export interface ServiceDetailType {
-  data: Array<{
-    title?: string;
-    description?: string;
-    buttonTitle?: string;
-  }>;
+  data: {
+    title: string;
+    description: string;
+    buttonTitle: string;
+  };
 }
 
 export interface CardType {
@@ -30,8 +30,4 @@ export interface CardType {
     title: string;
     points: StringArrayData;
   }>;
-}
-
-export interface ServiceDetailProps {
-  service: string | null;
 }

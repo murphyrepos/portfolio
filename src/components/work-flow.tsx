@@ -17,7 +17,7 @@ const WorkFlow = () => {
               <Icons.arrows className='p-1 text-primary' />
             </div> */}
               <WorkFlowCard
-                descriptionClassNames='text-justify'
+                descriptionClassNames='text-left'
                 invertColor
                 title={title}
                 description={description}
