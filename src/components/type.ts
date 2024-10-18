@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 interface StringArrayData {
   data: string[];
 }
@@ -13,7 +15,7 @@ export interface CardProps {
   title: string;
   description: string;
   technologies: string[];
-  image: string;
+  image: string | StaticImageData;
   role: string;
 }
 

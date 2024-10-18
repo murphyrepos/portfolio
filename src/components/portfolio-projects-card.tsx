@@ -45,16 +45,17 @@ const CardComponent: React.FC<CardProps> = ({
           <div className='cursor-pointer text-center transition-transform duration-300 hover:scale-105'>
             <CustomImage
               src={image}
-              alt='college-admission-advising-platform'
+              alt='Portfolio demo'
               className='mx-auto h-full max-h-[32rem] w-full max-w-max'
               skeletonClassName='h-96 w-96'
-              width={1200}
-              height={1200}
-              loading='eager'
-              priority
+              loading='lazy'
               style={{
                 objectPosition: 'center',
                 objectFit: 'cover',
+                maxWidth: '1200px',
+                maxHeight: '500px',
+                width: '100%',
+                height: 'auto',
               }}
             />
           </div>
