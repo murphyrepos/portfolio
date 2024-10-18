@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
 import {
   IServiceConstant,
@@ -59,22 +59,33 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  return new Promise((res) => {
-    const service = context.params?.service as string;
-    if (
-      !service ||
-      !servicesConstants[service as keyof typeof servicesConstants]
-    ) {
-      res({
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  return new Promise((resolve) => {
+    try {
+      const service = context.params?.service as string;
+      if (
+        !service ||
+        !servicesConstants[service as keyof typeof servicesConstants]
+      ) {
+        resolve({
+          notFound: true,
+        });
+      } else {
+        resolve({
+          props: {
+            service:
+              servicesConstants[service as keyof typeof servicesConstants],
+          },
+        });
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (e) {
+      resolve({
         notFound: true,
       });
     }
-    res({
-      props: {
-        service: servicesConstants[service as keyof typeof servicesConstants],
-      },
-    });
   });
 };
 
