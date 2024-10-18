@@ -10,6 +10,7 @@ import FavoriteChoices from '@/components/favorite-choices';
 import CardLayout from '@/components/servicesCard';
 import Technologies from '@/components/technologies';
 import { NextSeo } from 'next-seo';
+import { PRODUCTION_URL } from '@/utils/helper';
 
 const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
   return (
@@ -17,9 +18,9 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
       <NextSeo
         title={service.testimonialConstants.title || 'Service Detail'}
         description={service.testimonialConstants.description}
-        canonical={`https://murphyrepos.com/service/${service.key}`}
+        canonical={PRODUCTION_URL}
         openGraph={{
-          url: `https://murphyrepos.com/service/${service.key}`,
+          url: PRODUCTION_URL,
           type: 'article',
           title: service.testimonialConstants.title || 'Service Detail',
           description:
@@ -36,6 +37,7 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
           //     height: 630,
           //   },
           // ],
+          site_name: 'Murphy Repos',
         }}
         // twitter={{
         //   // handle: result.user.profile.username,
@@ -45,7 +47,9 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
         additionalMetaTags={[
           {
             name: 'keywords',
-            content: service.technologiesConstant.data.join(', '),
+            content: service.technologiesConstant.data
+              .join(', ')
+              .concat(', Murphy Repos, Portfolio, Services'),
           },
         ]}
       />

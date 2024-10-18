@@ -26,3 +26,5 @@ export function detectDevice(): DeviceType {
     return DeviceType.Desktop;
   }
 }
+
+export const PRODUCTION_URL = 'https://murphyrepos.com';
