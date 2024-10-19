@@ -1,15 +1,16 @@
 // Updated CardComponent.tsx
 'use client';
-import React from 'react';
-import { CardProps } from './type';
 import { Card, CardContent } from './ui/card';
 import CustomImage from './custom-image';
+import { Detail } from '@/utils/constants/portfolio.content';
+import { cn } from '@/lib/utils';
 
-const CardComponent: React.FC<CardProps> = ({
+const CardComponent: React.FC<Detail> = ({
   title,
   description,
   technologies,
   image,
+  isMobile,
   role,
 }) => {
   return (
@@ -46,7 +47,10 @@ const CardComponent: React.FC<CardProps> = ({
             <CustomImage
               src={image}
               alt='Portfolio demo'
-              className='mx-auto h-full max-h-[32rem] w-full max-w-max'
+              className={cn(
+                'mx-auto h-full max-h-[32rem] w-full max-w-max',
+                isMobile && 'scale-100 md:scale-110 lg:scale-125'
+              )}
               skeletonClassName='h-96 w-96'
               loading='lazy'
               style={{
@@ -55,6 +59,7 @@ const CardComponent: React.FC<CardProps> = ({
                 maxWidth: '1200px',
                 maxHeight: '500px',
                 width: '100%',
+
                 height: 'auto',
               }}
             />

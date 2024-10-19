@@ -53,6 +53,7 @@ const Portfolio = () => {
             technologies={detail.technologies}
             image={detail.image}
             role={detail.role}
+            isMobile={detail.isMobile}
           />
         ))}
       </div>

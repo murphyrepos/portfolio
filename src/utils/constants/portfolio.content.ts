@@ -1,10 +1,19 @@
-import image1 from '../../../public/images/care-for-u.png';
+import { StaticImageData } from 'next/image';
+import image1 from '../../../public/images/cure-for-u.png';
 import image2 from '../../../public/images/maahdha-4.png';
 import image3 from '../../../public/images/nala-prep.png';
 import image4 from '../../../public/images/restaurant-app.png';
 import image5 from '../../../public/images/strike-crypto.png';
 
-export const details = [
+export interface Detail {
+  title: string;
+  description: string;
+  technologies: string[];
+  role: string;
+  image: StaticImageData;
+  isMobile?: boolean;
+}
+export const details: Detail[] = [
   {
     title: 'Cureforu',
     description:
@@ -12,6 +21,7 @@ export const details = [
     technologies: ['React Native', 'TypeScript', 'Firebase', 'Android', 'IOS'],
     role: 'Developed cross platform mobile application with real-time notifications for the users targeting both Android and IOS',
     image: image1,
+    isMobile: true,
   },
   {
     title: 'Maahdha',
