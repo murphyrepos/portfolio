@@ -18,7 +18,7 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
       <NextSeo
         title={service?.testimonialConstants?.title || 'Service Detail'}
         description={service.testimonialConstants.description}
-        canonical={PRODUCTION_URL}
+        canonical={`${PRODUCTION_URL}/services/${service.key}`}
         openGraph={{
           url: PRODUCTION_URL,
           type: 'article',

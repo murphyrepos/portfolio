@@ -21,16 +21,12 @@ const Services = () => {
         >
           <p className='text-primary'>Our Services</p>
           <p className='w-[100%] text-3xl font-medium'>
-            Gain a competitive edge with our customized approach to meeting your
-            business objectives
+          Get ahead with custom solutions that align with your goals.
           </p>
           <p className='text-muted-foreground'>
-            Taking a customized approach to every project we undertake, our
-            rock-solid process is tailored to suit our clients&apos; needs. Our
-            refined methodology delivers the best possible results, streamlining
-            business operations and driving growth for startups and large
-            enterprises. Trust us to help you achieve success with our
-            tailor-made software development methodology.
+            Our custom approach delivers results. We tailor our software
+            development process to your unique needs, streamlining operations
+            and driving growth for businesses of all sizes.
           </p>
           <a href='#footer' data-scroll-to>
             <Button
