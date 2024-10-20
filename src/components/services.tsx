@@ -11,11 +11,11 @@ const Services = () => {
       className='mx-auto mb-10 flex w-[90%] max-w-7xl flex-col justify-evenly py-10 lg:flex-row'
       data-scroll-section
     >
-      <div id='fixed' className='w-full lg:w-1/2 lg:py-8' data-scroll>
+      <div id='services' className='w-full lg:w-1/2 lg:py-8' data-scroll>
         <div
           data-scroll-sticky
           data-scroll
-          data-scroll-target='#fixed'
+          data-scroll-target='#services'
           data-scroll-repeat
           className='flex flex-col items-start justify-center space-y-8 px-8'
         >
