@@ -51,7 +51,7 @@ const NavigationBar = () => {
                     side='bottom'
                     align='center'
                     sideOffset={5}
-                    className='block rounded-md bg-white px-2 py-1 font-medium md:hidden'
+                    className='block rounded-md bg-white px-2 py-1 font-medium drop-shadow-lg md:hidden'
                   >
                     <p>{item.title}</p>
                   </TooltipContent>
@@ -59,7 +59,7 @@ const NavigationBar = () => {
                     side='right'
                     align='center'
                     sideOffset={5}
-                    className='hidden rounded-md bg-white px-2 py-1 font-medium md:block'
+                    className='hidden rounded-md bg-white px-2 py-1 font-medium drop-shadow-lg md:block'
                   >
                     <p>{item.title}</p>
                   </TooltipContent>
