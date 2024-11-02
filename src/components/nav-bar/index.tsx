@@ -1,76 +1,155 @@
-import React from 'react';
-
+'use Client';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import Link from 'next/link';
 import { items } from './items';
-import { Tooltip, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
-import { TooltipContent } from '@radix-ui/react-tooltip';
-import { useRouter } from 'next/router';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const NavigationBar = () => {
-  const router = useRouter();
-  const path = router.asPath;
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const scrollCallback = useCallback(() => {
+    if (window?.scrollY > 50) {
+      console.log('setting state');
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window) {
+      window.addEventListener('scroll', scrollCallback);
+    }
+    return () => {
+      if (window) {
+        window.removeEventListener('scroll', scrollCallback);
+      }
+    };
+  }, [scrollCallback]);
+
   return (
-    <div className='w-full rounded-2xl border-2 border-slate-300 bg-slate-100 bg-opacity-10 px-6 py-2 shadow-[8px_8px_16px_rgba(0,0,0,0.15),-8px_-8px_16px_rgba(255,255,255,0.8)] md:px-2 md:py-2'>
-      <NavigationMenu className='mx-auto flex max-h-max w-full flex-1 items-center justify-center rounded-2xl px-0 py-0 md:flex-col md:px-0 md:py-6'>
-        <NavigationMenuList className='flex w-full gap-6 md:flex-col md:justify-center md:gap-12'>
-          {items.map((item, index) => (
-            <div key={index}>
-              <TooltipProvider key={index}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <NavigationMenuItem key={index}>
-                      {item.legacyBehavior ? (
-                        <Link href={item.href} legacyBehavior>
-                          <item.icon
-                            className={cn(
-                              'h-10 w-10 rounded-md bg-neutral-100 p-2 text-primary shadow-[4px_4px_8px_rgba(0,0,0,0.15),-4px_-4px_8px_rgba(255,255,255,0.8)] ring-2 ring-slate-200 hover:ring-slate-300',
-                              path === item.href && 'ring-slate-300'
-                            )}
-                          />
-                        </Link>
-                      ) : (
-                        <NavigationMenuLink href={item.href}>
-                          <item.icon
-                            className={cn(
-                              'h-10 w-10 rounded-md bg-neutral-100 p-2 text-primary shadow-[4px_4px_8px_rgba(0,0,0,0.15),-4px_-4px_8px_rgba(255,255,255,0.8)] ring-2 ring-slate-200 hover:ring-slate-300',
-                              path === item.href && 'ring-slate-300'
-                            )}
-                          />
-                        </NavigationMenuLink>
-                      )}
-                    </NavigationMenuItem>
-                  </TooltipTrigger>
-                  <TooltipContent
-                    side='bottom'
-                    align='center'
-                    sideOffset={5}
-                    className='block rounded-md bg-white px-2 py-1 font-medium drop-shadow-lg md:hidden'
+    <NavigationMenu
+      className={cn(
+        'ml-auto flex max-h-max w-full max-w-full flex-1 items-center justify-between border-2 border-neutral-100 bg-neutral-100 p-4 backdrop-blur-md',
+        isVisible ? 'fixed top-0 shadow-md shadow-neutral-100' : ''
+      )}
+    >
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href={items[0]?.href}
+            title={items[0].title}
+            className={cn(navigationMenuTriggerStyle(), 'bg-neutral-100')}
+          >
+            <span className='flex items-center justify-start gap-2'>
+              {/* {items[0].icon} */}
+              {items[0]?.icon?.()}
+              {items[0].title}
+            </span>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      <NavigationMenuList className='justify-between'>
+        {items
+          .filter(({ title }) => title !== 'Home')
+          .map(({ title, icon, href, subMenu }, index) =>
+            title === 'Services' ? (
+              // It may look a crazy hierarchy to use Nested Navigation Menu but this is a patch for an existing issue in ShadCn Menu https://github.com/shadcn-ui/ui/issues/418
+              <NavigationMenu key={index}>
+                <NavigationMenuItem key={index} className='relative'>
+                  <>
+                    <NavigationMenuTrigger
+                      key={index}
+                      className='bg-neutral-100'
+                    >
+                      <span className='flex items-center justify-center gap-2 bg-neutral-100'>
+                        {icon?.()}
+                        {title}
+                      </span>
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className='bg-neutral-100'>
+                      <NavigationMenuList className='bg-neutral-100'>
+                        {subMenu?.map((subItem, index) => (
+                          <NavigationMenuItem
+                            key={index}
+                            className='bg-neutral-100'
+                          >
+                            <ListItem
+                              href={subItem.href}
+                              title={subItem.title}
+                            ></ListItem>
+                          </NavigationMenuItem>
+                        ))}
+                      </NavigationMenuList>
+                    </NavigationMenuContent>
+                  </>
+                </NavigationMenuItem>
+              </NavigationMenu>
+            ) : (
+              <NavigationMenuItem key={index}>
+                <Link href={href} legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      'bg-neutral-100'
+                    )}
                   >
-                    <p>{item.title}</p>
-                  </TooltipContent>
-                  <TooltipContent
-                    side='right'
-                    align='center'
-                    sideOffset={5}
-                    className='hidden rounded-md bg-white px-2 py-1 font-medium drop-shadow-lg md:block'
-                  >
-                    <p>{item.title}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
+                    <span className='flex items-center justify-center gap-2 bg-neutral-100'>
+                      {icon?.()}
+                      {title}
+                    </span>
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            )
+          )}
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };
+
+const ListItem = React.forwardRef<
+  React.ElementRef<typeof Link>,
+  React.ComponentPropsWithoutRef<
+    typeof Link & {
+      className: string;
+      title: string;
+      children: typeof React.Children;
+    }
+  >
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <NavigationMenuLink
+      asChild
+      className={cn(navigationMenuTriggerStyle(), 'bg-neutral-100')}
+    >
+      <Link
+        ref={ref}
+        className={cn(
+          'block select-none space-y-1 rounded-md bg-neutral-100 p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+          className
+        )}
+        {...props}
+      >
+        <div className='bg-neutral-100 text-sm font-medium leading-none'>
+          {title}
+        </div>
+        <p className='line-clamp-2 bg-neutral-100 text-sm leading-snug text-muted-foreground'>
+          {children}
+        </p>
+      </Link>
+    </NavigationMenuLink>
+  );
+});
+ListItem.displayName = 'ListItem';
 
 export default NavigationBar;

@@ -3,6 +3,7 @@ import {
   Contact,
   GalleryVerticalEnd,
   House,
+  LucideProps,
   Workflow,
 } from 'lucide-react';
 import React from 'react';
@@ -10,36 +11,47 @@ import React from 'react';
 interface Items {
   title: string;
   href: string;
-  icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+  icon?: (props?: LucideProps) => JSX.Element;
   legacyBehavior?: boolean;
+  subMenu?: Items[];
 }
 export const items: Items[] = [
   {
     title: 'Home',
     href: '/',
-    icon: (props) => <House {...props} />,
+    icon: (props?: LucideProps) => <House {...props} />,
   },
   {
     title: 'Services',
     href: '/#services',
-    icon: (props) => <AppWindowMac {...props} />,
+    icon: (props?: LucideProps) => <AppWindowMac {...props} />,
     legacyBehavior: true,
+    subMenu: [
+      {
+        title: 'Web Development',
+        href: '/services/web-development',
+      },
+      {
+        title: 'Mobile Development',
+        href: '/services/mobile-development',
+      },
+    ],
   },
   {
     title: 'Portfolio',
     href: '/portfolio',
-    icon: (props) => <GalleryVerticalEnd {...props} />,
+    icon: (props?: LucideProps) => <GalleryVerticalEnd {...props} />,
   },
   {
     title: 'Workflow',
     href: '/#workflow',
-    icon: (props) => <Workflow {...props} />,
+    icon: (props?: LucideProps) => <Workflow {...props} />,
     legacyBehavior: true,
   },
   {
     title: 'Contact',
     href: '/#footer',
-    icon: (props) => <Contact {...props} />,
+    icon: (props?: LucideProps) => <Contact {...props} />,
     legacyBehavior: true,
   },
 ];

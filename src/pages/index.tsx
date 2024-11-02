@@ -3,7 +3,6 @@ import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
 import WorkFlow from '@/components/work-flow';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { NextSeo } from 'next-seo';
 import { PRODUCTION_URL } from '@/utils/helper';
 
