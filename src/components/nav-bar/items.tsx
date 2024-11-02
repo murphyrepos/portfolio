@@ -1,9 +1,11 @@
 import {
-  AppWindowMac,
   Contact,
   GalleryVerticalEnd,
   House,
+  Laptop,
   LucideProps,
+  MonitorSmartphone,
+  Smartphone,
   Workflow,
 } from 'lucide-react';
 import React from 'react';
@@ -24,16 +26,18 @@ export const items: Items[] = [
   {
     title: 'Services',
     href: '/#services',
-    icon: (props?: LucideProps) => <AppWindowMac {...props} />,
+    icon: (props?: LucideProps) => <MonitorSmartphone {...props} />,
     legacyBehavior: true,
     subMenu: [
       {
         title: 'Web Development',
         href: '/services/web-development',
+        icon: (props?: LucideProps) => <Laptop {...props} />,
       },
       {
         title: 'Mobile Development',
         href: '/services/mobile-development',
+        icon: (props?: LucideProps) => <Smartphone {...props} />,
       },
     ],
   },

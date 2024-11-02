@@ -51,7 +51,6 @@ const NavigationBar = () => {
             className={cn(navigationMenuTriggerStyle(), 'bg-neutral-100')}
           >
             <span className='flex items-center justify-start gap-2'>
-              {/* {items[0].icon} */}
               {items[0]?.icon?.()}
               {items[0].title}
             </span>
@@ -76,17 +75,26 @@ const NavigationBar = () => {
                         {title}
                       </span>
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className='bg-neutral-100'>
+                    <NavigationMenuContent className='bg-neutral-100 p-4'>
                       <NavigationMenuList className='bg-neutral-100'>
                         {subMenu?.map((subItem, index) => (
                           <NavigationMenuItem
                             key={index}
                             className='bg-neutral-100'
                           >
-                            <ListItem
-                              href={subItem.href}
-                              title={subItem.title}
-                            ></ListItem>
+                            <Link href={subItem?.href} legacyBehavior passHref>
+                              <NavigationMenuLink
+                                className={cn(
+                                  navigationMenuTriggerStyle(),
+                                  'bg-neutral-100'
+                                )}
+                              >
+                                <span className='flex items-center justify-center gap-2 bg-neutral-100'>
+                                  {subItem?.icon?.()}
+                                  {subItem?.title}
+                                </span>
+                              </NavigationMenuLink>
+                            </Link>
                           </NavigationMenuItem>
                         ))}
                       </NavigationMenuList>
@@ -116,40 +124,5 @@ const NavigationBar = () => {
     </NavigationMenu>
   );
 };
-
-const ListItem = React.forwardRef<
-  React.ElementRef<typeof Link>,
-  React.ComponentPropsWithoutRef<
-    typeof Link & {
-      className: string;
-      title: string;
-      children: typeof React.Children;
-    }
-  >
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <NavigationMenuLink
-      asChild
-      className={cn(navigationMenuTriggerStyle(), 'bg-neutral-100')}
-    >
-      <Link
-        ref={ref}
-        className={cn(
-          'block select-none space-y-1 rounded-md bg-neutral-100 p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-          className
-        )}
-        {...props}
-      >
-        <div className='bg-neutral-100 text-sm font-medium leading-none'>
-          {title}
-        </div>
-        <p className='line-clamp-2 bg-neutral-100 text-sm leading-snug text-muted-foreground'>
-          {children}
-        </p>
-      </Link>
-    </NavigationMenuLink>
-  );
-});
-ListItem.displayName = 'ListItem';
 
 export default NavigationBar;
