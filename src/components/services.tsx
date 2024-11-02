@@ -9,16 +9,10 @@ const Services = () => {
   return (
     <div
       className='mx-auto mb-10 flex w-[90%] max-w-7xl flex-col justify-evenly py-10 lg:flex-row'
-      data-scroll-section
+      id='services'
     >
-      <div id='services' className='w-full lg:w-1/2 lg:py-8' data-scroll>
-        <div
-          data-scroll-sticky
-          data-scroll
-          data-scroll-target='#services'
-          data-scroll-repeat
-          className='flex flex-col items-start justify-center space-y-8 px-8'
-        >
+      <div className='w-full lg:w-1/2 lg:py-8'>
+        <div className='flex flex-col items-start justify-center space-y-8 px-8'>
           <p className='text-primary'>Our Services</p>
           <p className='w-[100%] text-3xl font-medium'>
             Gain a competitive edge with our customized approach to meeting your
@@ -32,14 +26,14 @@ const Services = () => {
             enterprises. Trust us to help you achieve success with our
             tailor-made software development methodology.
           </p>
-          <a href='#footer' data-scroll-to>
+          <Link href='#footer'>
             <Button
               className='rounded-full py-4 text-base transition-all duration-500 hover:bg-white hover:text-primary hover:ring-2'
               variant={'default'}
             >
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className='flex w-full flex-1 md:mt-5 xl:px-10'>
@@ -47,10 +41,7 @@ const Services = () => {
           <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
             {services.map(({ title, description, url }, index) => (
               <Link href={url} key={index}>
-                <Card
-                  data-scroll
-                  className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-5 xl:mx-10'
-                >
+                <Card className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-5 xl:mx-10'>
                   <WorkFlowCard
                     invertColor
                     showMore

@@ -28,14 +28,13 @@ const ClientTestimonial = () => {
   return (
     <div
       className='mx-auto flex h-[90vh] w-[95%] max-w-7xl flex-col items-center justify-center bg-white lg:h-[70vh] lg:w-full'
-      data-scroll-section
     >
-      <div className='mx-auto mb-10 w-full text-center' data-scroll>
+      <div className='mx-auto mb-10 w-full text-center' >
         <p className='text-2xl font-medium'>Clients Testimonial</p>
       </div>
       <div
         className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between space-x-5 space-y-10'
-        data-scroll
+
       >
         <Carousel
           setApi={setApi}
