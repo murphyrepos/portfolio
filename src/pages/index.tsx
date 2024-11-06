@@ -1,27 +1,12 @@
-'use client';
 import ClientTestimonial from '@/components/client-testimonial';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
 import WorkFlow from '@/components/work-flow';
-import { useEffect, useRef } from 'react';
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
-import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { PRODUCTION_URL } from '@/utils/helper';
 
 export default function Home() {
-  const { asPath } = useRouter(); // Get
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current) {
-      return;
-    }
-    containerRef.current.scrollLeft = 0;
-    containerRef.current.scrollTop = 0;
-  }, [asPath]);
   return (
     <>
       <NextSeo
@@ -63,34 +48,13 @@ export default function Home() {
           },
         ]}
       />
-
-      <LocomotiveScrollProvider
-        options={{
-          smooth: true,
-          mobile: {
-            smooth: true,
-            inertia: 0.8,
-            getDirection: true,
-            breakpoint: 0,
-          },
-          tablet: {
-            smooth: true,
-            inertia: 0.8,
-            getDirection: true,
-            breakpoint: 0,
-          },
-        }}
-        watch={[asPath]}
-        containerRef={containerRef}
-      >
-        <div ref={containerRef} data-scroll-container>
-          <HeroSection />
-          <Services />
-          <WorkFlow />
-          <ClientTestimonial />
-          <Footer />
-        </div>
-      </LocomotiveScrollProvider>
+      <div>
+        <HeroSection />
+        <Services />
+        <WorkFlow />
+        <ClientTestimonial />
+        <Footer />
+      </div>
     </>
   );
 }
