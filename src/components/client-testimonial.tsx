@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect } from 'react';
 import ReviewCard from './review-card';
 import {
@@ -9,10 +10,13 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const ClientTestimonial = () => {
   const [api, setApi] = React.useState<CarouselApi | null>();
   const [current, setCurrent] = React.useState<number>(0);
+  const [emblaRef] = useEmblaCarousel({ loop: true });
 
   useEffect(() => {
     if (!api) {
@@ -26,21 +30,24 @@ const ClientTestimonial = () => {
     });
   }, [api]);
   return (
-    <div
-      className='mx-auto flex h-[90vh] w-[95%] max-w-7xl flex-col items-center justify-center bg-white lg:h-[70vh] lg:w-full'
-    >
-      <div className='mx-auto mb-10 w-full text-center' >
+    <div className='mx-auto flex h-[40vh] w-[95%] max-w-7xl flex-col items-center justify-center bg-white lg:h-[70vh] lg:w-full'>
+      <div className='mx-auto mb-10 w-full text-center'>
         <p className='text-2xl font-medium'>Clients Testimonial</p>
       </div>
-      <div
-        className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between space-x-5 space-y-10'
-
-      >
+      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between space-x-5 space-y-10'>
         <Carousel
           setApi={setApi}
           opts={{
             align: 'start',
+            loop: true,
           }}
+          ref={emblaRef}
+          plugins={[
+            Autoplay({
+              delay: 1000,
+              stopOnInteraction: true,
+            }),
+          ]}
           className='w-full'
         >
           <CarouselContent>

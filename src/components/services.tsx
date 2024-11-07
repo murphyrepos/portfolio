@@ -1,21 +1,23 @@
+'use client';
 import React from 'react';
 import { Button } from './ui/button';
-import WorkFlowCard from './work-flow-card';
-import { Card } from './ui/card';
 import Link from 'next/link';
+import PortfolioDetailOverview from './portfolio-detail-overview';
 import { services } from '@/utils/constants/services.content';
 
 const Services = () => {
   return (
     <div
-      className='mx-auto mb-10 flex w-[90%] max-w-7xl flex-col justify-evenly py-10 lg:flex-row'
+      className='mx-auto mb-10 flex max-w-7xl flex-col items-center justify-center gap-5 py-10'
       id='services'
     >
-      <div className='w-full lg:w-1/2 lg:py-8'>
-        <div className='flex flex-col items-start justify-center space-y-8 px-8'>
-          <p className='text-primary'>Our Services</p>
+      <div className='mx-auto w-[90%] max-w-screen-2xl'>
+        <div className='mx-auto flex flex-col items-center justify-center gap-5 text-center'>
+          <h4 className='text-center text-xl font-bold text-primary md:text-2xl lg:text-3xl'>
+            Our Services
+          </h4>
           <p className='w-[100%] text-3xl font-medium'>
-          Get ahead with custom solutions that align with your goals.
+            Get ahead with custom solutions that align with your goals.
           </p>
           <p className='text-muted-foreground'>
             Our custom approach delivers results. We tailor our software
@@ -32,9 +34,21 @@ const Services = () => {
           </Link>
         </div>
       </div>
-      <div className='flex w-full flex-1 md:mt-5 xl:px-10'>
+      <div className='mt-10 flex flex-col items-center justify-center gap-5'>
+        {services.map((service, index) => (
+          <PortfolioDetailOverview
+            key={index}
+            url={service.url}
+            logo={service.icon}
+            name={service.title}
+            description={service.description}
+          />
+        ))}
+      </div>
+      {/* <div className='flex w-full flex-1 md:mt-5 xl:px-10'>
         <div className='flex w-full rounded-md border border-none px-4 shadow-none xl:flex-col'>
-          <div className='flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
+          <div className='relative flex flex-col justify-end md:flex-row md:flex-wrap lg:flex-col lg:flex-nowrap lg:space-y-10'>
+            
             {services.map(({ title, description, url }, index) => (
               <Link href={url} key={index}>
                 <Card className='min-h-50 my-4 rounded-xl border-none shadow-none md:basis-1/2 md:px-2 lg:mx-5 xl:mx-10'>
@@ -48,8 +62,7 @@ const Services = () => {
               </Link>
             ))}
           </div>
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 };

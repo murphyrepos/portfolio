@@ -84,3 +84,36 @@ html {
   color: var(--primary);
   text-decoration: underline;
 }
+
+@keyframes translateOnce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.75rem); /* assuming 2 units = 0.5rem */
+  }
+  100% {
+    transform: translateY(0); /* assuming 2 units = 0.5rem */
+  }
+}
+
+@keyframes translatedefault {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.75rem); /* assuming 2 units = 0.5rem */
+  }
+  100% {
+    transform: translateY(0); /* assuming 2 units = 0.5rem */
+  }
+}
+
+/* Define the animation utility class */
+.animate-translate-once {
+  animation: translateOnce 0.5s forwards;
+}
+
+.animate-translate-default {
+  animation: translatedefault 0.5s forwards;
+}

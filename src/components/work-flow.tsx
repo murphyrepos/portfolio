@@ -14,7 +14,7 @@ const WorkFlow = () => {
           {workflow.map(({ title, description }) => (
             <div className='relative md:basis-1/2 xl:basis-1/4' key={title}>
               <WorkFlowCard
-                descriptionClassNames='text-left'
+                descriptionClassNames='text-center'
                 invertColor
                 title={title}
                 description={description}
