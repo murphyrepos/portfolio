@@ -30,11 +30,11 @@ const ClientTestimonial = () => {
     });
   }, [api]);
   return (
-    <div className='mx-auto flex h-[40vh] w-[95%] max-w-7xl flex-col items-center justify-center bg-white lg:h-[70vh] lg:w-full'>
+    <div className='mx-auto flex h-[90vh] w-[95%] max-w-7xl flex-col items-center justify-center bg-white lg:h-[70vh] lg:w-full'>
       <div className='mx-auto mb-10 w-full text-center'>
         <p className='text-2xl font-medium'>Clients Testimonial</p>
       </div>
-      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-center justify-between space-x-5 space-y-10'>
+      <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-stretch justify-between space-x-5 space-y-10'>
         <Carousel
           setApi={setApi}
           opts={{
@@ -51,16 +51,20 @@ const ClientTestimonial = () => {
           className='w-full'
         >
           <CarouselContent>
-            <CarouselItem className='md:basis-1/2 lg:basis-1/3'>
+            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
+              <ReviewCard
+                review='Working with MurphyRapoes on CureforU phone app was a fantastic experience. Their creativity, technical expertise, and collaborative approach made the process seamless. Their professionalism and commitment to delivering a high-quality, innovative product exceeded our expectations. I highly recommend them.'
+                name='Salman Saif'
+                designation='Founder, CureForU'
+              />
+            </CarouselItem>
+            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
               <ReviewCard />
             </CarouselItem>
-            <CarouselItem className='md:basis-1/2 lg:basis-1/3'>
+            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
               <ReviewCard />
             </CarouselItem>
-            <CarouselItem className='md:basis-1/2 lg:basis-1/3'>
-              <ReviewCard />
-            </CarouselItem>
-            <CarouselItem className='md:basis-1/2 lg:basis-1/3'>
+            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
               <ReviewCard />
             </CarouselItem>
           </CarouselContent>
