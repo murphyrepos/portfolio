@@ -2,11 +2,18 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 import ContactForm from './contact-form';
+import { cn } from '@/lib/utils';
 
-const Footer = () => {
+interface FooterProps {
+  invertColors?: boolean;
+}
+const Footer = ({ invertColors }: FooterProps) => {
   return (
     <div
-      className='flex w-full flex-col items-center justify-center bg-neutral-100 py-20'
+      className={cn(
+        'flex w-full flex-col items-center justify-center bg-neutral-100 py-20',
+        invertColors && 'bg-white'
+      )}
       id='footer'
     >
       <div className='mx-auto flex h-full w-[90%] max-w-7xl flex-col items-center justify-between md:flex-row lg:space-x-5'>

@@ -11,6 +11,7 @@ import CardLayout from '@/components/servicesCard';
 import Technologies from '@/components/technologies';
 import { NextSeo } from 'next-seo';
 import { PRODUCTION_URL } from '@/utils/helper';
+import Footer from '@/components/footer';
 
 const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
   return (
@@ -53,11 +54,14 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
           },
         ]}
       />
-      <div>
+      <div className='mt-10'>
         <ServiceDetailCard data={service.testimonialConstants} />
         <FavoriteChoices data={{ data: service.favorites }} />
         <CardLayout cards={{ cards: service.cards }} />
         <Technologies data={service.technologiesConstant} />
+        <div className='mt-40'>
+          <Footer />
+        </div>
       </div>
     </>
   );

@@ -49,7 +49,7 @@ const CardComponent: React.FC<Detail> = ({
               alt='Portfolio demo'
               className={cn(
                 'mx-auto h-full max-h-[32rem] w-full max-w-max',
-                isMobile && 'scale-100 md:scale-110 lg:scale-125'
+                isMobile && 'scale-100 md:scale-90 lg:scale-110'
               )}
               skeletonClassName='h-96 w-96'
               loading='lazy'

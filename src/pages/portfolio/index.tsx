@@ -2,6 +2,7 @@ import React from 'react';
 import CardComponent from '@/components/portfolio-projects-card';
 import { details } from '@/utils/constants/portfolio.content';
 import { NextSeo } from 'next-seo';
+import Footer from '@/components/footer';
 
 const Portfolio = () => {
   return (
@@ -44,18 +45,26 @@ const Portfolio = () => {
           },
         ]}
       />
-      <div className='flex min-h-dvh w-full flex-col items-center justify-start space-y-10 bg-neutral-100 px-6 py-16 lg:px-16'>
+      <div className='mt-10 flex min-h-dvh w-full flex-col items-center justify-start space-y-10 bg-neutral-100 px-6 py-16 lg:px-16'>
         {details.map((detail, index) => (
-          <CardComponent
-            key={index}
-            title={detail.title}
-            description={detail.description}
-            technologies={detail.technologies}
-            image={detail.image}
-            role={detail.role}
-            isMobile={detail.isMobile}
-          />
+          <>
+            <CardComponent
+              key={index}
+              title={detail.title}
+              description={detail.description}
+              technologies={detail.technologies}
+              image={detail.image}
+              role={detail.role}
+              isMobile={detail.isMobile}
+            />
+            {index === details.length - 1 && (
+              <div className='h-[6rem] w-full' />
+            )}
+          </>
         ))}
+      </div>
+      <div className='bg-white'>
+        <Footer invertColors />
       </div>
     </>
   );
