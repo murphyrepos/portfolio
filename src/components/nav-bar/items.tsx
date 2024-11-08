@@ -42,7 +42,7 @@ export const items: Items[] = [
       },
       {
         title: 'UI / UX Design',
-        href: '/services/ui-uix-services',
+        href: '/services/ui-ux-services',
         Icon: (props?: LucideProps) => <Component {...props} />,
       },
       {

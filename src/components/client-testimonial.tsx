@@ -45,7 +45,7 @@ const ClientTestimonial = () => {
           ref={emblaRef}
           plugins={[
             Autoplay({
-              delay: 2000,
+              delay: 5000,
               stopOnInteraction: true,
             }),
           ]}
