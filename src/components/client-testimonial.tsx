@@ -53,7 +53,7 @@ const ClientTestimonial = () => {
           <CarouselContent>
             <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
               <ReviewCard
-                review='Working with MurphyRapoes on CureforU phone app was a fantastic experience. Their creativity, technical expertise, and collaborative approach made the process seamless. Their professionalism and commitment to delivering a high-quality, innovative product exceeded our expectations. I highly recommend them.'
+                review='Working with MurphyRepos on CureforU phone app was a fantastic experience. Their creativity, technical expertise, and collaborative approach made the process seamless. Their professionalism and commitment to delivering a high-quality, innovative product exceeded our expectations. I highly recommend them.'
                 name='Salman Saif'
                 designation='Founder, CureForU'
               />
