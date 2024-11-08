@@ -93,34 +93,39 @@ const NavigationBar = () => {
                           </span>
                           <p>{title}</p>
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className='border-1 border-muted-foreground bg-white p-4'>
-                          <NavigationMenuList className='bg-white text-white'>
-                            {subMenu?.map((subItem, index) => (
-                              <NavigationMenuItem
-                                key={index}
-                                className='text-muted-foreground'
-                              >
-                                <Link
-                                  href={subItem?.href}
-                                  legacyBehavior
-                                  passHref
+                        <NavigationMenuContent className='border-1 min-w-max border-muted-foreground bg-white p-4'>
+                          <NavigationMenuList
+                            className='bg-white text-white'
+                            asChild
+                          >
+                            <div className='grid grid-cols-2 gap-4'>
+                              {subMenu?.map((subItem, index) => (
+                                <NavigationMenuItem
+                                  key={index}
+                                  className='text-muted-foreground'
                                 >
-                                  <NavigationMenuLink
-                                    className={cn(
-                                      navigationMenuTriggerStyle(),
-                                      'border-1 flex gap-2 border-muted-foreground'
-                                    )}
+                                  <Link
+                                    href={subItem?.href}
+                                    legacyBehavior
+                                    passHref
                                   >
-                                    <span className='flex items-center justify-center gap-2'>
-                                      {subItem.Icon && (
-                                        <subItem.Icon className='hidden lg:block' />
+                                    <NavigationMenuLink
+                                      className={cn(
+                                        navigationMenuTriggerStyle(),
+                                        'border-1 flex gap-2 border-muted-foreground'
                                       )}
-                                    </span>
-                                    <p>{subItem?.title}</p>
-                                  </NavigationMenuLink>
-                                </Link>
-                              </NavigationMenuItem>
-                            ))}
+                                    >
+                                      <span className='flex items-center justify-center gap-2'>
+                                        {subItem.Icon && (
+                                          <subItem.Icon className='hidden lg:block' />
+                                        )}
+                                      </span>
+                                      <p>{subItem?.title}</p>
+                                    </NavigationMenuLink>
+                                  </Link>
+                                </NavigationMenuItem>
+                              ))}
+                            </div>
                           </NavigationMenuList>
                         </NavigationMenuContent>
                       </>

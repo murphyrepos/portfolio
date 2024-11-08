@@ -59,7 +59,6 @@ const CardComponent: React.FC<Detail> = ({
                 maxWidth: '1200px',
                 maxHeight: '500px',
                 width: '100%',
-
                 height: 'auto',
               }}
             />
