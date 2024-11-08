@@ -4,13 +4,24 @@ import CommentRatings from './rating-component';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import Icons from './icons';
 
-const ReviewCard = () => {
+interface IReviewCardProps {
+  rating: number;
+  review: string;
+  name: string;
+  designation: string;
+}
+const ReviewCard: React.FC<Partial<IReviewCardProps>> = ({
+  rating,
+  review,
+  name,
+  designation,
+}) => {
   return (
     <Card className='rounded-xl border-none bg-neutral-100 shadow-none'>
-      <CardContent className='mx-auto flex w-full flex-col justify-between space-y-16 py-6'>
+      <CardContent className='mx-auto flex h-full w-full flex-col justify-between space-y-16 py-6'>
         <div className='flex flex-col items-start justify-start space-y-4'>
           <CommentRatings
-            rating={4.5}
+            rating={rating ?? 4.5}
             variant='yellow'
             totalStars={5}
             fill
@@ -18,8 +29,8 @@ const ReviewCard = () => {
             disabled
           />
           <p className='mr-4 text-sm text-muted-foreground'>
-            “Ut ullamcorper hendrerit tempor. Aliquam in rutrum dui. Maecenas ac
-            placerat metus, in faucibus est.”
+            {review ??
+              `“Ut ullamcorper hendrerit tempor. Aliquam in rutrum dui. Maecenas ac placerat metus, in faucibus est.”`}
           </p>
         </div>
         <div className='flex w-full flex-row justify-between'>
@@ -29,8 +40,10 @@ const ReviewCard = () => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div className='flex flex-col items-start'>
-              <p className='text-sm font-bold'>Robert Fox</p>
-              <p className='text-xs text-muted-foreground'>UI/UX designer</p>
+              <p className='text-sm font-bold'>{name ?? 'Robert Fox'}</p>
+              <p className='text-xs text-muted-foreground'>
+                {designation ?? 'UI/UX designer'}
+              </p>
             </div>
           </div>
           <Icons.quotes />
