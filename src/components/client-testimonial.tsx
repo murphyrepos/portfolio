@@ -12,6 +12,7 @@ import {
 import { cn } from '@/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { testimonials } from '@/utils/constants/testimonials.content';
 
 const ClientTestimonial = () => {
   const [api, setApi] = React.useState<CarouselApi | null>();
@@ -44,29 +45,28 @@ const ClientTestimonial = () => {
           ref={emblaRef}
           plugins={[
             Autoplay({
-              delay: 1000,
+              delay: 2000,
               stopOnInteraction: true,
             }),
           ]}
           className='w-full'
         >
           <CarouselContent>
-            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
-              <ReviewCard
-                review='Working with MurphyRepos on CureforU phone app was a fantastic experience. Their creativity, technical expertise, and collaborative approach made the process seamless. Their professionalism and commitment to delivering a high-quality, innovative product exceeded our expectations. I highly recommend them.'
-                name='Salman Saif'
-                designation='Founder, CureForU'
-              />
-            </CarouselItem>
-            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
-              <ReviewCard />
-            </CarouselItem>
-            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
-              <ReviewCard />
-            </CarouselItem>
-            <CarouselItem className='flex justify-stretch md:basis-1/2 lg:basis-1/3'>
-              <ReviewCard />
-            </CarouselItem>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem
+                key={index}
+                className='flex justify-stretch md:basis-1/2'
+              >
+                <ReviewCard
+                  review={testimonial.review}
+                  name={testimonial.name}
+                  rating={testimonial.rating}
+                  designation={testimonial.designation}
+                  logo={testimonial.logo ?? null}
+                  company={testimonial.company}
+                />
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious className='hidden h-10 w-10 rounded-sm !bg-white text-primary hover:bg-opacity-100 hover:text-primary md:flex' />
           <CarouselNext className='hidden h-10 w-10 rounded-sm !bg-white text-primary hover:bg-opacity-100 hover:text-primary md:flex' />

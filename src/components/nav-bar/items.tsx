@@ -1,4 +1,6 @@
 import {
+  Component,
+  FolderCode,
   GalleryVerticalEnd,
   House,
   Laptop,
@@ -37,6 +39,16 @@ export const items: Items[] = [
         title: 'Mobile Development',
         href: '/services/mobile-development',
         Icon: (props?: LucideProps) => <Smartphone {...props} />,
+      },
+      {
+        title: 'UI / UX Design',
+        href: '/services/ui-uix-services',
+        Icon: (props?: LucideProps) => <Component {...props} />,
+      },
+      {
+        title: 'Custom Solutions',
+        href: '/services/custom-solutions',
+        Icon: (props?: LucideProps) => <FolderCode {...props} />,
       },
     ],
   },

@@ -23,3 +23,5 @@ export interface CardType {
     points: StringArrayData;
   }>;
 }
+
+export type IconProps = React.HTMLAttributes<SVGElement>;

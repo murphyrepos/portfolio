@@ -89,14 +89,9 @@ export function Drawer({ open, onOpenChange }: Props) {
                                         <NavigationMenuLink
                                           className={cn(
                                             navigationMenuTriggerStyle(),
-                                            'border-1 flex gap-1 rounded-none border-muted-foreground text-muted-foreground hover:bg-transparent hover:text-primary'
+                                            'border-1 rounded-none border-muted-foreground text-center text-muted-foreground hover:bg-transparent hover:text-primary'
                                           )}
                                         >
-                                          <span className='flex items-center justify-between gap-2'>
-                                            {subItem.Icon && (
-                                              <subItem.Icon className='block' />
-                                            )}
-                                          </span>
                                           <p>{subItem?.title}</p>
                                         </NavigationMenuLink>
                                       </Link>

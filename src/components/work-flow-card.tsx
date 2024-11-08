@@ -1,7 +1,8 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { ChevronRightIcon, UserIcon } from 'lucide-react';
+import { ChevronRightIcon } from 'lucide-react';
 import React from 'react';
+import { IconProps } from './type';
 
 interface WorkFlowCardProps {
   invertColor?: boolean;
@@ -9,6 +10,7 @@ interface WorkFlowCardProps {
   description: string;
   showMore?: boolean;
   descriptionClassNames?: string;
+  icon: React.FC<IconProps>;
 }
 const WorkFlowCard = ({
   invertColor,
@@ -16,7 +18,9 @@ const WorkFlowCard = ({
   showMore,
   description,
   descriptionClassNames = '',
+  icon,
 }: WorkFlowCardProps) => {
+  const Icon = icon;
   return (
     <div
       className={cn(
@@ -30,7 +34,7 @@ const WorkFlowCard = ({
           invertColor && 'bg-white text-primary'
         )}
       >
-        <UserIcon size={32} />
+        <Icon className='h-8 w-8' />
       </div>
       <p className='text-xl'>{title}</p>
       <p

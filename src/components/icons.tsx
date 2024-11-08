@@ -1,5 +1,5 @@
 import React from 'react';
-type IconProps = React.HTMLAttributes<SVGElement>;
+import { IconProps } from './type';
 
 export const Icons = {
   react: (props: IconProps) => (
