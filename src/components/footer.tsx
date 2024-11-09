@@ -11,7 +11,7 @@ const Footer = ({ invertColors }: FooterProps) => {
   return (
     <div
       className={cn(
-        'flex w-full flex-col items-center justify-center bg-neutral-100 py-28',
+        'mb-0 mt-10 flex w-full flex-col items-center justify-center bg-neutral-100 py-16',
         invertColors && 'bg-white'
       )}
       id='footer'

@@ -54,7 +54,7 @@ const ServiceDetail = ({ service }: { service: IServiceConstant }) => {
           },
         ]}
       />
-      <div className='w-full pb-16 pt-16'>
+      <div className='w-full pt-0 lg:pt-16'>
         <ServiceDetailCard data={service.testimonialConstants} />
         <FavoriteChoices data={{ data: service.favorites }} />
         <CardLayout cards={{ cards: service.cards }} />
