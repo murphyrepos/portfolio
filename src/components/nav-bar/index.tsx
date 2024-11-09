@@ -23,8 +23,8 @@ const NavigationBar = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   const handleScroll = useCallback(() => {
-    if (window?.scrollY > 10) {
-      setIsSticky(window.scrollY > 10); // Sticky when scrolled down
+    if (window?.scrollY > 0) {
+      setIsSticky(window.scrollY > 0); // Sticky when scrolled down
     } else {
       setIsSticky(false);
     }
@@ -52,11 +52,11 @@ const NavigationBar = () => {
         className={cn(
           'duration-600 ml-auto hidden max-h-max w-full max-w-full items-center justify-between p-4 transition-transform ease-in-out lg:block',
           isSticky
-            ? 'animate-translate-once bg-green bg-transparent bg-opacity-70 py-3 shadow-lg backdrop-blur-md'
+            ? 'animate-translate-once bg-green bg-transparent bg-opacity-70 shadow-lg backdrop-blur-md'
             : 'animate-translate-default bg-neutral-100'
         )}
         style={{
-          position: isSticky ? 'sticky' : 'fixed',
+          position: isSticky ? 'fixed' : 'absolute',
           top: 0,
           left: 0,
           right: 0,
@@ -162,13 +162,13 @@ const NavigationBar = () => {
       </NavigationMenu>
       <div
         className={cn(
-          'duration-600 z-10 ml-auto flex max-h-max w-full max-w-full items-center justify-between p-4 px-4 py-5 transition-transform ease-in-out lg:hidden',
+          'duration-600 z-10 ml-auto flex max-h-max w-full max-w-full items-center justify-between transition-transform ease-in-out lg:hidden',
           isSticky
             ? 'animate-translate-once bg-green bg-transparent bg-opacity-70 py-3 shadow-lg backdrop-blur-md'
-            : 'animate-translate-default bg-neutral-100'
+            : 'animate-translate-default bg-neutral-100 py-3'
         )}
         style={{
-          position: isSticky ? 'sticky' : 'fixed',
+          position: isSticky ? 'fixed' : 'absolute',
           top: 0,
           left: 0,
           right: 0,
