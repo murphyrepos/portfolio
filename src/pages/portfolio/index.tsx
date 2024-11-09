@@ -58,7 +58,7 @@ const Portfolio = () => {
               isMobile={detail.isMobile}
             />
             {index === details.length - 1 && (
-              <div className='h-[6rem] w-full' />
+              <div className='h-[2rem] w-full' />
             )}
           </>
         ))}
