@@ -8,15 +8,15 @@ import { services } from '@/utils/constants/services.content';
 const Services = () => {
   return (
     <div
-      className='mx-auto mb-10 flex max-w-7xl flex-col items-center justify-center gap-5 py-10'
+      className='mx-auto mb-10 flex max-w-7xl flex-col items-center justify-center gap-10 py-10'
       id='services'
     >
       <div className='mx-auto w-[90%] max-w-screen-2xl'>
-        <div className='mx-auto flex flex-col items-center justify-center gap-5 text-center'>
+        <div className='mx-auto flex flex-col items-center justify-center gap-3 text-center'>
           <h4 className='text-center text-xl font-bold text-primary md:text-2xl lg:text-3xl'>
             Our Services
           </h4>
-          <p className='w-[100%] text-3xl font-medium'>
+          <p className='w-full text-3xl font-medium'>
             Get ahead with custom solutions that align with your goals.
           </p>
           <p className='text-muted-foreground'>

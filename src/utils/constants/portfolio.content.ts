@@ -24,9 +24,9 @@ export const details: Detail[] = [
     isMobile: true,
   },
   {
-    title: 'Maahdha',
+    title: 'Maahdhaa',
     description:
-      'Maahdha is a web platform designed to foster political awareness and public engagement. It provides users with access to the manifestos of various local political parties, up-to-date government news, and information about political leaders and government bodies. The platform also allows the public to participate in polls, share opinions, and track the popularity of political figures.',
+      'Maahdhaa is a web platform designed to foster political awareness and public engagement. It provides users with access to the manifestos of various local political parties, up-to-date government news, and information about political leaders and government bodies. The platform also allows the public to participate in polls, share opinions, and track the popularity of political figures.',
     technologies: [
       'NestJS ',
       ' React ',
@@ -35,7 +35,7 @@ export const details: Detail[] = [
       'AWS ',
       ' CI/CD',
     ],
-    role: 'Developed public facing platform with admin dashboard for the puroduct manager to manage content, creating polls and displaying information to the users.',
+    role: 'Developed public facing platform with admin dashboard for the product manager to manage content, creating polls and displaying information to the users.',
     image: image2,
   },
   {
@@ -80,7 +80,7 @@ export const details: Detail[] = [
       'AWS ',
       ' CI/CD',
     ],
-    role: 'Revamped the public facing website for the end user, improving look and feel of overall product and making user expreince seamless.',
+    role: 'Revamped the public facing website for the end user, improving look and feel of overall product and making user experience seamless.',
     image: image5,
   },
 ];
