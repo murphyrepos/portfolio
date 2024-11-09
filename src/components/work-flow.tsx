@@ -5,7 +5,7 @@ import { workflow } from '@/utils/constants/workflow.content';
 const WorkFlow = () => {
   return (
     <div
-      className='mx-auto flex w-full flex-col bg-neutral-100 py-20'
+      className='mx-auto my-10 flex w-full flex-col bg-neutral-100 py-16'
       id='workflow'
     >
       <div className='mx-auto flex w-[90%] max-w-7xl flex-col items-center justify-center gap-10'>

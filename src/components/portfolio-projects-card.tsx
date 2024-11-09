@@ -17,15 +17,21 @@ const CardComponent: React.FC<Detail> = ({
     <Card className='lg:py-26 flex max-w-7xl items-center justify-center border-none px-10 pb-14 pt-14 shadow-md lg:pl-20 lg:pr-0'>
       <CardContent className='flex flex-col items-center justify-between space-y-5 p-0 lg:flex-row lg:space-y-0'>
         <div className='flex w-full flex-col items-start justify-start space-y-7 lg:w-2/6'>
-          <h2 className='text-4xl font-semibold text-primary'>{title}</h2>
+          <h2 className='text-3xl font-semibold text-primary md:text-4xl'>
+            {title}
+          </h2>
           <div className='flex w-full flex-col items-start justify-start space-y-7'>
             <div className='flex flex-col space-y-2'>
-              <h2 className='text-2xl font-semibold'>Description</h2>
-              <p className='text-balance text-gray-600'>{description}</p>
+              <h2 className='text-xl font-semibold md:text-2xl'>Description</h2>
+              <p className='text-balance text-sm text-gray-600 md:text-base'>
+                {description}
+              </p>
             </div>
             <div className='flex flex-col space-y-2'>
-              <h2 className='text-2xl font-semibold'>Role</h2>
-              <p className='text-balance text-gray-600'>{role}</p>
+              <h2 className='text-xl font-semibold md:text-2xl'>Role</h2>
+              <p className='text-balance text-sm text-gray-600 md:text-base'>
+                {role}
+              </p>
             </div>
             <div className='flex flex-col space-y-2'>
               <h3 className='font-semibold'>Technologies</h3>

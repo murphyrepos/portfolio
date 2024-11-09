@@ -8,7 +8,7 @@ import { services } from '@/utils/constants/services.content';
 const Services = () => {
   return (
     <div
-      className='mx-auto mb-10 flex max-w-7xl flex-col items-center justify-center gap-10 py-10'
+      className='mx-auto my-10 flex max-w-7xl flex-col items-center justify-center gap-10 py-16'
       id='services'
     >
       <div className='mx-auto w-[90%] max-w-screen-2xl'>

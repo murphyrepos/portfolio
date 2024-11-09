@@ -7,7 +7,7 @@ import Link from 'next/link';
 const ServiceDetailCard = ({ data }: ServiceDetailType) => {
   return (
     <div
-      className={`flex w-full flex-col items-center justify-center space-y-4 bg-neutral-100 py-14 lg:items-start`}
+      className={`flex w-full flex-col items-center justify-center space-y-4 bg-neutral-100 py-16 lg:items-start`}
     >
       <div
         className={`mx-auto mt-14 flex w-full max-w-7xl flex-col items-center justify-center space-y-4 lg:w-[90%] lg:items-start`}
