@@ -8,7 +8,7 @@ import { services } from '@/utils/constants/services.content';
 const Services = () => {
   return (
     <div
-      className='mx-auto my-10 flex max-w-7xl flex-col items-center justify-center gap-10 py-16'
+      className='mx-auto mb-10 flex max-w-7xl flex-col items-center justify-center gap-20 py-20'
       id='services'
     >
       <div className='mx-auto w-[90%] max-w-screen-2xl'>
@@ -34,7 +34,7 @@ const Services = () => {
           </Link>
         </div>
       </div>
-      <div className='mt-10 flex flex-col items-center justify-center gap-5'>
+      <div className='flex flex-col items-center justify-center gap-5'>
         {services.map((service, index) => (
           <PortfolioDetailOverview
             key={index}

@@ -19,11 +19,11 @@ const Footer = ({ invertColors }: FooterProps) => {
       <div className='mx-auto flex h-full w-[90%] max-w-7xl flex-col items-center justify-between md:flex-row lg:space-x-5'>
         <div className='flex w-full flex-col items-start justify-center space-y-6 md:mx-5 md:w-1/2'>
           <div className='flex w-full flex-col items-center justify-center space-y-6 md:w-[100%]'>
-            <p className='text-center text-2xl md:text-5xl lg:text-left'>
+            <p className='text-center text-2xl md:text-left md:text-5xl'>
               We will get back to you soon!
             </p>
             <div className='my-8 flex flex-col space-y-4 text-muted-foreground'>
-              <div className='my-4 grid grid-cols-12 text-center lg:text-left'>
+              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
                 <ArrowRight
                   className='col-span-1 mt-1 text-primary'
                   size={18}
@@ -33,7 +33,7 @@ const Footer = ({ invertColors }: FooterProps) => {
                   contact us form.
                 </p>
               </div>
-              <div className='my-4 grid grid-cols-12 text-center lg:text-left'>
+              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
                 <ArrowRight
                   className='col-span-1 mt-1 text-primary'
                   size={18}
@@ -43,7 +43,7 @@ const Footer = ({ invertColors }: FooterProps) => {
                   about your query
                 </p>
               </div>
-              <div className='my-4 grid grid-cols-12 text-center lg:text-left'>
+              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
                 <ArrowRight
                   className='col-span-1 mt-1 text-primary'
                   size={18}

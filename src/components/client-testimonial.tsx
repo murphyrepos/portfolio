@@ -31,9 +31,9 @@ const ClientTestimonial = () => {
     });
   }, [api]);
   return (
-    <div className='mx-auto my-10 flex w-[95%] max-w-7xl flex-col items-center justify-center gap-10 bg-white py-16 lg:h-[60vh] lg:w-full'>
+    <div className='mx-auto flex w-[95%] max-w-7xl flex-col items-center justify-center gap-20 bg-white py-20 lg:w-full'>
       <div className='mx-auto w-full text-center'>
-        <p className='text-2xl font-medium'>Clients Testimonial</p>
+        <p className='text-2xl font-medium'>Clients Testimonials</p>
       </div>
       <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-stretch justify-between space-x-5 space-y-10'>
         <Carousel

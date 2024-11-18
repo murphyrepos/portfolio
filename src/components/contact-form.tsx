@@ -51,7 +51,7 @@ const ContactForm = () => {
     contactForm.setValue('message', '');
   }
   return (
-    <Card className='w-full !max-w-md flex-col items-center justify-center rounded-2xl bg-white px-5 py-6 md:-top-80 xl:absolute'>
+    <Card className='w-[90%] flex-col items-center justify-center rounded-2xl bg-white px-5 py-6 lg:absolute lg:-top-80 lg:!max-w-md'>
       <p className='my-1 text-center text-xl text-primary'>Say Hello</p>
       <p className='text-neutral-foreground my-1 text-center text-2xl'>
         Contact Us
