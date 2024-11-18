@@ -47,7 +47,7 @@ const Portfolio = () => {
       />
       <div className='flex min-h-dvh w-full flex-col items-center justify-start space-y-10 bg-neutral-100 px-6 pb-16 pt-28 lg:px-16'>
         {details.map((detail, index) => (
-          <>
+          <div key={index}>
             <CardComponent
               key={index}
               title={detail.title}
@@ -60,7 +60,7 @@ const Portfolio = () => {
             {index === details.length - 1 && (
               <div className='h-[2rem] w-full' />
             )}
-          </>
+          </div>
         ))}
       </div>
       <div className='bg-white'>

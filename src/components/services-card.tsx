@@ -3,8 +3,8 @@ import { CardType } from './type';
 
 const CardLayout = ({ cards }: { cards: CardType }) => {
   return (
-    <div className='mx-auto my-6 flex w-full max-w-7xl flex-col items-start space-y-4 py-10 lg:w-[90%]'>
-      <p className={`w-full text-center text-2xl lg:text-left lg:text-4xl`}>
+    <div className='mx-auto my-7 flex w-full max-w-7xl flex-col items-center justify-center gap-8 py-10 lg:w-[90%]'>
+      <p className='w-full text-center text-2xl font-medium lg:text-4xl'>
         Modern, Fast & Stable Apps
       </p>
       <div className='mx-auto flex w-full justify-start md:justify-center lg:mx-0 lg:justify-start'>
@@ -16,7 +16,7 @@ const CardLayout = ({ cards }: { cards: CardType }) => {
             ) => (
               <div
                 key={index}
-                className='flex w-full flex-col items-center gap-2 bg-gray-100 p-10 lg:items-start lg:rounded-md lg:p-6 lg:shadow-md'
+                className='flex w-full flex-col items-center gap-2 bg-gray-100 p-10 lg:items-start lg:rounded-md lg:p-6'
               >
                 <div className='flex w-full max-w-[28rem] flex-col'>
                   <h2

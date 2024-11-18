@@ -1,5 +1,5 @@
 import React from 'react';
-import CardLayout from './servicesCard';
+import CardLayout from './services-card';
 import { webDevConstants } from '@/utils/constants/services.constant';
 
 const ServiceApplicationType = () => {

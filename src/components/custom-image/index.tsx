@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 
 interface CustomImageProps extends ImageProps {
   className?: string;
-  skeletonClassName?: string;
 }
 const CustomImage = (props: CustomImageProps) => {
   const { className, ...rest } = props;

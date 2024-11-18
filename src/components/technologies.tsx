@@ -4,7 +4,7 @@ import { DataContainer } from './type';
 
 const Technologies = (technologies: DataContainer) => {
   return (
-    <div className='mx-auto my-6 flex w-[90%] max-w-7xl flex-col items-center gap-8 py-10 lg:items-start'>
+    <div className='mx-auto my-7 flex w-full max-w-7xl flex-col items-center justify-center gap-8 py-10 md:w-[90%]'>
       <p className='text-center text-2xl font-medium lg:text-4xl'>
         Technologies
       </p>
