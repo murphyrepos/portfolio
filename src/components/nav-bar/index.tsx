@@ -8,9 +8,9 @@ import {
 import { items } from './items';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import Image from 'next/image';
 import { NavBarItem, SubMenuComponent } from './nav-bar-component';
 import DrawerToggle from './drawer-toggle';
+import Icons from '../icons';
 
 const NavigationBar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -53,16 +53,13 @@ const NavigationBar = () => {
       >
         <div className='mx-auto flex max-w-screen-xl items-center justify-between px-6 py-2'>
           <div className='mx-auto flex w-full max-w-screen-xl items-center justify-between'>
-            <div className=''>
-              <Link href='/' className='flex items-center gap-1'>
-                <Image
-                  src='/logos/2.png'
-                  alt='Murphy Repos'
-                  className='md:h-42 h-[40px] w-[40px] object-contain md:w-[50px]'
-                  width={140}
-                  height={140}
-                  priority
-                />
+            <div>
+              <Link
+                href='/'
+                className='flex items-center gap-2 text-muted-foreground transition-all delay-150 hover:text-primary'
+              >
+                <Icons.logo className='h-14 w-14' />
+                <p>Murphy Repos</p>
               </Link>
             </div>
             <div className='flex flex-1 items-center justify-end'>

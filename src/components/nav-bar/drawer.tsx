@@ -26,7 +26,7 @@ export function Drawer({ open, onOpenChange }: Props) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetTrigger asChild></SheetTrigger>
-      <SheetContent side='top' className='top-16 md:hidden' hideOverLayer>
+      <SheetContent side='top' className='top-14 md:hidden' hideOverLayer>
         <SheetHeader className='sr-only'>
           <SheetDescription className='sr-only'></SheetDescription>
         </SheetHeader>

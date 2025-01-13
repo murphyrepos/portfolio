@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { Drawer } from './drawer';
-import Image from 'next/image';
+import Icons from '../icons';
 
 interface DrawerToggleProps {
   isSticky: boolean;
@@ -21,24 +21,20 @@ const DrawerToggle = ({ isSticky, open, setOpen }: DrawerToggleProps) => {
           : 'animate-translate-default bg-background py-3'
       )}
     >
-      <Link href='/' className='ml-5 flex items-center gap-1'>
-        <Image
-          src='/logos/2.png'
-          alt='Murphy Repos'
-          className='md:h-42 h-[40px] w-[40px] object-contain md:w-[50px]'
-          width={140}
-          height={140}
-          priority
-        />
+      <Link
+        href='/'
+        className='flex flex-1 items-center gap-2 px-4 text-muted-foreground transition-all delay-150 hover:text-primary'
+      >
+        <Icons.logo className='h-14 w-14' />
+        <p>Murphy Repos</p>
       </Link>
-      <div className='h-10 w-10'></div>
       <Drawer open={open} onOpenChange={setOpen} />
       <div className='flex items-center gap-2'>
         <Button
           asChild
           variant='outline'
           size={'sm'}
-          className='rounded-full border-muted-foreground bg-background text-sm text-muted-foreground shadow-none'
+          className='rounded-full border-muted-foreground bg-background !px-4 text-xs text-muted-foreground shadow-none'
         >
           <Link href='/#footer'>Contact Us</Link>
         </Button>
