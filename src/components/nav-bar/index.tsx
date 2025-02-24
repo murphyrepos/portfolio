@@ -67,11 +67,11 @@ const NavigationBar = () => {
           <div className=''>
             <Link href='/' className='flex items-center gap-1'>
               <Image
-                src='/logos/2.png'
+                src='/logos/white.png'
                 alt='Murphy Repos'
-                className='h-[40px] w-[40px] object-contain md:h-[50px] md:w-[50px]'
-                width={140}
-                height={140}
+                className='h-auto w-[40px] object-contain md:w-[150px]'
+                width={500}
+                height={250}
                 priority
               />
             </Link>
@@ -179,9 +179,9 @@ const NavigationBar = () => {
       >
         <Link href='/' className='ml-5 flex items-center gap-1'>
           <Image
-            src='/logos/2.png'
+            src='/logos/small_white.png'
             alt='Murphy Repos'
-            className='h-[40px] w-[40px] object-contain md:h-[50px] md:w-[50px]'
+            className='h-auto w-[80px] object-contain md:w-[50px]'
             width={140}
             height={140}
             priority

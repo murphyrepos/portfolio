@@ -24,13 +24,13 @@ const WorkFlowCard = ({
   return (
     <div
       className={cn(
-        'flex h-full flex-col items-center justify-center space-y-4 rounded-xl bg-white px-8 py-6',
+        'flex h-full flex-col items-center justify-center space-y-4 rounded-xl bg-white px-8 py-6 group',
         invertColor && 'bg-neutral-100'
       )}
     >
       <div
         className={cn(
-          'flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white',
+          'flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white group-hover:scale-125 transition-all duration-700',
           invertColor && 'bg-white text-primary'
         )}
       >

@@ -15,7 +15,7 @@ const ServiceDetailCard = ({ data }: ServiceDetailType) => {
         <p className={`text-4xl font-bold`}>{data?.title}</p>
         <p className={`w-[70%] text-center text-xl`}>{data.description}</p>
         <Link href={'/portfolio'}>
-          <Button className={`rounded-none px-12 py-7 text-lg capitalize`}>
+          <Button className={`px-12 py-7 text-lg capitalize`} variant="default">
             {data.buttonTitle}
           </Button>
         </Link>
