@@ -8,7 +8,7 @@ const CardLayout = ({ cards }: { cards: CardType }) => {
         Modern, Fast & Stable Apps
       </p>
       <div className='mx-auto flex w-full justify-start md:justify-center lg:mx-0 lg:justify-start'>
-        <div className='grid w-full grid-cols-1 gap-6 py-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'>
+        <div className='mx-4 grid w-full grid-cols-1 gap-6 py-6 md:mx-8 lg:grid-cols-2 xl:grid-cols-3'>
           {cards?.cards?.map(
             (
               point: { title: string; points: { data: string[] } },
@@ -16,7 +16,7 @@ const CardLayout = ({ cards }: { cards: CardType }) => {
             ) => (
               <div
                 key={index}
-                className='flex w-full flex-col items-center gap-2 bg-gray-100 p-10 lg:items-start lg:rounded-md lg:p-6'
+                className='flex w-full flex-col items-center gap-2 rounded-xl bg-gray-100 p-10 shadow-xl shadow-neutral-200 lg:items-start lg:p-6'
               >
                 <div className='flex w-full max-w-[28rem] flex-col'>
                   <h2

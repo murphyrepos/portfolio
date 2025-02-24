@@ -14,7 +14,7 @@ const CardComponent: React.FC<Detail> = ({
   role,
 }) => {
   return (
-    <Card className='lg:py-26 flex max-w-7xl items-center justify-center border-none px-10 pb-14 pt-14 shadow-md lg:pl-20 lg:pr-0'>
+    <Card className='lg:py-26 flex max-w-7xl items-center justify-center px-10 pb-14 pt-14 shadow-xl shadow-neutral-300 lg:pl-20 lg:pr-0'>
       <CardContent className='flex flex-col items-center justify-between space-y-5 p-0 lg:space-y-0'>
         <div className='flex flex-col lg:flex-row'>
           <div className='flex w-full flex-col items-start justify-start space-y-7 lg:w-2/6'>
