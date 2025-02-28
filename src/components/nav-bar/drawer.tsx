@@ -42,7 +42,7 @@ export function Drawer({ open, onOpenChange }: Props) {
               className='flex items-center justify-center gap-0'
             >
               <Image
-                src='/logos/2.png'
+                src='/logos/small_white.png'
                 alt='Murphy Repos'
                 className='h-[40px] w-[40px] object-contain md:h-[50px] md:w-[50px]'
                 width={140}
