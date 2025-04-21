@@ -57,7 +57,7 @@ const Footer = ({ invertColors }: FooterProps) => {
             </div>
           </div>
         </div>
-        <div className='mt-10 flex w-full items-center justify-center md:relative md:mx-5 md:mt-0 md:w-1/2 md:justify-end'>
+        <div className='mb-2 mt-10 flex w-full items-center justify-center md:relative md:mx-5 md:mt-0 md:w-1/2 md:justify-end'>
           <ContactForm />
         </div>
       </div>
