@@ -27,7 +27,7 @@ const HeroSection = () => {
             src={'/assets/hero.lottie'}
             loop
             autoplay
-            className='h-full w-full [&>canvas]:!w-[112%]'
+            className='mx-auto h-full w-full [&>canvas]:mx-auto [&>canvas]:!w-[100%] [&>canvas]:max-w-[40rem] xl:[&>canvas]:!w-[112%]'
           />
         </div>
       </div>
