@@ -168,8 +168,9 @@ const contactFormSchema = z.object({
       message: 'Name should be at most 50 characters',
     }),
   email: z
-    .string({
-      required_error: 'Please enter your email address',
+    .string()
+    .min(1, {
+      message: 'Please enter your email address',
     })
     .email({
       message: 'Please enter a valid email address',

@@ -14,7 +14,7 @@ import React from 'react';
 interface Items {
   title: string;
   href: string;
-  Icon?: (props?: LucideProps) => JSX.Element;
+  Icon?: (props?: LucideProps) => React.ReactElement;
   legacyBehavior?: boolean;
   subMenu?: Items[];
 }

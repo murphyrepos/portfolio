@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React, { useEffect, useState } from 'react';
-import { Star } from 'lucide-react';
+import { Star, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { DeviceType, detectDevice } from '@/utils/helper';
 
@@ -36,18 +35,22 @@ interface RatingsProps extends React.HTMLAttributes<HTMLDivElement> {
   totalStars?: number;
   size?: number;
   fill?: boolean;
-  Icon?: React.ReactElement;
+  Icon?: LucideIcon;
   variant?: keyof typeof ratingVariants;
   onRatingChange?: (rating: number) => void;
   disabled?: boolean; // Add disabled prop
 }
+
+type RatingPointerEvent =
+  | React.MouseEvent<Element>
+  | React.TouchEvent<Element>;
 
 export const CommentRatings = ({
   rating: initialRating,
   totalStars = 5,
   size = 20,
   fill = true,
-  Icon = <Star />,
+  Icon = Star,
   variant = 'default',
   onRatingChange,
   disabled = false, // Default to false if disabled prop is not provided
@@ -63,14 +66,16 @@ export const CommentRatings = ({
   // Usage
   const deviceType: DeviceType = detectDevice();
 
-  const handleMouseEnter = (
-    event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
-  ) => {
+  const getStarIndex = (event: RatingPointerEvent) => {
+    const target = event.currentTarget as HTMLElement | SVGElement;
+
+    return Number.parseInt(target.dataset.starIndex ?? '0', 10);
+  };
+
+  const handleMouseEnter = (event: RatingPointerEvent) => {
     if (!disabled) {
       setIsHovering(true);
-      const starIndex = parseInt(
-        (event.currentTarget as HTMLDivElement).dataset.starIndex ?? '0'
-      );
+      const starIndex = getStarIndex(event);
       onRatingChange?.(currentRating);
       setHoverRating(starIndex);
     }
@@ -85,13 +90,9 @@ export const CommentRatings = ({
     setHoverRating(null);
   };
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
-  ) => {
+  const handleClick = (event: RatingPointerEvent) => {
     if (!disabled) {
-      const starIndex = parseInt(
-        (event.currentTarget as HTMLDivElement).dataset.starIndex ?? '0'
-      );
+      const starIndex = getStarIndex(event);
       setCurrentRating(starIndex);
       if (onRatingChange) {
         onRatingChange(starIndex);
@@ -157,37 +158,34 @@ export const CommentRatings = ({
         onTouchStart={handleMouseEnter}
         onTouchMove={handleMouseEnter}
       >
-        {[...Array(fullStars)].map((_, i) =>
-          React.cloneElement(Icon, {
-            key: i,
-            size,
-            className: cn(
+        {[...Array(fullStars)].map((_, i) => (
+          <Icon
+            key={i}
+            size={size}
+            className={cn(
               fill ? 'fill-current stroke-1' : 'fill-transparent',
               ratingVariants[variant].star
-            ),
-            onClick: handleClick,
-            onTouchEnd: handleClick,
-            onMouseEnter: handleMouseEnter,
-            onTouchStart: handleMouseEnter,
-            'data-star-index': i + 1,
-          })
-        )}
+            )}
+            onClick={handleClick}
+            onTouchEnd={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onTouchStart={handleMouseEnter}
+            data-star-index={i + 1}
+          />
+        ))}
         {partialStar}
-        {[
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          ...Array(Math.max(0, totalStars - fullStars - (partialStar ? 1 : 0))),
-        ].map((_, i) =>
-          React.cloneElement(Icon, {
-            key: i + fullStars + 1,
-            size,
-            className: cn('stroke-1', ratingVariants[variant].emptyStar),
-            onClick: handleClick,
-            onTouchEnd: handleClick,
-            onMouseEnter: handleMouseEnter,
-            onTouchStart: handleMouseEnter,
-            'data-star-index': i + fullStars + 1,
-          })
-        )}
+        {[...Array(Math.max(0, totalStars - fullStars - (partialStar ? 1 : 0)))].map((_, i) => (
+          <Icon
+            key={i + fullStars + 1}
+            size={size}
+            className={cn('stroke-1', ratingVariants[variant].emptyStar)}
+            onClick={handleClick}
+            onTouchEnd={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onTouchStart={handleMouseEnter}
+            data-star-index={i + fullStars + 1}
+          />
+        ))}
       </div>
     </div>
   );
@@ -197,7 +195,7 @@ interface PartialStarProps {
   fillPercentage: number;
   size: number;
   className?: string;
-  Icon: React.ReactElement;
+  Icon: LucideIcon;
 }
 
 const PartialStar = ({
@@ -208,10 +206,7 @@ const PartialStar = ({
 }: PartialStarProps) => {
   return (
     <div style={{ position: 'relative', display: 'inline-block' }}>
-      {React.cloneElement(Icon, {
-        size,
-        className: cn('fill-transparent', className),
-      })}
+      <Icon size={size} className={cn('fill-transparent', className)} />
       <div
         style={{
           position: 'absolute',
@@ -220,10 +215,7 @@ const PartialStar = ({
           width: `${fillPercentage * 100}%`,
         }}
       >
-        {React.cloneElement(Icon, {
-          size,
-          className: cn('fill-current', className),
-        })}
+        <Icon size={size} className={cn('fill-current', className)} />
       </div>
     </div>
   );

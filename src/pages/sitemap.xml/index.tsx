@@ -43,9 +43,7 @@ export const getServerSideProps: GetServerSideProps = (ctx) => {
     },
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
   return getServerSideSitemapLegacy(ctx, map);
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export default function Sitemap() {}
