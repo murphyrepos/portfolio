@@ -1,37 +1,52 @@
 import React from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import Link from 'next/link';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
+
 const HeroSection = () => {
   return (
-    <div className='flex w-full flex-col items-center justify-center bg-neutral-100 lg:h-screen'>
-      <div className='xl:max-w-8xl mx-auto flex max-w-screen-xl flex-col-reverse items-center justify-between gap-14 py-32 md:gap-5 xl:mx-auto xl:w-[80%] xl:flex-row'>
-        <div className='flex w-full flex-col items-center justify-center space-y-6 xl:w-6/12 xl:items-start'>
-          <div className='flex w-full flex-col items-center justify-center space-y-6 md:w-[75%]'>
-            <h1 className='text-center text-xl sm:text-3xl md:text-5xl xl:text-left'>
-              Find a solution that suits your business needs
-            </h1>
-            <h2 className='text-center text-muted-foreground xl:text-left'>
-              Murphy repos is always on toes to provide best services to build
-              your next big application
-            </h2>
+    <section id='home' className='relative overflow-hidden bg-slate-100 pb-16 pt-28 lg:pb-20'>
+      <div className='absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-100 to-slate-50' />
+
+      <div className='relative z-10 mx-auto grid w-full max-w-[1240px] items-center gap-12 px-6 lg:grid-cols-2 lg:gap-14 lg:px-8'>
+        <div className='space-y-8'>
+          <div className='inline-flex items-center gap-2 rounded-full bg-blue-100 px-5 py-2 text-base font-medium text-primary'>
+            <Sparkles size={18} />
+            <span>Creative Digital Agency</span>
           </div>
-          <h3 className='text-center text-sm lg:text-base xl:text-left'>
-            <span className='text-muted-foreground'>We are expert in:</span>{' '}
-            <span className='text-primary'>
-              Web Development, Mobile Development, Custom Software Solutions,
-              Cloud Solutions
-            </span>
-          </h3>
+
+          <h1 className='max-w-xl text-balance text-5xl font-bold leading-[1.05] text-slate-900 lg:text-7xl'>
+            We Build Digital Excellence
+          </h1>
+
+          <p className='max-w-xl text-balance text-xl text-slate-600'>
+            Transform your vision into reality with cutting-edge design and
+            development solutions
+          </p>
+
+          <div className='flex flex-wrap items-center gap-4'>
+            <Link
+              href='/#contact'
+              className='inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
+            >
+              Get Started
+              <ArrowRight size={22} />
+            </Link>
+
+            <Link
+              href='/services'
+              className='inline-flex items-center rounded-xl border-2 border-slate-300 bg-white px-8 py-4 text-lg font-medium text-slate-800 transition-colors hover:border-slate-400'
+            >
+              Our Services
+            </Link>
+          </div>
         </div>
-        <div className='m-0 flex w-full p-0 xl:w-6/12'>
-          <DotLottieReact
-            src={'/assets/hero.lottie'}
-            loop
-            autoplay
-            className='mx-auto h-full w-full [&>canvas]:mx-auto [&>canvas]:!w-[100%] [&>canvas]:max-w-[40rem] xl:[&>canvas]:!w-[112%]'
-          />
+
+        <div className='relative'>
+          <Skeleton className='h-[420px] w-full rounded-[2rem] bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 md:h-[620px]' />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

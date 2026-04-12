@@ -1,4 +1,3 @@
-import ClientTestimonial from '@/components/client-testimonial';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
@@ -54,7 +53,6 @@ export default function Home() {
         <HeroSection />
         <Services />
         <WorkFlow />
-        <ClientTestimonial />
         <Footer />
       </div>
     </>

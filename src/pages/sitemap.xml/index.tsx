@@ -18,6 +18,12 @@ export const getServerSideProps: GetServerSideProps = (ctx) => {
       priority: 1,
     },
     {
+      loc: `${baseUrl}/services`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: 1,
+    },
+    {
       loc: `${baseUrl}/services/mobile-development`,
       lastmod: new Date().toISOString(),
       changefreq: 'daily',
@@ -37,6 +43,24 @@ export const getServerSideProps: GetServerSideProps = (ctx) => {
     },
     {
       loc: `${baseUrl}/portfolio`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: 1,
+    },
+    {
+      loc: `${baseUrl}/workflow`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: 1,
+    },
+    {
+      loc: `${baseUrl}/about`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'daily',
+      priority: 1,
+    },
+    {
+      loc: `${baseUrl}/reviews`,
       lastmod: new Date().toISOString(),
       changefreq: 'daily',
       priority: 1,
