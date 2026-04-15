@@ -1,7 +1,6 @@
 import React from 'react';
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { generateNextSeo } from 'next-seo/pages';
 import { Globe, Palette, Smartphone } from 'lucide-react';
 import Footer from '@/components/footer';
 import { PRODUCTION_URL } from '@/utils/helper';
@@ -10,6 +9,23 @@ import {
   uiDevConstants,
   webDevConstants,
 } from '@/utils/constants/services.constant';
+
+export const metadata: Metadata = {
+  title: 'Our Services',
+  description:
+    'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
+  alternates: {
+    canonical: `${PRODUCTION_URL}/services`,
+  },
+  openGraph: {
+    title: 'Murphy Repos | Our Services',
+    description:
+      'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
+    url: `${PRODUCTION_URL}/services`,
+    siteName: 'Murphy Repos',
+    type: 'website',
+  },
+};
 
 const servicesShowcase = [
   {
@@ -40,25 +56,7 @@ const servicesShowcase = [
 
 const ServicesPage = () => {
   return (
-    <>
-      <Head>
-        {generateNextSeo({
-          title: 'Murphy Repos | Our Services',
-          description:
-            'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
-          canonical: `${PRODUCTION_URL}/services`,
-          openGraph: {
-            url: `${PRODUCTION_URL}/services`,
-            type: 'website',
-            title: 'Murphy Repos | Our Services',
-            description:
-              'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
-            siteName: 'Murphy Repos',
-          },
-        })}
-      </Head>
-
-      <div className='bg-slate-100 pt-28'>
+    <div className='bg-slate-100 pt-28'>
         <section id='services' className='py-20 lg:py-24'>
           <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
             <div className='mx-auto max-w-4xl text-center'>
@@ -130,9 +128,8 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

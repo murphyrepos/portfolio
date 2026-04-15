@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -18,7 +18,7 @@ const navLinks = [
 const NavigationBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState('');
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const syncHash = () => {
@@ -35,30 +35,30 @@ const NavigationBar = () => {
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return router.pathname === '/' && currentHash === '';
+      return pathname === '/' && currentHash === '';
     }
 
     if (href === '/services') {
-      return router.pathname === '/services' || router.pathname === '/services/[service]';
+      return pathname === '/services' || pathname.startsWith('/services/');
     }
 
     if (href === '/workflow') {
-      return router.pathname === '/workflow';
+      return pathname === '/workflow';
     }
 
     if (href === '/about') {
-      return router.pathname === '/about';
+      return pathname === '/about';
     }
 
     if (href === '/reviews') {
-      return router.pathname === '/reviews';
+      return pathname === '/reviews';
     }
 
     if (href.startsWith('/#')) {
-      return router.pathname === '/' && currentHash === href.slice(1);
+      return pathname === '/' && currentHash === href.slice(1);
     }
 
-    return router.pathname === href;
+    return pathname === href;
   };
 
   return (

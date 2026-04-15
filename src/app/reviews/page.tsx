@@ -1,11 +1,27 @@
 import React from 'react';
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { generateNextSeo } from 'next-seo/pages';
 import { Quote, Star } from 'lucide-react';
 import Footer from '@/components/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { PRODUCTION_URL } from '@/utils/helper';
+
+export const metadata: Metadata = {
+  title: 'Reviews',
+  description:
+    'Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.',
+  alternates: {
+    canonical: `${PRODUCTION_URL}/reviews`,
+  },
+  openGraph: {
+    title: 'Murphy Repos | Reviews',
+    description:
+      'Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.',
+    url: `${PRODUCTION_URL}/reviews`,
+    siteName: 'Murphy Repos',
+    type: 'website',
+  },
+};
 
 const reviewStats = [
   { number: '4.9', suffix: '/5', label: 'Average Rating' },
@@ -61,25 +77,7 @@ const reviews = [
 
 const ReviewsPage = () => {
   return (
-    <>
-      <Head>
-        {generateNextSeo({
-          title: 'Murphy Repos | Reviews',
-          description:
-            'Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.',
-          canonical: `${PRODUCTION_URL}/reviews`,
-          openGraph: {
-            url: `${PRODUCTION_URL}/reviews`,
-            type: 'website',
-            title: 'Murphy Repos | Reviews',
-            description:
-              'Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.',
-            siteName: 'Murphy Repos',
-          },
-        })}
-      </Head>
-
-      <div className='bg-slate-100 pt-28'>
+    <div className='bg-slate-100 pt-28'>
         <section className='py-20 lg:py-24'>
           <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
             <div className='mx-auto max-w-5xl text-center'>
@@ -177,9 +175,8 @@ const ReviewsPage = () => {
           </div>
         </section>
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 

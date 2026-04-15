@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-// import Mail from 'nodemailer/lib/mailer';
 
 interface ContactRequest {
   email: string;
@@ -17,15 +16,8 @@ const transport = nodemailer.createTransport({
   },
 });
 
-async function contact(
-  req: NextApiRequest,
-  res: NextApiResponse<{ status: string } | void>
-) {
-  const { email, fullName, message } = req.body as ContactRequest;
-
-  if (req.method !== 'POST') {
-    return res.status(404).end();
-  }
+export async function POST(request: Request) {
+  const { email, fullName, message } = (await request.json()) as ContactRequest;
 
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL,
@@ -47,12 +39,15 @@ async function contact(
 
   try {
     await sendMailPromise();
-    return res.status(200).send({ status: 'Email sent' });
+    return NextResponse.json({ status: 'Email sent' }, { status: 200 });
   } catch (err) {
-    return res.status(200).send({ status: JSON.stringify(err) });
+    return NextResponse.json({ status: JSON.stringify(err) }, { status: 500 });
   }
 }
-export default contact;
+
+export async function GET() {
+  return NextResponse.json({ status: 'Method not allowed' }, { status: 405 });
+}
 
 function getTemplate({ email, content }: { email: string; content: string }) {
   console.log(email, content);

@@ -1,6 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
-import { generateNextSeo } from 'next-seo/pages';
+import type { Metadata } from 'next';
 import {
   CheckCircle,
   Code2,
@@ -10,6 +9,23 @@ import {
 } from 'lucide-react';
 import Footer from '@/components/footer';
 import { PRODUCTION_URL } from '@/utils/helper';
+
+export const metadata: Metadata = {
+  title: 'Workflow',
+  description:
+    'A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.',
+  alternates: {
+    canonical: `${PRODUCTION_URL}/workflow`,
+  },
+  openGraph: {
+    title: 'Murphy Repos | Workflow',
+    description:
+      'A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.',
+    url: `${PRODUCTION_URL}/workflow`,
+    siteName: 'Murphy Repos',
+    type: 'website',
+  },
+};
 
 const workflowSteps = [
   {
@@ -76,25 +92,7 @@ const workflowSteps = [
 
 const WorkflowPage = () => {
   return (
-    <>
-      <Head>
-        {generateNextSeo({
-          title: 'Murphy Repos | Workflow',
-          description:
-            'A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.',
-          canonical: `${PRODUCTION_URL}/workflow`,
-          openGraph: {
-            url: `${PRODUCTION_URL}/workflow`,
-            type: 'website',
-            title: 'Murphy Repos | Workflow',
-            description:
-              'A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.',
-            siteName: 'Murphy Repos',
-          },
-        })}
-      </Head>
-
-      <div className='bg-slate-100 pt-28'>
+    <div className='bg-slate-100 pt-28'>
         <section className='pb-20 pt-8 lg:pb-24'>
           <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
             <div className='mx-auto max-w-4xl text-center'>
@@ -191,9 +189,8 @@ const WorkflowPage = () => {
           </div>
         </section>
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 
