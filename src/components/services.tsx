@@ -1,22 +1,27 @@
+'use client';
+
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
-
-const valueProps = [
-  {
-    title: 'Expert Team',
-    description: 'Seasoned professionals with years of industry experience',
-  },
-  {
-    title: 'Quality Focused',
-    description: 'We never compromise on the quality of our deliverables',
-  },
-  {
-    title: 'On-Time Delivery',
-    description: 'Meeting deadlines is our commitment to your success',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation('common');
+
+  const valueProps = [
+    {
+      title: t('services.valueProps.expertTeam.title'),
+      description: t('services.valueProps.expertTeam.description'),
+    },
+    {
+      title: t('services.valueProps.qualityFocused.title'),
+      description: t('services.valueProps.qualityFocused.description'),
+    },
+    {
+      title: t('services.valueProps.onTimeDelivery.title'),
+      description: t('services.valueProps.onTimeDelivery.description'),
+    },
+  ];
+
   return (
     <section id='services' className='scroll-mt-28 bg-white py-24'>
       <div id='about' className='scroll-mt-28' />
@@ -24,10 +29,10 @@ const Services = () => {
       <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
         <div className='mx-auto max-w-4xl text-center'>
           <h2 className='text-4xl font-bold leading-tight text-slate-900 lg:text-5xl'>
-            Why Choose Us
+            {t('services.title')}
           </h2>
           <p className='mt-5 text-balance text-xl text-slate-600'>
-            We deliver exceptional results through innovative solutions
+            {t('services.description')}
           </p>
         </div>
 

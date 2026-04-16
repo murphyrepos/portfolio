@@ -3,6 +3,7 @@ import NavigationBar from '../nav-bar';
 import Footer from '../footer';
 import { Space_Grotesk } from 'next/font/google';
 import { Toaster } from '../ui/toaster';
+import I18nProvider from '../i18n-provider';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
@@ -11,12 +12,16 @@ interface LayoutProps {
 }
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={`${spaceGrotesk.className} flex min-h-screen flex-col`}>
-      <NavigationBar />
-      <Toaster />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    <body className={spaceGrotesk.className}>
+      <I18nProvider>
+        <div>
+          <NavigationBar />
+          <Toaster />
+          <main>{children}</main>
+          <Footer />
+        </div>
+      </I18nProvider>
+    </body>
   );
 };
 

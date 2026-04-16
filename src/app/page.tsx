@@ -3,7 +3,6 @@ import HeroSection from '@/components/hero-section';
 import Services from '@/components/services';
 import WorkFlow from '@/components/work-flow';
 import ClientTestimonial from '@/components/client-testimonial';
-import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Murphy Repos',
@@ -29,7 +28,6 @@ export default function HomePage() {
       <Services />
       <WorkFlow />
       <ClientTestimonial />
-      <Footer />
     </>
   );
 }

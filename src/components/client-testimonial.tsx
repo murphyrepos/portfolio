@@ -12,12 +12,14 @@ import {
 import { cn } from '@/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import { useTranslation } from 'react-i18next';
 import { testimonials } from '@/utils/constants/testimonials.content';
 
 const ClientTestimonial = () => {
   const [api, setApi] = React.useState<CarouselApi | null>();
   const [current, setCurrent] = React.useState<number>(0);
   const [emblaRef] = useEmblaCarousel({ loop: true });
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     if (!api) {
@@ -33,7 +35,7 @@ const ClientTestimonial = () => {
   return (
     <div className='mx-auto flex w-[95%] max-w-7xl flex-col items-center justify-center gap-20 bg-white py-20 lg:w-full'>
       <div className='mx-auto w-full text-center'>
-        <p className='text-2xl font-medium'>Clients Testimonials</p>
+        <p className='text-2xl font-medium'>{t('testimonials.title')}</p>
       </div>
       <div className='mx-auto flex w-[90%] max-w-screen-xl flex-col items-stretch justify-between space-x-5 space-y-10'>
         <Carousel

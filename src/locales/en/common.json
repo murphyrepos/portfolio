@@ -1,0 +1,118 @@
+{
+  "languages": {
+    "en": "English"
+  },
+  "navbar": {
+    "brand": "Murphy Repos",
+    "toggleMenu": "Toggle navigation menu",
+    "languageLabel": "Language",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "workflow": "Workflow",
+      "about": "About",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "badge": "Creative Digital Agency",
+    "title": "We Build Digital Excellence",
+    "description": "Transform your vision into reality with cutting-edge design and development solutions",
+    "primaryCta": "Get Started",
+    "secondaryCta": "Our Services"
+  },
+  "services": {
+    "title": "Why Choose Us",
+    "description": "We deliver exceptional results through innovative solutions",
+    "valueProps": {
+      "expertTeam": {
+        "title": "Expert Team",
+        "description": "Seasoned professionals with years of industry experience"
+      },
+      "qualityFocused": {
+        "title": "Quality Focused",
+        "description": "We never compromise on the quality of our deliverables"
+      },
+      "onTimeDelivery": {
+        "title": "On-Time Delivery",
+        "description": "Meeting deadlines is our commitment to your success"
+      }
+    }
+  },
+  "workflow": {
+    "title": "Featured Projects",
+    "description": "Explore our latest work and success stories",
+    "cta": "Start Your Project",
+    "categories": {
+      "defaultMobile": "Mobile Development",
+      "defaultWeb": "Web Development",
+      "cureforu": "Mobile Development",
+      "maahdhaa": "Web Development",
+      "nalaPrep": "Education Platform",
+      "savora": "Hospitality Tech",
+      "strike": "FinTech Platform"
+    }
+  },
+  "testimonials": {
+    "title": "Clients Testimonials"
+  },
+  "footer": {
+    "description": "Creative solutions for modern businesses",
+    "sections": {
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "quickLinks": {
+      "home": "Home",
+      "services": "Services",
+      "workflow": "Workflow",
+      "about": "About"
+    },
+    "serviceLinks": {
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "uiUxServices": "UI/UX Services",
+      "customSolutions": "Custom Software Services"
+    },
+    "contact": {
+      "email": "contact@murphyrepos.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Creative Street, Design City"
+    },
+    "copyright": "Murphy Repos. All rights reserved."
+  },
+  "contactForm": {
+    "pretitle": "Say Hello",
+    "title": "Contact Us",
+    "placeholders": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message"
+    },
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "toasts": {
+      "errorTitle": "Aww Snap!",
+      "errorDescription": "Looks like we are having some trouble. Please try again later."
+    },
+    "validation": {
+      "invalidName": "Please enter a valid name",
+      "nameMin": "Name should be at least 2 characters",
+      "nameMax": "Name should be at most 50 characters",
+      "emailRequired": "Please enter your email address",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPhone": "Please enter a valid number",
+      "phoneRegex": "Please enter a valid phone",
+      "messageRequired": "Please enter a message"
+    }
+  },
+  "portfolioCard": {
+    "descriptionLabel": "Description",
+    "roleLabel": "Role",
+    "technologiesLabel": "Technologies",
+    "imageAlt": "Portfolio demo"
+  }
+}

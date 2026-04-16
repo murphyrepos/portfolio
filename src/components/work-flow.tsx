@@ -1,23 +1,30 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Skeleton } from '@/components/ui/skeleton';
 import { details } from '@/utils/constants/portfolio.content';
 
-const categoryByProjectTitle: Record<string, string> = {
-  Cureforu: 'Mobile Development',
-  Maahdhaa: 'Web Development',
-  'Nala Prep': 'Education Platform',
-  Savora: 'Hospitality Tech',
-  Strike: 'FinTech Platform',
+const categoryByProjectTitleKey: Record<string, string> = {
+  Cureforu: 'workflow.categories.cureforu',
+  Maahdhaa: 'workflow.categories.maahdhaa',
+  'Nala Prep': 'workflow.categories.nalaPrep',
+  Savora: 'workflow.categories.savora',
+  Strike: 'workflow.categories.strike',
 };
 
 const WorkFlow = () => {
+  const { t } = useTranslation('common');
+
   const featuredProjects = details.slice(0, 4).map((projectItem) => ({
     title: projectItem.title,
-    category:
-      categoryByProjectTitle[projectItem.title] ??
-      (projectItem.isMobile ? 'Mobile Development' : 'Web Development'),
+    category: categoryByProjectTitleKey[projectItem.title]
+      ? t(categoryByProjectTitleKey[projectItem.title])
+      : projectItem.isMobile
+        ? t('workflow.categories.defaultMobile')
+        : t('workflow.categories.defaultWeb'),
   }));
 
   return (
@@ -27,10 +34,10 @@ const WorkFlow = () => {
       <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
         <div className='mx-auto max-w-4xl text-center'>
           <h2 className='text-4xl font-bold leading-tight text-slate-900 lg:text-5xl'>
-            Featured Projects
+            {t('workflow.title')}
           </h2>
           <p className='mt-5 text-balance text-xl text-slate-600'>
-            Explore our latest work and success stories
+            {t('workflow.description')}
           </p>
         </div>
 
@@ -59,7 +66,7 @@ const WorkFlow = () => {
             href='/#contact'
             className='inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
           >
-            Start Your Project
+            {t('workflow.cta')}
             <ArrowRight size={22} />
           </Link>
         </div>

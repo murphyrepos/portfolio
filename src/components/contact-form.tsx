@@ -12,9 +12,14 @@ import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from './ui/button';
 import { LoaderIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import type { TFunction } from 'i18next';
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { t } = useTranslation('common');
+
+  const contactFormSchema = React.useMemo(() => createContactFormSchema(t), [t]);
 
   const contactForm = useForm<Contact>({
     resolver: zodResolver(contactFormSchema),
@@ -32,15 +37,13 @@ const ContactForm = () => {
         },
       });
       toast({
-        title: 'Aww Snap!',
-        description:
-          'Looks like we are having some trouble. Please try again later.',
+        title: t('contactForm.toasts.errorTitle'),
+        description: t('contactForm.toasts.errorDescription'),
       });
     } catch {
       toast({
-        title: 'Aww Snap!',
-        description:
-          'Looks like we are having some trouble. Please try again later.',
+        title: t('contactForm.toasts.errorTitle'),
+        description: t('contactForm.toasts.errorDescription'),
       });
     }
   }
@@ -54,9 +57,11 @@ const ContactForm = () => {
   }
   return (
     <Card className='w-[90%] flex-col items-center justify-center rounded-2xl bg-white px-5 py-6 lg:absolute lg:-top-80 lg:!max-w-md'>
-      <p className='my-1 text-center text-xl text-primary'>Say Hello</p>
+      <p className='my-1 text-center text-xl text-primary'>
+        {t('contactForm.pretitle')}
+      </p>
       <p className='text-neutral-foreground my-1 text-center text-2xl'>
-        Contact Us
+        {t('contactForm.title')}
       </p>
       <Form {...contactForm}>
         <form
@@ -74,7 +79,7 @@ const ContactForm = () => {
                     className={cn(
                       'h-14 w-full border-none bg-neutral-100 outline-none ring-0 focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0'
                     )}
-                    placeholder='Full Name'
+                    placeholder={t('contactForm.placeholders.fullName')}
                     {...field}
                   />
                 </FormControl>
@@ -93,7 +98,7 @@ const ContactForm = () => {
                     className={cn(
                       'h-12 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0'
                     )}
-                    placeholder='Email'
+                    placeholder={t('contactForm.placeholders.email')}
                     {...field}
                   />
                 </FormControl>
@@ -112,7 +117,7 @@ const ContactForm = () => {
                     className={cn(
                       'h-14 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0'
                     )}
-                    placeholder='Phone'
+                    placeholder={t('contactForm.placeholders.phone')}
                     {...field}
                   />
                 </FormControl>
@@ -128,7 +133,7 @@ const ContactForm = () => {
               <FormItem className='w-full'>
                 <FormControl>
                   <Textarea
-                    placeholder='Message'
+                    placeholder={t('contactForm.placeholders.message')}
                     className={cn(
                       'min-h-28 w-full border-none bg-neutral-100 outline-none focus:border-transparent focus:outline-none focus:ring-0 focus-visible:outline-0 focus-visible:ring-0 focus-visible:ring-offset-0'
                     )}
@@ -145,9 +150,12 @@ const ContactForm = () => {
             disabled={contactForm.formState.isSubmitting}
           >
             {contactForm.formState.isSubmitting ? (
-              <LoaderIcon className='mr-2 animate-spin' />
+              <>
+                <LoaderIcon className='mr-2 animate-spin' />
+                {t('contactForm.submitting')}
+              </>
             ) : (
-              'Submit'
+              t('contactForm.submit')
             )}
           </Button>
         </form>
@@ -158,38 +166,35 @@ const ContactForm = () => {
 
 export default ContactForm;
 
-const contactFormSchema = z.object({
-  fullName: z
-    .string({
-      message: 'Please enter a valid name',
-    })
-    .min(2, {
-      message: 'Name should be at least 2 characters',
-    })
-    .max(50, {
-      message: 'Name should be at most 50 characters',
+const createContactFormSchema = (t: TFunction<'common'>) =>
+  z.object({
+    fullName: z
+      .string({
+        message: t('contactForm.validation.invalidName'),
+      })
+      .min(2, {
+        message: t('contactForm.validation.nameMin'),
+      })
+      .max(50, {
+        message: t('contactForm.validation.nameMax'),
+      }),
+    email: z
+      .string()
+      .min(1, {
+        message: t('contactForm.validation.emailRequired'),
+      })
+      .email({
+        message: t('contactForm.validation.invalidEmail'),
+      }),
+    number: z
+      .string({
+        message: t('contactForm.validation.invalidPhone'),
+      })
+      .regex(new RegExp('\\d{2,}'), t('contactForm.validation.phoneRegex'))
+      .optional(),
+    message: z.string({
+      message: t('contactForm.validation.messageRequired'),
     }),
-  email: z
-    .string()
-    .min(1, {
-      message: 'Please enter your email address',
-    })
-    .email({
-      message: 'Please enter a valid email address',
-    }),
-  number: z
-    .string({
-      message: 'Please enter a valid number',
-    })
-    .regex(new RegExp('\\d{2,}'), 'Please enter a valid phone')
-    .optional(),
-  message: z.string({
-    message: 'Please enter a message',
-  }),
-});
+  });
 
-// .regex(new RegExp('[d]{2,}'), 'Please enter valid phone')
-// example of regex for phone number validation
-// .regex(new RegExp('^[0-9]{10}$'), 'Please enter valid phone')
-// 0-9: any digit between 0 and 9
-type Contact = z.infer<typeof contactFormSchema>;
+type Contact = z.infer<ReturnType<typeof createContactFormSchema>>;
