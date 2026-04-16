@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import HeroSection from '@/components/hero-section';
-import Services from '@/components/services';
-import WorkFlow from '@/components/work-flow';
-import ClientTestimonial from '@/components/client-testimonial';
+import { redirect, RedirectType } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Murphy Repos',
@@ -21,13 +18,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
-  return (
-    <>
-      <HeroSection />
-      <Services />
-      <WorkFlow />
-      <ClientTestimonial />
-    </>
-  );
+// reroute to /home
+
+async function Page() {
+  redirect('/home', RedirectType.replace);
 }
+
+export default Page;

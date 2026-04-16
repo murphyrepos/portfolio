@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 html {
   --scroll-behavior: smooth !important;
@@ -36,7 +37,7 @@ html {
     --chart-5: oklch(0.7834 0.1261 58.75);
   }
 
-  dark {
+  .dark {
     --background: oklch(0.16 0.02 255);
     --foreground: oklch(0.95 0.01 255);
 
@@ -46,8 +47,8 @@ html {
     --popover: oklch(0.2 0.02 255);
     --popover-foreground: oklch(0.95 0.01 255);
 
-    --primary: oklch(0.7 0.15 255);
-    --primary-foreground: oklch(0.2 0.03 255);
+    --primary: oklch(0.546 0.2153 262.87);
+    --primary-foreground: oklch(0.9838 0.0035 247.86);
 
     --secondary: oklch(0.27 0.02 255);
     --secondary-foreground: oklch(0.93 0.01 255);
@@ -71,6 +72,45 @@ html {
     --chart-4: oklch(0.78 0.1 175);
     --chart-5: oklch(0.8 0.12 95);
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-100: color-mix(in oklch, var(--primary) 15%, white);
+  --color-primary-200: color-mix(in oklch, var(--primary) 30%, white);
+  --color-primary-300: color-mix(in oklch, var(--primary) 45%, white);
+  --color-primary-400: color-mix(in oklch, var(--primary) 65%, white);
+  --color-primary-500: var(--primary);
+  --color-primary-600: color-mix(in oklch, var(--primary) 85%, black);
+  --color-primary-700: color-mix(in oklch, var(--primary) 70%, black);
+  --color-primary-800: color-mix(in oklch, var(--primary) 55%, black);
+  --color-primary-900: color-mix(in oklch, var(--primary) 40%, black);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
 }
 
 @layer base {
