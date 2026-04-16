@@ -65,6 +65,81 @@
       }
     }
   },
+  "servicesPage": {
+    "hero": {
+      "title": "Our Services",
+      "description": "Comprehensive digital solutions tailored to your business needs"
+    },
+    "showcase": {
+      "items": {
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "Custom web applications built with modern frameworks and best practices for optimal performance and scalability.",
+          "points": [
+            "Responsive Design",
+            "Progressive Web Apps",
+            "API Integration",
+            "Performance Optimization"
+          ]
+        },
+        "uiUxDesign": {
+          "title": "UI/UX Design",
+          "description": "Beautiful, intuitive interfaces that enhance user experience and drive engagement across all platforms.",
+          "points": [
+            "User Research",
+            "Wireframing & Prototyping",
+            "Visual Design",
+            "Usability Testing"
+          ]
+        },
+        "mobileApps": {
+          "title": "Mobile Apps",
+          "description": "Native and cross-platform mobile applications that deliver exceptional experiences on iOS and Android.",
+          "points": [
+            "iOS Development",
+            "Android Development",
+            "Cross-Platform Solutions",
+            "App Store Optimization"
+          ]
+        },
+        "customSoftware": {
+          "title": "Custom Software",
+          "description": "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
+          "points": [
+            "Business Automation",
+            "System Integration",
+            "Cloud Solutions",
+            "Legacy Modernization"
+          ]
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategic marketing campaigns that increase visibility, drive traffic, and convert leads into customers.",
+          "points": [
+            "SEO & Content Strategy",
+            "Social Media Marketing",
+            "Email Campaigns",
+            "Analytics & Reporting"
+          ]
+        },
+        "brandStrategy": {
+          "title": "Brand Strategy",
+          "description": "Comprehensive brand development that establishes your unique identity and resonates with your target audience.",
+          "points": [
+            "Brand Identity",
+            "Logo Design",
+            "Brand Guidelines",
+            "Market Positioning"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Let's discuss how we can help bring your vision to life",
+      "button": "Get in Touch"
+    }
+  },
   "workflow": {
     "title": "Featured Projects",
     "description": "Explore our latest work and success stories",
