@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { services } from '@/utils/constants/services.content';
+import { Container } from './container';
 
 interface FooterProps {
   invertColors?: boolean;
@@ -30,28 +31,28 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
   const copyrightYear = new Date().getFullYear();
 
   return (
-    <footer id='footer' className='scroll-mt-28 bg-[#081531] py-16 text-white'>
-      <div id='contact' className='scroll-mt-28' />
-
-      <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
+    <footer
+      id='footer'
+      className='scroll-mt-28 bg-gray-900 py-12 text-slate-400'
+    >
+      <Container className='max-w-7x mx-auto w-full px-10'>
         <div className='grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4'>
-          <div>
-            <h3 className='text-4xl font-bold'>{t('navbar.brand')}</h3>
-            <p className='mt-4 max-w-sm text-xl text-slate-300'>
-              {t('footer.description')}
-            </p>
+          <div className='flex flex-col gap-2'>
+            <h3 className='text-xl font-bold text-slate-100'>
+              {t('navbar.brand')}
+            </h3>
+            <p className='max-w-sm text-slate-400'>{t('footer.description')}</p>
           </div>
-
-          <div>
-            <h4 className='text-3xl font-semibold'>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
               {t('footer.sections.quickLinks')}
             </h4>
-            <ul className='mt-4 space-y-3 text-xl text-slate-300'>
+            <ul className='space-y-2 text-lg text-slate-400'>
               {quickLinks.map((linkItem) => (
                 <li key={linkItem.href}>
                   <Link
                     href={linkItem.href}
-                    className='transition-colors hover:text-white'
+                    className='text-base transition-colors hover:text-white'
                   >
                     {linkItem.label}
                   </Link>
@@ -59,15 +60,16 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
               ))}
             </ul>
           </div>
-
-          <div>
-            <h4 className='text-3xl font-semibold'>{t('footer.sections.services')}</h4>
-            <ul className='mt-4 space-y-3 text-xl text-slate-300'>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
+              {t('footer.sections.services')}
+            </h4>
+            <ul className='space-y-2 text-lg text-slate-400'>
               {services.map((serviceItem) => (
                 <li key={serviceItem.url}>
                   <Link
                     href={serviceItem.url}
-                    className='transition-colors hover:text-white'
+                    className='text-base transition-colors hover:text-white'
                   >
                     {serviceLinkKeyByUrl[serviceItem.url]
                       ? t(serviceLinkKeyByUrl[serviceItem.url])
@@ -77,32 +79,33 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
               ))}
             </ul>
           </div>
-
-          <div>
-            <h4 className='text-3xl font-semibold'>{t('footer.sections.contact')}</h4>
-            <ul className='mt-4 space-y-4 text-xl text-slate-300'>
-              <li className='flex items-start gap-3'>
-                <Mail className='mt-1 h-6 w-6 shrink-0' />
-                <span>{t('footer.contact.email')}</span>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
+              {t('footer.sections.contact')}
+            </h4>
+            <ul className='space-y-2 text-lg text-slate-400'>
+              <li className='flex items-start gap-2'>
+                <Mail className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.email')}</span>
               </li>
-              <li className='flex items-start gap-3'>
-                <Phone className='mt-1 h-6 w-6 shrink-0' />
-                <span>{t('footer.contact.phone')}</span>
+              <li className='flex items-start gap-2'>
+                <Phone className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.phone')}</span>
               </li>
-              <li className='flex items-start gap-3'>
-                <MapPin className='mt-1 h-6 w-6 shrink-0' />
-                <span>{t('footer.contact.address')}</span>
+              <li className='flex items-start gap-2'>
+                <MapPin className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.address')}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className='mt-12 border-t border-slate-700 pt-8 text-center text-lg text-slate-300'>
+        <div className='mt-12 border-t border-slate-800 pt-8 text-center text-base text-slate-400'>
           <p>
             &copy; {copyrightYear} {t('footer.copyright')}
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

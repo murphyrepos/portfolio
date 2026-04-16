@@ -15,28 +15,53 @@
       "contact": "Contact"
     }
   },
-  "hero": {
-    "badge": "Creative Digital Agency",
-    "title": "We Build Digital Excellence",
-    "description": "Transform your vision into reality with cutting-edge design and development solutions",
-    "primaryCta": "Get Started",
-    "secondaryCta": "Our Services"
-  },
-  "services": {
-    "title": "Why Choose Us",
-    "description": "We deliver exceptional results through innovative solutions",
-    "valueProps": {
-      "expertTeam": {
-        "title": "Expert Team",
-        "description": "Seasoned professionals with years of industry experience"
-      },
-      "qualityFocused": {
-        "title": "Quality Focused",
-        "description": "We never compromise on the quality of our deliverables"
-      },
-      "onTimeDelivery": {
-        "title": "On-Time Delivery",
-        "description": "Meeting deadlines is our commitment to your success"
+  "home": {
+    "hero": {
+      "badge": "Creative Digital Agency",
+      "title": "We Build Digital Excellence",
+      "description": "Transform your vision into reality with cutting-edge design and development solutions",
+      "primaryCta": "Get Started",
+      "secondaryCta": "Our Services"
+    },
+    "services": {
+      "title": "Why Choose Us",
+      "description": "We deliver exceptional results through innovative solutions",
+      "valueProps": {
+        "expertTeam": {
+          "title": "Expert Team",
+          "description": "Seasoned professionals with years of industry experience"
+        },
+        "qualityFocused": {
+          "title": "Quality Focused",
+          "description": "We never compromise on the quality of our deliverables"
+        },
+        "onTimeDelivery": {
+          "title": "On-Time Delivery",
+          "description": "Meeting deadlines is our commitment to your success"
+        }
+      }
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "description": "Explore our latest work and success stories",
+      "cta": "Start Your Project",
+      "items": {
+        "cureforu": {
+          "title": "Cureforu",
+          "category": "Healthcare Platform"
+        },
+        "nalaPrep": {
+          "title": "Nala Prep",
+          "category": "Education Platform"
+        },
+        "savora": {
+          "title": "Savora",
+          "category": "Restaurant System"
+        },
+        "strike": {
+          "title": "Strike",
+          "category": "Crypto Product"
+        }
       }
     }
   },

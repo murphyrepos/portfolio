@@ -10,7 +10,7 @@ import { Container } from '@/components/container';
 import { Badge } from '@/components/ui/badge';
 
 const HeroSection = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('common', { keyPrefix: 'home.hero' });
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -21,7 +21,7 @@ const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
 
   return (
-    <Container className='min-w-full from-blue-50 via-white to-gray-50'>
+    <Container className='max-w-none min-w-full bg-linear-to-br from-blue-100 via-white to-gray-50 px-0 py-16'>
       <motion.section
         ref={heroRef}
         style={{ opacity, scale }}
@@ -37,26 +37,26 @@ const HeroSection = () => {
             <Badge className='bg-primary-100 flex max-w-max justify-center gap-2 px-4 py-2'>
               <Sparkles size={16} className='text-primary' />
               <span className='text-primary text-base font-normal'>
-                {t('hero.badge')}
+                {t('badge')}
               </span>
             </Badge>
             <h1 className='max-w-xl text-5xl leading-[1.05] font-bold text-balance text-gray-900 lg:text-7xl'>
-              {t('hero.title')}
+              {t('title')}
             </h1>
-            <p className='text-xl text-gray-600'>{t('hero.description')}</p>
+            <p className='text-xl text-gray-600'>{t('description')}</p>
             <Container className='flex flex-wrap justify-start gap-4 p-0'>
               <Link
                 href='/#contact'
                 className='hover:bg-primary/70 bg-primary inline-flex items-center gap-2 rounded-xl px-4 py-2 text-white transition-colors'
               >
-                {t('hero.primaryCta')}
+                {t('primaryCta')}
                 <ArrowRight size={18} />
               </Link>
               <Link
                 href='/services'
                 className='inline-flex items-center rounded-xl border border-gray-200 bg-white px-4 py-2 text-gray-800 transition-colors hover:border-gray-300'
               >
-                {t('hero.secondaryCta')}
+                {t('secondaryCta')}
               </Link>
             </Container>
           </motion.div>
@@ -66,7 +66,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className='relative'
           >
-            <Skeleton className='h-[420px] w-full rounded-[2rem] bg-gradient-to-br from-slate-300 via-slate-200 to-slate-300 md:h-[620px]' />
+            <Skeleton className='h-105 w-full rounded-4xl bg-linear-to-br from-slate-300 via-slate-200 to-slate-300 md:h-[620px]' />
           </motion.div>
         </Container>
       </motion.section>
