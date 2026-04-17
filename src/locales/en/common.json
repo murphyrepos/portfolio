@@ -257,6 +257,92 @@
       ]
     }
   },
+  "reviewsPage": {
+    "meta": {
+      "title": "Reviews",
+      "description": "Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.",
+      "openGraphTitle": "Murphy Repos | Reviews"
+    },
+    "hero": {
+      "title": "Client Reviews",
+      "description": "Don't just take our word for it - hear what our clients have to say about working with us"
+    },
+    "stats": {
+      "items": [
+        {
+          "number": "4.9",
+          "suffix": "/5",
+          "label": "Average Rating"
+        },
+        {
+          "number": "98",
+          "suffix": "%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "number": "150",
+          "suffix": "+",
+          "label": "5-Star Reviews"
+        },
+        {
+          "number": "95",
+          "suffix": "%",
+          "label": "Return Clients"
+        }
+      ]
+    },
+    "grid": {
+      "items": [
+        {
+          "name": "Jennifer Martinez",
+          "role": "CEO, TechStart Inc.",
+          "review": "Working with this agency was an absolute pleasure. They transformed our outdated website into a modern, high-performing platform that has significantly increased our conversion rates. The team was professional, responsive, and truly understood our vision.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Robert Chen",
+          "role": "Founder, GrowthLab",
+          "review": "Exceptional service from start to finish. The team delivered our mobile app ahead of schedule and exceeded all expectations. Their attention to detail and commitment to quality is unmatched. Highly recommend!",
+          "rating": 5,
+          "highlighted": true
+        },
+        {
+          "name": "Amanda Thompson",
+          "role": "Marketing Director, BrightFuture",
+          "review": "We've worked with several agencies before, but none compare to the level of expertise and creativity this team brings. They not only met our requirements but also suggested improvements that made our project even better.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "David Kumar",
+          "role": "Product Manager, InnovateCo",
+          "review": "The entire process was smooth and transparent. Regular updates, clear communication, and a genuine interest in our success made this collaboration outstanding. The final product speaks for itself - it's exactly what we needed.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Sarah Williams",
+          "role": "Owner, Artisan Boutique",
+          "review": "As a small business owner, I was nervous about investing in a new website. The team made the entire experience easy and stress-free. They explained everything clearly and delivered a beautiful site that my customers love.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Michael Brown",
+          "role": "CTO, DataFlow Systems",
+          "review": "Impressive technical expertise combined with creative design thinking. They helped us modernize our entire digital infrastructure and the results have been phenomenal. Our team productivity has increased by 40%.",
+          "rating": 5,
+          "highlighted": true
+        }
+      ]
+    },
+    "cta": {
+      "title": "Join Our Happy Clients",
+      "description": "Experience the difference that quality, dedication, and expertise can make for your business",
+      "button": "Start Your Project"
+    }
+  },
   "workflow": {
     "title": "Our Workflow",
     "description": "A proven process that delivers exceptional results every time",
