@@ -102,7 +102,7 @@ const NavigationBar = () => {
             alt={t('navbar.brand')}
             width={180}
             height={48}
-            className='mx-auto h-12 w-full object-contain'
+            className='mx-auto h-12 w-auto object-contain'
             priority
           />
         </Link>
@@ -158,7 +158,7 @@ const NavigationBar = () => {
                   alt={t('navbar.brand')}
                   width={180}
                   height={48}
-                  className='mx-auto h-12 w-full object-contain'
+                  className='mx-auto h-12 w-auto object-contain'
                   priority
                 />
               </Link>

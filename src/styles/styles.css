@@ -3,11 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-html {
-  --scroll-behavior: smooth !important;
-  scroll-behavior: smooth !important;
-}
-
 @layer base {
   :root {
     --background: oklch(1 0 0);

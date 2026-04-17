@@ -1,5 +1,6 @@
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTypeScript from 'eslint-config-next/typescript';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 const config = [
   ...nextVitals,
@@ -11,6 +12,9 @@ const config = [
         project: true,
       },
     },
+    plugins: {
+      'unused-imports': unusedImports,
+    },
     rules: {
       '@typescript-eslint/array-type': [
         'error',
@@ -18,7 +22,18 @@ const config = [
           default: 'array-simple',
         },
       ],
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
+        {
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
       '@typescript-eslint/no-misused-promises': [
         'error',
         {
@@ -34,6 +49,8 @@ const config = [
     files: ['src/components/ui/**/*.{ts,tsx}'],
     rules: {
       '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'off',
+      'unused-imports/no-unused-vars': 'off',
       '@typescript-eslint/no-misused-promises': 'off',
       '@typescript-eslint/consistent-type-definitions': 'off',
       '@typescript-eslint/no-empty-interface': 'off',

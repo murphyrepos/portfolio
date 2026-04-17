@@ -33,7 +33,7 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
   return (
     <footer
       id='footer'
-      className='scroll-mt-28 bg-gray-900 py-12 text-slate-400'
+      className='scroll-mt-28 bg-gray-900 pt-12 text-slate-400'
     >
       <Container className='max-w-7x mx-auto w-full px-10'>
         <div className='grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4'>
@@ -99,8 +99,7 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
             </ul>
           </div>
         </div>
-
-        <div className='mt-12 border-t border-slate-800 pt-8 text-center text-base text-slate-400'>
+        <div className='mt-12 border-t border-slate-800 py-4 text-center text-base text-slate-400'>
           <p>
             &copy; {copyrightYear} {t('footer.copyright')}
           </p>

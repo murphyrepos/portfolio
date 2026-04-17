@@ -141,9 +141,14 @@
     }
   },
   "workflow": {
-    "title": "Featured Projects",
-    "description": "Explore our latest work and success stories",
+    "title": "Our Workflow",
+    "description": "A proven process that delivers exceptional results every time",
     "cta": "Start Your Project",
+    "meta": {
+      "title": "Workflow",
+      "description": "A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.",
+      "openGraphTitle": "Murphy Repos | Workflow"
+    },
     "categories": {
       "defaultMobile": "Mobile Development",
       "defaultWeb": "Web Development",
@@ -152,6 +157,83 @@
       "nalaPrep": "Education Platform",
       "savora": "Hospitality Tech",
       "strike": "FinTech Platform"
+    },
+    "chart": {
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We start by understanding your business, goals, and target audience through comprehensive research and analysis.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Stakeholder interviews",
+            "Market analysis",
+            "Competitor research",
+            "Requirements gathering"
+          ]
+        },
+        "strategy": {
+          "title": "Strategy & Planning",
+          "description": "Develop a detailed roadmap and strategy aligned with your objectives, including timelines and deliverables.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Project planning",
+            "Technical architecture",
+            "Design system creation",
+            "Timeline development"
+          ]
+        },
+        "designDevelopment": {
+          "title": "Design & Development",
+          "description": "Our team brings your vision to life with stunning designs and robust development using cutting-edge technologies.",
+          "duration": "4-8 weeks",
+          "tasks": [
+            "UI/UX design",
+            "Prototype creation",
+            "Frontend development",
+            "Backend integration"
+          ]
+        },
+        "testingRefinement": {
+          "title": "Testing & Refinement",
+          "description": "Rigorous quality assurance and testing to ensure everything works flawlessly across all devices and browsers.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Quality assurance",
+            "User testing",
+            "Performance optimization",
+            "Bug fixes"
+          ]
+        },
+        "launchSupport": {
+          "title": "Launch & Support",
+          "description": "Successful deployment and ongoing support to ensure your project continues to perform at its best.",
+          "duration": "Ongoing",
+          "tasks": [
+            "Deployment",
+            "Training & documentation",
+            "Monitoring",
+            "Continuous support"
+          ]
+        }
+      }
+    },
+    "values": {
+      "title": "Transparent & Collaborative",
+      "description": "We believe in keeping you informed every step of the way. Regular updates, open communication, and your feedback drive our process.",
+      "items": {
+        "transparency": {
+          "value": "100%",
+          "label": "Transparency"
+        },
+        "communication": {
+          "value": "24/7",
+          "label": "Communication"
+        },
+        "responseTime": {
+          "value": "<48h",
+          "label": "Response Time"
+        }
+      }
     }
   },
   "testimonials": {
