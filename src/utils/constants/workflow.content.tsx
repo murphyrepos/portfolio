@@ -1,4 +1,4 @@
-import { IconProps } from '@/components/type';
+import type { ComponentProps, FC } from 'react';
 import {
   BrainCog,
   ChartCandlestick,
@@ -6,10 +6,12 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 
+type IconProps = ComponentProps<'svg'>;
+
 interface WorkFlow {
   title: string;
   description: string;
-  Icon: React.FC<IconProps>;
+  Icon: FC<IconProps>;
 }
 export const workflow: WorkFlow[] = [
   {
