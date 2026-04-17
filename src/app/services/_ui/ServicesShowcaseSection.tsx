@@ -57,12 +57,12 @@ const servicesShowcase: ServicesShowcaseItem[] = [
   },
   {
     key: 'digitalMarketing',
-    href: '/home#contact',
+    href: '/contact',
     Icon: ChartCandlestick,
   },
   {
     key: 'brandStrategy',
-    href: '/home#contact',
+    href: '/contact',
     Icon: Target,
   },
 ];

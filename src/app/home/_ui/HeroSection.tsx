@@ -46,7 +46,7 @@ const HeroSection = () => {
             <p className='text-xl text-gray-600'>{t('description')}</p>
             <Container className='flex flex-wrap justify-start gap-4 p-0'>
               <Link
-                href='/#contact'
+                href='/contact'
                 className='hover:bg-primary/70 bg-primary inline-flex items-center gap-2 rounded-xl px-4 py-2 text-white transition-colors'
               >
                 {t('primaryCta')}

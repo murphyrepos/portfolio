@@ -65,5 +65,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1,
     },
+    {
+      url: `${PRODUCTION_URL}/contact`,
+      lastModified,
+      changeFrequency: 'daily',
+      priority: 1,
+    },
   ];
 }

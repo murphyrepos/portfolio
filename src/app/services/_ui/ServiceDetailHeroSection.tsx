@@ -28,7 +28,7 @@ const ServiceDetailHeroSection = ({
 
           <div className='mt-8 flex items-center justify-center'>
             <Link
-              href='/home#contact'
+              href='/contact'
               className='bg-primary hover:bg-primary/90 inline-flex items-center justify-center rounded-xl px-8 py-3 text-lg font-semibold text-white transition-colors'
             >
               Get in Touch

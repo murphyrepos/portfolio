@@ -29,7 +29,7 @@ const navLinks = [
   { href: '/workflow', labelKey: 'navbar.links.workflow' },
   { href: '/about', labelKey: 'navbar.links.about' },
   { href: '/reviews', labelKey: 'navbar.links.reviews' },
-  { href: '/home#contact', labelKey: 'navbar.links.contact' },
+  { href: '/contact', labelKey: 'navbar.links.contact' },
 ] as const;
 
 const NavigationBar = () => {

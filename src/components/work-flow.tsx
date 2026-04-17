@@ -33,10 +33,10 @@ const WorkFlow = () => {
 
       <div className='mx-auto w-full max-w-[1240px] px-6 lg:px-8'>
         <div className='mx-auto max-w-4xl text-center'>
-          <h2 className='text-4xl font-bold leading-tight text-slate-900 lg:text-5xl'>
+          <h2 className='text-4xl leading-tight font-bold text-slate-900 lg:text-5xl'>
             {t('workflow.title')}
           </h2>
-          <p className='mt-5 text-balance text-xl text-slate-600'>
+          <p className='mt-5 text-xl text-balance text-slate-600'>
             {t('workflow.description')}
           </p>
         </div>
@@ -53,7 +53,7 @@ const WorkFlow = () => {
                 <p className='text-base font-medium text-blue-300'>
                   {projectItem.category}
                 </p>
-                <h3 className='mt-1 text-2xl font-bold leading-tight text-white md:text-4xl'>
+                <h3 className='mt-1 text-2xl leading-tight font-bold text-white md:text-4xl'>
                   {projectItem.title}
                 </h3>
               </div>
@@ -63,8 +63,8 @@ const WorkFlow = () => {
 
         <div className='mt-12 text-center'>
           <Link
-            href='/#contact'
-            className='inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
+            href='/contact'
+            className='bg-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
           >
             {t('workflow.cta')}
             <ArrowRight size={22} />

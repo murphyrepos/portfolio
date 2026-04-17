@@ -343,6 +343,87 @@
       "button": "Start Your Project"
     }
   },
+  "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "Reach out to Murphy Repos to discuss your project, get a proposal, or ask questions about our digital services.",
+      "openGraphTitle": "Murphy Repos | Contact"
+    },
+    "hero": {
+      "title": "Get in Touch",
+      "description": "Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    "form": {
+      "title": "Send us a message",
+      "labels": {
+        "fullName": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "number": "Phone",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Your name",
+        "email": "your.email@example.com",
+        "subject": "What can we help you with?",
+        "number": "+1 (555) 123-4567",
+        "message": "Tell us about your project..."
+      },
+      "submit": "Send Message",
+      "submitting": "Sending message...",
+      "toasts": {
+        "successTitle": "Message sent",
+        "successDescription": "Thanks for reaching out. We'll get back to you shortly.",
+        "errorTitle": "Something went wrong",
+        "errorDescription": "Looks like we are having some trouble. Please try again later."
+      },
+      "validation": {
+        "invalidName": "Please enter a valid name",
+        "nameMin": "Name should be at least 2 characters",
+        "nameMax": "Name should be at most 50 characters",
+        "emailRequired": "Please enter your email address",
+        "invalidEmail": "Please enter a valid email address",
+        "subjectRequired": "Please enter a subject",
+        "subjectMin": "Subject should be at least 2 characters",
+        "subjectMax": "Subject should be at most 120 characters",
+        "invalidPhone": "Please enter a valid number",
+        "phoneRegex": "Please enter a valid phone",
+        "messageRequired": "Please enter a message",
+        "messageMin": "Message should be at least 10 characters"
+      }
+    },
+    "information": {
+      "title": "Contact Information",
+      "description": "Feel free to reach out through any of these channels. We're here to help!",
+      "channels": [
+        {
+          "key": "email",
+          "label": "Email",
+          "value": "contact@murphyrepos.com"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "value": "+1 (555) 123-4567"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "value": "123 Creative Street, Design City, DC 12345"
+        }
+      ]
+    },
+    "officeHours": {
+      "title": "Office Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 4:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "cta": {
+      "title": "Let's Build Something Great Together",
+      "description": "Whether you have a clear vision or just an idea, we're here to help turn it into reality. Reach out today and let's start the conversation."
+    }
+  },
   "workflow": {
     "title": "Our Workflow",
     "description": "A proven process that delivers exceptional results every time",
@@ -467,32 +548,6 @@
       "address": "123 Creative Street, Design City"
     },
     "copyright": "Murphy Repos. All rights reserved."
-  },
-  "contactForm": {
-    "pretitle": "Say Hello",
-    "title": "Contact Us",
-    "placeholders": {
-      "fullName": "Full Name",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message"
-    },
-    "submit": "Submit",
-    "submitting": "Submitting...",
-    "toasts": {
-      "errorTitle": "Aww Snap!",
-      "errorDescription": "Looks like we are having some trouble. Please try again later."
-    },
-    "validation": {
-      "invalidName": "Please enter a valid name",
-      "nameMin": "Name should be at least 2 characters",
-      "nameMax": "Name should be at most 50 characters",
-      "emailRequired": "Please enter your email address",
-      "invalidEmail": "Please enter a valid email address",
-      "invalidPhone": "Please enter a valid number",
-      "phoneRegex": "Please enter a valid phone",
-      "messageRequired": "Please enter a message"
-    }
   },
   "portfolioCard": {
     "descriptionLabel": "Description",

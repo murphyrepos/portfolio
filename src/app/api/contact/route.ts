@@ -6,7 +6,8 @@ interface ContactRequest {
   email: string;
   fullName: string;
   message: string;
-  number: string;
+  number?: string;
+  subject: string;
 }
 const transport = nodemailer.createTransport({
   service: 'gmail',
@@ -17,13 +18,25 @@ const transport = nodemailer.createTransport({
 });
 
 export async function POST(request: Request) {
-  const { email, fullName, message } = (await request.json()) as ContactRequest;
+  const { email, fullName, message, number, subject } =
+    (await request.json()) as ContactRequest;
+
+  const composedMessage = [
+    `Name: ${fullName}`,
+    `Email: ${email}`,
+    `Subject: ${subject}`,
+    number ? `Phone: ${number}` : '',
+    '',
+    message,
+  ]
+    .filter(Boolean)
+    .join('\n');
 
   const mailOptions: Mail.Options = {
     from: process.env.NEXT_PUBLIC_EMAIL,
     to: 'muhammad.hamza@murphyrepos.com',
-    subject: `Message from ${fullName} (${email})`,
-    html: getTemplate({ email, content: message }),
+    subject: `Contact Form: ${subject} - ${fullName} (${email})`,
+    html: getTemplate({ email, content: composedMessage }),
   };
 
   const sendMailPromise = () =>
@@ -50,7 +63,6 @@ export async function GET() {
 }
 
 function getTemplate({ email, content }: { email: string; content: string }) {
-  console.log(email, content);
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
   xmlns="http://www.w3.org/1999/xhtml"

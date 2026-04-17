@@ -77,7 +77,7 @@ const Projects = () => {
           className='mt-12 text-center'
         >
           <Link
-            href='/#contact'
+            href='/contact'
             className='group bg-primary-500 hover:bg-primary-600 inline-flex items-center gap-2 rounded-xl px-8 py-4 text-white transition-colors'
           >
             {t('cta')}

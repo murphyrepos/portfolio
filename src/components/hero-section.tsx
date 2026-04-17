@@ -11,29 +11,29 @@ const HeroSection = () => {
   return (
     <section
       id='home'
-      className='relative overflow-hidden bg-slate-100 pb-16 pt-28 lg:pb-20'
+      className='relative overflow-hidden bg-slate-100 pt-28 pb-16 lg:pb-20'
     >
       <div className='absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-100 to-slate-50' />
 
       <div className='relative z-10 mx-auto grid w-full max-w-[1240px] items-center gap-12 px-6 lg:grid-cols-2 lg:gap-14 lg:px-8'>
         <div className='space-y-8'>
-          <div className='inline-flex items-center gap-2 rounded-full bg-blue-100 px-5 py-2 text-base font-medium text-primary'>
+          <div className='text-primary inline-flex items-center gap-2 rounded-full bg-blue-100 px-5 py-2 text-base font-medium'>
             <Sparkles size={18} />
             <span>{t('hero.badge')}</span>
           </div>
 
-          <h1 className='max-w-xl text-balance text-5xl font-bold leading-[1.05] text-slate-900 lg:text-7xl'>
+          <h1 className='max-w-xl text-5xl leading-[1.05] font-bold text-balance text-slate-900 lg:text-7xl'>
             {t('hero.title')}
           </h1>
 
-          <p className='max-w-xl text-balance text-xl text-slate-600'>
+          <p className='max-w-xl text-xl text-balance text-slate-600'>
             {t('hero.description')}
           </p>
 
           <div className='flex flex-wrap items-center gap-4'>
             <Link
-              href='/#contact'
-              className='inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
+              href='/contact'
+              className='bg-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-lg font-semibold text-white transition-colors hover:bg-blue-600'
             >
               {t('hero.primaryCta')}
               <ArrowRight size={22} />
