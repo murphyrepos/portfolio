@@ -61,7 +61,7 @@ function Workflow() {
   }) as WorkflowChartSteps;
 
   return (
-    <section className='py-20 lg:py-24'>
+    <section className='py-24'>
       <Container className='max-w-7xl px-6 lg:px-12'>
         <Container className='relative'>
           <motion.div
@@ -71,9 +71,17 @@ function Workflow() {
             whileInView={shouldReduceMotion ? undefined : 'visible'}
             viewport={{ once: true, amount: 0.15 }}
           >
-            <div
+            <motion.div
               aria-hidden
-              className='absolute top-0 bottom-0 left-11 hidden w-0.5 bg-linear-to-b from-blue-500 via-blue-400 to-blue-300 md:block'
+              className='absolute top-0 -bottom-12 left-11 hidden w-0.5 bg-linear-to-b from-blue-500 via-blue-400 to-blue-300 md:block'
+              initial={shouldReduceMotion ? false : { opacity: 0 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={
+                shouldReduceMotion
+                  ? undefined
+                  : { duration: 0.8, ease: 'easeIn' }
+              }
             />
             {workflowStepConfig.map(({ key, Icon }, index) => {
               const step = workflowSteps[key];
@@ -129,7 +137,6 @@ function WorkflowStepItem({
             </div>
           </div>
         </div>
-
         <div className='flex-1'>
           <div className='mb-2 flex flex-wrap items-start justify-between gap-2'>
             <h2 className='text-xl leading-tight font-bold text-gray-900 lg:text-3xl'>
@@ -139,7 +146,9 @@ function WorkflowStepItem({
               {duration}
             </Badge>
           </div>
-          <p className='text-balance text-gray-600'>{description}</p>
+          <p className='mt-4 text-base leading-relaxed text-gray-600'>
+            {description}
+          </p>
           <ul className='mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2'>
             {tasks.map((task, taskIndex) => (
               <li

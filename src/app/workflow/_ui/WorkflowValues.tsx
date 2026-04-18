@@ -48,10 +48,10 @@ function WorkflowValues() {
           viewport={{ once: true, amount: 0.2 }}
           transition={shouldReduceMotion ? undefined : { duration: 0.5 }}
         >
-          <h3 className='text-4xl leading-[1.05] font-bold text-balance text-gray-900'>
+          <h3 className='text-4xl leading-tight font-bold text-gray-900 lg:text-5xl'>
             {t('title')}
           </h3>
-          <p className='mx-auto mt-5 max-w-3xl text-lg text-gray-600'>
+          <p className='mx-auto mt-4 max-w-3xl text-xl text-gray-600 lg:text-xl'>
             {t('description')}
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ function WorkflowValues() {
                     shouldReduceMotion ? undefined : { y: -6, scale: 1.01 }
                   }
                 >
-                  <Card className='mx-auto flex h-full flex-col items-center justify-center gap-3 border-none px-18 py-6 text-center shadow-sm'>
+                  <Card className='ou mx-auto flex h-full flex-col items-center justify-center gap-3 rounded-xl border px-18 py-6 text-center shadow-sm'>
                     <h3 className='text-primary text-3xl font-bold'>
                       {valueItem.value}
                     </h3>

@@ -143,7 +143,7 @@ const ServiceCard = ({ item }: { item: ServicesShowcaseItem }) => {
       }
     >
       <Card className='hover:border-primary h-full rounded-2xl border border-gray-200 p-8 shadow-none transition-colors hover:shadow-lg'>
-        <div className='bg-primary mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl text-white'>
+        <div className='bg-primary mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl text-white'>
           <item.Icon className='h-8 w-8 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6' />
         </div>
         <h2 className='text-2xl font-bold text-gray-900'>
