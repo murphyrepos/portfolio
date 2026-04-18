@@ -1,6 +1,9 @@
 import '@/styles/styles.css';
 import Layout from '@/components/layout';
 import type { Metadata } from 'next';
+import { Space_Grotesk } from 'next/font/google';
+
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://murphyrepos.com'),
@@ -14,7 +17,9 @@ export const metadata: Metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <Layout>{children}</Layout>
+      <body className={spaceGrotesk.className}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
