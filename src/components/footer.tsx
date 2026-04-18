@@ -1,67 +1,111 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+'use client';
 
-import ContactForm from './contact-form';
-import { cn } from '@/lib/utils';
+import React from 'react';
+import Link from 'next/link';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { services } from '@/utils/constants/services.content';
+import { Container } from './container';
 
 interface FooterProps {
   invertColors?: boolean;
 }
-const Footer = ({ invertColors }: FooterProps) => {
+
+const serviceLinkKeyByUrl: Record<string, string> = {
+  '/services/web-development': 'footer.serviceLinks.webDevelopment',
+  '/services/mobile-development': 'footer.serviceLinks.mobileDevelopment',
+  '/services/ui-ux-services': 'footer.serviceLinks.uiUxServices',
+  '/services/custom-solutions': 'footer.serviceLinks.customSolutions',
+};
+
+const Footer = ({ invertColors: _invertColors }: FooterProps) => {
+  const { t } = useTranslation('common');
+
+  const quickLinks = [
+    { href: '/', label: t('footer.quickLinks.home') },
+    { href: '/services', label: t('footer.quickLinks.services') },
+    { href: '/workflow', label: t('footer.quickLinks.workflow') },
+    { href: '/about', label: t('footer.quickLinks.about') },
+  ];
+
+  const copyrightYear = new Date().getFullYear();
+
   return (
-    <div
-      className={cn(
-        'mb-0 mt-10 flex w-full flex-col items-center justify-center bg-neutral-100 py-16',
-        invertColors && 'bg-white'
-      )}
+    <footer
       id='footer'
+      className='scroll-mt-28 bg-gray-900 pt-12 text-slate-400'
     >
-      <div className='mx-auto flex h-full w-[90%] max-w-7xl flex-col items-center justify-between md:flex-row lg:space-x-5'>
-        <div className='flex w-full flex-col items-start justify-center space-y-6 md:mx-5 md:w-1/2'>
-          <div className='flex w-full flex-col items-center justify-center space-y-6 md:w-[100%]'>
-            <p className='text-center text-2xl md:text-left md:text-5xl'>
-              We will get back to you soon!
-            </p>
-            <div className='my-8 flex flex-col space-y-4 text-muted-foreground'>
-              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
-                <ArrowRight
-                  className='col-span-1 mt-1 text-primary'
-                  size={18}
-                />
-                <p className='col-span-10 ml-2'>
-                  Leave the required information and your queries in the given
-                  contact us form.
-                </p>
-              </div>
-              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
-                <ArrowRight
-                  className='col-span-1 mt-1 text-primary'
-                  size={18}
-                />
-                <p className='col-span-10 ml-2'>
-                  Our team will reach you out with the relevant information
-                  about your query
-                </p>
-              </div>
-              <div className='my-4 grid grid-cols-12 text-center md:text-left'>
-                <ArrowRight
-                  className='col-span-1 mt-1 text-primary'
-                  size={18}
-                />
-                <p className='col-span-10 ml-2'>
-                  Our team is 24/7 available to assist, address your queries,
-                  explore new opportunities to provide some value and turn your
-                  ideas into digital reality
-                </p>
-              </div>
-            </div>
+      <Container className='max-w-7x mx-auto w-full px-10'>
+        <div className='grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4'>
+          <div className='flex flex-col gap-2'>
+            <h3 className='text-xl font-bold text-slate-100'>
+              {t('navbar.brand')}
+            </h3>
+            <p className='max-w-sm text-slate-400'>{t('footer.description')}</p>
+          </div>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
+              {t('footer.sections.quickLinks')}
+            </h4>
+            <ul className='space-y-2 text-lg text-slate-400'>
+              {quickLinks.map((linkItem) => (
+                <li key={linkItem.href}>
+                  <Link
+                    href={linkItem.href}
+                    className='text-base transition-colors hover:text-white'
+                  >
+                    {linkItem.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
+              {t('footer.sections.services')}
+            </h4>
+            <ul className='space-y-2 text-lg text-slate-400'>
+              {services.map((serviceItem) => (
+                <li key={serviceItem.url}>
+                  <Link
+                    href={serviceItem.url}
+                    className='text-base transition-colors hover:text-white'
+                  >
+                    {serviceLinkKeyByUrl[serviceItem.url]
+                      ? t(serviceLinkKeyByUrl[serviceItem.url])
+                      : serviceItem.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='flex flex-col gap-2'>
+            <h4 className='text-xl font-semibold text-slate-100'>
+              {t('footer.sections.contact')}
+            </h4>
+            <ul className='space-y-2 text-lg text-slate-400'>
+              <li className='flex items-start gap-2'>
+                <Mail className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.email')}</span>
+              </li>
+              <li className='flex items-start gap-2'>
+                <Phone className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.phone')}</span>
+              </li>
+              <li className='flex items-start gap-2'>
+                <MapPin className='mt-1 h-5 w-5 shrink-0' />
+                <span className='text-base'>{t('footer.contact.address')}</span>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className='mb-2 mt-10 flex w-full items-center justify-center md:relative md:mx-5 md:mt-0 md:w-1/2 md:justify-end'>
-          <ContactForm />
+        <div className='mt-12 border-t border-slate-800 py-4 text-center text-base text-slate-400'>
+          <p>
+            &copy; {copyrightYear} {t('footer.copyright')}
+          </p>
         </div>
-      </div>
-    </div>
+      </Container>
+    </footer>
   );
 };
 

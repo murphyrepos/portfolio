@@ -1,8 +1,10 @@
-import { ExtendedNavigator } from '@/components/type';
-
 export enum DeviceType {
   Mobile = 'mobile',
   Desktop = 'desktop',
+}
+
+interface ExtendedNavigator extends Navigator {
+  customProperty?: string;
 }
 
 export function detectDevice(): DeviceType {

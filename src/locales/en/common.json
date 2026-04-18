@@ -1,0 +1,793 @@
+{
+  "languages": {
+    "en": "English"
+  },
+  "siteMeta": {
+    "title": "Murphy Repos",
+    "description": "Transform your vision into reality with cutting-edge design and development solutions.",
+    "canonical": "https://murphyrepos.com",
+    "openGraphTitle": "Murphy Repos"
+  },
+  "navbar": {
+    "brand": "Murphy Repos",
+    "toggleMenu": "Toggle navigation menu",
+    "languageLabel": "Language",
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "workflow": "Workflow",
+      "about": "About",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Creative Digital Agency",
+      "title": "We Build Digital Excellence",
+      "description": "Transform your vision into reality with cutting-edge design and development solutions",
+      "primaryCta": "Get Started",
+      "secondaryCta": "Our Services"
+    },
+    "services": {
+      "title": "Why Choose Us",
+      "description": "We deliver exceptional results through innovative solutions",
+      "valueProps": {
+        "expertTeam": {
+          "title": "Expert Team",
+          "description": "Seasoned professionals with years of industry experience"
+        },
+        "qualityFocused": {
+          "title": "Quality Focused",
+          "description": "We never compromise on the quality of our deliverables"
+        },
+        "onTimeDelivery": {
+          "title": "On-Time Delivery",
+          "description": "Meeting deadlines is our commitment to your success"
+        }
+      }
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "description": "Explore our latest work and success stories",
+      "cta": "Start Your Project",
+      "items": {
+        "cureforu": {
+          "title": "Cureforu",
+          "category": "Healthcare Platform"
+        },
+        "nalaPrep": {
+          "title": "Nala Prep",
+          "category": "Education Platform"
+        },
+        "savora": {
+          "title": "Savora",
+          "category": "Restaurant System"
+        },
+        "strike": {
+          "title": "Strike",
+          "category": "Crypto Product"
+        }
+      }
+    }
+  },
+  "servicesPage": {
+    "meta": {
+      "title": "Our Services",
+      "description": "Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.",
+      "openGraphTitle": "Murphy Repos | Our Services"
+    },
+    "hero": {
+      "title": "Our Services",
+      "description": "Comprehensive digital solutions tailored to your business needs"
+    },
+    "showcase": {
+      "items": {
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "Custom web applications built with modern frameworks and best practices for optimal performance and scalability.",
+          "points": [
+            "Responsive Design",
+            "Progressive Web Apps",
+            "API Integration",
+            "Performance Optimization"
+          ]
+        },
+        "uiUxDesign": {
+          "title": "UI/UX Design",
+          "description": "Beautiful, intuitive interfaces that enhance user experience and drive engagement across all platforms.",
+          "points": [
+            "User Research",
+            "Wireframing & Prototyping",
+            "Visual Design",
+            "Usability Testing"
+          ]
+        },
+        "mobileApps": {
+          "title": "Mobile Apps",
+          "description": "Native and cross-platform mobile applications that deliver exceptional experiences on iOS and Android.",
+          "points": [
+            "iOS Development",
+            "Android Development",
+            "Cross-Platform Solutions",
+            "App Store Optimization"
+          ]
+        },
+        "customSoftware": {
+          "title": "Custom Software",
+          "description": "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
+          "points": [
+            "Business Automation",
+            "System Integration",
+            "Cloud Solutions",
+            "Legacy Modernization"
+          ]
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategic marketing campaigns that increase visibility, drive traffic, and convert leads into customers.",
+          "points": [
+            "SEO & Content Strategy",
+            "Social Media Marketing",
+            "Email Campaigns",
+            "Analytics & Reporting"
+          ]
+        },
+        "brandStrategy": {
+          "title": "Brand Strategy",
+          "description": "Comprehensive brand development that establishes your unique identity and resonates with your target audience.",
+          "points": [
+            "Brand Identity",
+            "Logo Design",
+            "Brand Guidelines",
+            "Market Positioning"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Let's discuss how we can help bring your vision to life",
+      "button": "Get in Touch"
+    }
+  },
+  "serviceDetailPage": {
+    "meta": {
+      "siteName": "Murphy Repos",
+      "notFoundTitle": "Service Not Found",
+      "keywords": ["Murphy Repos", "Portfolio", "Services"]
+    },
+    "heroButton": "Get in Touch",
+    "deliverables": {
+      "title": "What We Deliver",
+      "description": "Purpose-built capabilities tailored to your business goals."
+    },
+    "technologies": {
+      "title": "Technology Stack",
+      "description": "Modern tools and frameworks we use to build reliable products.",
+      "favoritesTitle": "Our Favorite Choices"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Let's discuss how we can help bring your vision to life",
+      "button": "Get in Touch"
+    },
+    "items": {
+      "web-development": {
+        "title": "Web Development",
+        "description": "We create responsive web applications leveraging the most robust technologies to help you boost your business",
+        "cards": [
+          {
+            "title": "Progressive Web Apps",
+            "points": [
+              "Offline Work Mode",
+              "Lazy-loading",
+              "HTTP/2 Server Push",
+              "Fully Responsive"
+            ]
+          },
+          {
+            "title": "Single Page Applications",
+            "points": [
+              "Update Required Content",
+              "Cache Local Data",
+              "Highly Interactive"
+            ]
+          },
+          {
+            "title": "Server Rendered Apps",
+            "points": [
+              "Prefetch Initial Data",
+              "Optimized for SEO",
+              "Reduced Bandwidth Consumption"
+            ]
+          },
+          {
+            "title": "API Development & Serverless",
+            "points": [
+              "Stateless Functions as a Service",
+              "REST, GraphQL and SOAP",
+              "Sync and Async Invocation",
+              "High Elasticity & Secure"
+            ]
+          }
+        ],
+        "technologies": [
+          "React",
+          "Angular",
+          "Vue.js",
+          "Nest.js",
+          "Next.js",
+          "Node.js",
+          "GraphQL",
+          "Typescript",
+          "ServerLess"
+        ],
+        "favorites": ["React", "Nest.js", "Node.Js", "GraphQL", "Next.js"]
+      },
+      "mobile-development": {
+        "title": "Mobile Development",
+        "description": "We craft high-performing mobile applications across iOS and Android platforms, leveraging native and cross-platform technologies for seamless user experiences and optimal performance.",
+        "cards": [
+          {
+            "title": "Native Apps",
+            "points": [
+              "Optimal performance and native user experience",
+              "Access to device-specific features (camera, GPS, etc.)",
+              "Development for specific platforms (iOS or Android)"
+            ]
+          },
+          {
+            "title": "Single Page Applications (SPA)",
+            "points": [
+              "Fast updates and dynamic content",
+              "Caching for enhanced performance",
+              "Highly interactive and responsive"
+            ]
+          },
+          {
+            "title": "Hybrid Apps",
+            "points": [
+              "Built with web technologies (HTML, CSS, JavaScript)",
+              "Quick development and cost-effective deployment",
+              "Balanced access to native and web features"
+            ]
+          },
+          {
+            "title": "Progressive Web Apps (PWA)",
+            "points": [
+              "Works offline and has low data usage",
+              "Enables push notifications for user engagement",
+              "Installable on any device for native-like experience",
+              "Seamless performance across all devices"
+            ]
+          }
+        ],
+        "technologies": [
+          "React Native",
+          "Swift",
+          "Kotlin",
+          "Flutter",
+          "Angular",
+          "Vue.js",
+          "Node.js",
+          "GraphQL",
+          "Typescript"
+        ],
+        "favorites": ["Swift", "Kotlin", "React Native", "Node.js"]
+      },
+      "ui-ux-services": {
+        "title": "UI/UX Design",
+        "description": "We transform concepts into visually stunning and highly usable designs, ensuring a seamless user journey from wireframe to final product.",
+        "cards": [
+          {
+            "title": "User Interface (UI)",
+            "points": [
+              "Visually compelling and user-friendly design",
+              "Consistency in branding and experience across platforms",
+              "Accessibility standards for an inclusive design"
+            ]
+          },
+          {
+            "title": "User Experience (UX)",
+            "points": [
+              "Human-centered design and research-driven process",
+              "Focus on user needs, journey, and behavior",
+              "Continuous usability testing and iterative improvements"
+            ]
+          },
+          {
+            "title": "Responsive Design",
+            "points": [
+              "Ensures a seamless experience on all devices",
+              "Adaptive and flexible layouts for various screen sizes"
+            ]
+          },
+          {
+            "title": "Wireframing and Prototyping",
+            "points": [
+              "Early visualization of design concepts and user flow",
+              "Quick feedback loops and design iteration"
+            ]
+          }
+        ],
+        "technologies": [
+          "Figma",
+          "Sketch",
+          "Adobe XD",
+          "InVision",
+          "React",
+          "Vue.js",
+          "Next.js",
+          "Tailwind CSS"
+        ],
+        "favorites": ["Figma", "Adobe XD", "React", "Next.js", "Tailwind CSS"]
+      },
+      "custom-solutions": {
+        "title": "Cloud Services and Solutions",
+        "description": "We offer a full range of cloud services, from infrastructure setup to application deployment and optimization. Our solutions help businesses scale, enhance performance, and reduce costs by leveraging modern cloud technologies.",
+        "cards": [
+          {
+            "title": "Infrastructure as a Service (IaaS)",
+            "points": [
+              "On-demand provisioning of computing resources",
+              "Scalability and flexibility to meet business needs",
+              "Reduced IT costs with pay-per-use model"
+            ]
+          },
+          {
+            "title": "Platform as a Service (PaaS)",
+            "points": [
+              "Accelerated development and deployment of applications",
+              "Managed infrastructure for seamless development workflows"
+            ]
+          },
+          {
+            "title": "Software as a Service (SaaS)",
+            "points": [
+              "Access to scalable applications over the internet",
+              "Flexible, pay-as-you-go pricing models",
+              "Minimized maintenance and support efforts"
+            ]
+          },
+          {
+            "title": "Cloud Migration and Optimization",
+            "points": [
+              "Seamless and secure transition to cloud infrastructure",
+              "Enhanced performance, scalability, and cost-efficiency"
+            ]
+          }
+        ],
+        "technologies": [
+          "AWS",
+          "Azure",
+          "React",
+          "Angular",
+          "Vue.js",
+          "Nest.js",
+          "Next.js",
+          "Node.js",
+          "GraphQL",
+          "Typescript",
+          "Serverless"
+        ],
+        "favorites": ["AWS", "Azure", "React", "Nest.js", "Node.js", "GraphQL"]
+      }
+    }
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "About",
+      "description": "Learn about our story, values, and the technology expertise behind the digital solutions we deliver.",
+      "openGraphTitle": "Murphy Repos | About"
+    },
+    "hero": {
+      "title": "About Us",
+      "description": "We are a team of passionate creators dedicated to transforming ideas into exceptional digital experiences"
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraphs": [
+        "Founded in 2016, our agency started with a simple mission: to help businesses succeed in the digital age through innovative design and development.",
+        "Over the years, we've grown from a small team of three to a diverse group of talented professionals. We've worked with startups, established brands, and everything in between, delivering solutions that drive real results.",
+        "Today, we're proud to be a trusted partner for businesses looking to make their mark in the digital world."
+      ]
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Principles that guide everything we do",
+      "items": {
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions."
+        },
+        "collaboration": {
+          "title": "Collaboration",
+          "description": "Working closely with our clients as partners to achieve shared success and growth."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Commitment to the highest standards in every project we undertake."
+        },
+        "passion": {
+          "title": "Passion",
+          "description": "We love what we do, and it shows in the quality of our work and dedication to clients."
+        }
+      }
+    },
+    "stats": {
+      "title": "By the Numbers",
+      "items": {
+        "projectsCompleted": {
+          "number": "150+",
+          "label": "Projects Completed"
+        },
+        "happyClients": {
+          "number": "50+",
+          "label": "Happy Clients"
+        },
+        "yearsExperience": {
+          "number": "8",
+          "label": "Years Experience"
+        },
+        "teamMembers": {
+          "number": "15",
+          "label": "Team Members"
+        }
+      }
+    },
+    "technologies": {
+      "title": "Technologies We Master",
+      "description": "Leveraging cutting-edge tools and frameworks to build exceptional solutions",
+      "items": [
+        {
+          "name": "React",
+          "category": "Frontend"
+        },
+        {
+          "name": "Node.js",
+          "category": "Backend"
+        },
+        {
+          "name": "TypeScript",
+          "category": "Language"
+        },
+        {
+          "name": "Tailwind CSS",
+          "category": "Styling"
+        },
+        {
+          "name": "Next.js",
+          "category": "Framework"
+        },
+        {
+          "name": "PostgreSQL",
+          "category": "Database"
+        },
+        {
+          "name": "AWS",
+          "category": "Cloud"
+        },
+        {
+          "name": "Figma",
+          "category": "Design"
+        },
+        {
+          "name": "Docker",
+          "category": "DevOps"
+        },
+        {
+          "name": "GraphQL",
+          "category": "API"
+        },
+        {
+          "name": "MongoDB",
+          "category": "Database",
+          "featured": true
+        },
+        {
+          "name": "Firebase",
+          "category": "Backend"
+        }
+      ]
+    }
+  },
+  "reviewsPage": {
+    "meta": {
+      "title": "Reviews",
+      "description": "Read what our clients say about collaborating with Murphy Repos across web, mobile, and product design projects.",
+      "openGraphTitle": "Murphy Repos | Reviews"
+    },
+    "hero": {
+      "title": "Client Reviews",
+      "description": "Don't just take our word for it - hear what our clients have to say about working with us"
+    },
+    "stats": {
+      "items": [
+        {
+          "number": "4.9",
+          "suffix": "/5",
+          "label": "Average Rating"
+        },
+        {
+          "number": "98",
+          "suffix": "%",
+          "label": "Client Satisfaction"
+        },
+        {
+          "number": "150",
+          "suffix": "+",
+          "label": "5-Star Reviews"
+        },
+        {
+          "number": "95",
+          "suffix": "%",
+          "label": "Return Clients"
+        }
+      ]
+    },
+    "grid": {
+      "items": [
+        {
+          "name": "Jennifer Martinez",
+          "role": "CEO, TechStart Inc.",
+          "review": "Working with this agency was an absolute pleasure. They transformed our outdated website into a modern, high-performing platform that has significantly increased our conversion rates. The team was professional, responsive, and truly understood our vision.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Robert Chen",
+          "role": "Founder, GrowthLab",
+          "review": "Exceptional service from start to finish. The team delivered our mobile app ahead of schedule and exceeded all expectations. Their attention to detail and commitment to quality is unmatched. Highly recommend!",
+          "rating": 5,
+          "highlighted": true
+        },
+        {
+          "name": "Amanda Thompson",
+          "role": "Marketing Director, BrightFuture",
+          "review": "We've worked with several agencies before, but none compare to the level of expertise and creativity this team brings. They not only met our requirements but also suggested improvements that made our project even better.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "David Kumar",
+          "role": "Product Manager, InnovateCo",
+          "review": "The entire process was smooth and transparent. Regular updates, clear communication, and a genuine interest in our success made this collaboration outstanding. The final product speaks for itself - it's exactly what we needed.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Sarah Williams",
+          "role": "Owner, Artisan Boutique",
+          "review": "As a small business owner, I was nervous about investing in a new website. The team made the entire experience easy and stress-free. They explained everything clearly and delivered a beautiful site that my customers love.",
+          "rating": 5,
+          "highlighted": false
+        },
+        {
+          "name": "Michael Brown",
+          "role": "CTO, DataFlow Systems",
+          "review": "Impressive technical expertise combined with creative design thinking. They helped us modernize our entire digital infrastructure and the results have been phenomenal. Our team productivity has increased by 40%.",
+          "rating": 5,
+          "highlighted": true
+        }
+      ]
+    },
+    "cta": {
+      "title": "Join Our Happy Clients",
+      "description": "Experience the difference that quality, dedication, and expertise can make for your business",
+      "button": "Start Your Project"
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact",
+      "description": "Reach out to Murphy Repos to discuss your project, get a proposal, or ask questions about our digital services.",
+      "openGraphTitle": "Murphy Repos | Contact"
+    },
+    "hero": {
+      "title": "Get in Touch",
+      "description": "Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    "form": {
+      "title": "Send us a message",
+      "labels": {
+        "fullName": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "number": "Phone",
+        "message": "Message"
+      },
+      "placeholders": {
+        "fullName": "Your name",
+        "email": "your.email@example.com",
+        "subject": "What can we help you with?",
+        "number": "+1 (555) 123-4567",
+        "message": "Tell us about your project..."
+      },
+      "submit": "Send Message",
+      "submitting": "Sending message...",
+      "toasts": {
+        "successTitle": "Message sent",
+        "successDescription": "Thanks for reaching out. We'll get back to you shortly.",
+        "errorTitle": "Something went wrong",
+        "errorDescription": "Looks like we are having some trouble. Please try again later."
+      },
+      "validation": {
+        "invalidName": "Please enter a valid name",
+        "nameMin": "Name should be at least 2 characters",
+        "nameMax": "Name should be at most 50 characters",
+        "emailRequired": "Please enter your email address",
+        "invalidEmail": "Please enter a valid email address",
+        "subjectRequired": "Please enter a subject",
+        "subjectMin": "Subject should be at least 2 characters",
+        "subjectMax": "Subject should be at most 120 characters",
+        "invalidPhone": "Please enter a valid number",
+        "phoneRegex": "Please enter a valid phone",
+        "messageRequired": "Please enter a message",
+        "messageMin": "Message should be at least 10 characters"
+      }
+    },
+    "information": {
+      "title": "Contact Information",
+      "description": "Feel free to reach out through any of these channels. We're here to help!",
+      "channels": [
+        {
+          "key": "email",
+          "label": "Email",
+          "value": "contact@murphyrepos.com"
+        },
+        {
+          "key": "phone",
+          "label": "Phone",
+          "value": "+1 (555) 123-4567"
+        },
+        {
+          "key": "address",
+          "label": "Address",
+          "value": "123 Creative Street, Design City, DC 12345"
+        }
+      ]
+    },
+    "officeHours": {
+      "title": "Office Hours",
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 4:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "cta": {
+      "title": "Let's Build Something Great Together",
+      "description": "Whether you have a clear vision or just an idea, we're here to help turn it into reality. Reach out today and let's start the conversation."
+    }
+  },
+  "workflow": {
+    "title": "Our Workflow",
+    "description": "A proven process that delivers exceptional results every time",
+    "cta": "Start Your Project",
+    "meta": {
+      "title": "Workflow",
+      "description": "A proven process that delivers exceptional results from discovery and planning through launch and ongoing support.",
+      "openGraphTitle": "Murphy Repos | Workflow"
+    },
+    "categories": {
+      "defaultMobile": "Mobile Development",
+      "defaultWeb": "Web Development",
+      "cureforu": "Mobile Development",
+      "maahdhaa": "Web Development",
+      "nalaPrep": "Education Platform",
+      "savora": "Hospitality Tech",
+      "strike": "FinTech Platform"
+    },
+    "chart": {
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We start by understanding your business, goals, and target audience through comprehensive research and analysis.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Stakeholder interviews",
+            "Market analysis",
+            "Competitor research",
+            "Requirements gathering"
+          ]
+        },
+        "strategy": {
+          "title": "Strategy & Planning",
+          "description": "Develop a detailed roadmap and strategy aligned with your objectives, including timelines and deliverables.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Project planning",
+            "Technical architecture",
+            "Design system creation",
+            "Timeline development"
+          ]
+        },
+        "designDevelopment": {
+          "title": "Design & Development",
+          "description": "Our team brings your vision to life with stunning designs and robust development using cutting-edge technologies.",
+          "duration": "4-8 weeks",
+          "tasks": [
+            "UI/UX design",
+            "Prototype creation",
+            "Frontend development",
+            "Backend integration"
+          ]
+        },
+        "testingRefinement": {
+          "title": "Testing & Refinement",
+          "description": "Rigorous quality assurance and testing to ensure everything works flawlessly across all devices and browsers.",
+          "duration": "1-2 weeks",
+          "tasks": [
+            "Quality assurance",
+            "User testing",
+            "Performance optimization",
+            "Bug fixes"
+          ]
+        },
+        "launchSupport": {
+          "title": "Launch & Support",
+          "description": "Successful deployment and ongoing support to ensure your project continues to perform at its best.",
+          "duration": "Ongoing",
+          "tasks": [
+            "Deployment",
+            "Training & documentation",
+            "Monitoring",
+            "Continuous support"
+          ]
+        }
+      }
+    },
+    "values": {
+      "title": "Transparent & Collaborative",
+      "description": "We believe in keeping you informed every step of the way. Regular updates, open communication, and your feedback drive our process.",
+      "items": {
+        "transparency": {
+          "value": "100%",
+          "label": "Transparency"
+        },
+        "communication": {
+          "value": "24/7",
+          "label": "Communication"
+        },
+        "responseTime": {
+          "value": "<48h",
+          "label": "Response Time"
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Clients Testimonials"
+  },
+  "footer": {
+    "description": "Creative solutions for modern businesses",
+    "sections": {
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "quickLinks": {
+      "home": "Home",
+      "services": "Services",
+      "workflow": "Workflow",
+      "about": "About"
+    },
+    "serviceLinks": {
+      "webDevelopment": "Web Development",
+      "mobileDevelopment": "Mobile Development",
+      "uiUxServices": "UI/UX Services",
+      "customSolutions": "Custom Software Services"
+    },
+    "contact": {
+      "email": "contact@murphyrepos.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Creative Street, Design City"
+    },
+    "copyright": "Murphy Repos. All rights reserved."
+  },
+  "portfolioCard": {
+    "descriptionLabel": "Description",
+    "roleLabel": "Role",
+    "technologiesLabel": "Technologies",
+    "imageAlt": "Portfolio demo"
+  }
+}

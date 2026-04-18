@@ -4,6 +4,7 @@ import { Card, CardContent } from './ui/card';
 import CustomImage from './custom-image';
 import { Detail } from '@/utils/constants/portfolio.content';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
 
 const CardComponent: React.FC<Detail> = ({
   title,
@@ -13,6 +14,8 @@ const CardComponent: React.FC<Detail> = ({
   isMobile,
   role,
 }) => {
+  const { t } = useTranslation('common');
+
   return (
     <Card className='lg:py-26 flex max-w-7xl items-center justify-center px-10 pb-14 pt-14 shadow-xl shadow-neutral-300 lg:pl-20 lg:pr-0'>
       <CardContent className='flex flex-col items-center justify-between space-y-5 p-0 lg:space-y-0'>
@@ -24,20 +27,24 @@ const CardComponent: React.FC<Detail> = ({
             <div className='flex w-full flex-col items-start justify-start space-y-7'>
               <div className='flex flex-col space-y-2'>
                 <h2 className='text-xl font-semibold md:text-2xl'>
-                  Description
+                  {t('portfolioCard.descriptionLabel')}
                 </h2>
                 <p className='text-balance text-sm text-gray-600 md:text-base'>
                   {description}
                 </p>
               </div>
               <div className='flex flex-col space-y-2'>
-                <h2 className='text-xl font-semibold md:text-2xl'>Role</h2>
+                <h2 className='text-xl font-semibold md:text-2xl'>
+                  {t('portfolioCard.roleLabel')}
+                </h2>
                 <p className='text-balance text-sm text-gray-600 md:text-base'>
                   {role}
                 </p>
               </div>
               <div className='flex flex-col space-y-2 lg:hidden'>
-                <h3 className='font-semibold'>Technologies</h3>
+                <h3 className='font-semibold'>
+                  {t('portfolioCard.technologiesLabel')}
+                </h3>
                 <div className='flex flex-wrap gap-2'>
                   {technologies?.map((tech: string, index: number) => (
                     <span
@@ -55,7 +62,7 @@ const CardComponent: React.FC<Detail> = ({
             <div className='cursor-pointer text-center transition-transform duration-300 hover:scale-105'>
               <CustomImage
                 src={image}
-                alt='Portfolio demo'
+                alt={t('portfolioCard.imageAlt')}
                 className={cn(
                   'mx-auto h-full max-h-[32rem] w-full max-w-max',
                   isMobile && 'scale-100 md:scale-90 lg:scale-100 xl:scale-110'
@@ -74,7 +81,7 @@ const CardComponent: React.FC<Detail> = ({
           </div>
         </div>
         <div className='hidden flex-col space-y-2 self-start lg:flex'>
-          <h3 className='font-semibold'>Technologies</h3>
+          <h3 className='font-semibold'>{t('portfolioCard.technologiesLabel')}</h3>
           <div className='flex flex-wrap gap-2'>
             {technologies?.map((tech: string, index: number) => (
               <span

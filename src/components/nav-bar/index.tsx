@@ -1,214 +1,188 @@
 'use client';
-import React, { useCallback, useEffect, useState } from 'react';
+
+import React, { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X } from 'lucide-react';
+import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { items } from './items';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { Button } from '../ui/button';
-import Image from 'next/image';
-import { Menu } from 'lucide-react';
-import { Drawer } from './drawer';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+
+const navLinks = [
+  { href: '/home', labelKey: 'navbar.links.home' },
+  { href: '/services', labelKey: 'navbar.links.services' },
+  { href: '/workflow', labelKey: 'navbar.links.workflow' },
+  { href: '/about', labelKey: 'navbar.links.about' },
+  { href: '/reviews', labelKey: 'navbar.links.reviews' },
+  { href: '/contact', labelKey: 'navbar.links.contact' },
+] as const;
 
 const NavigationBar = () => {
-  const [isSticky, setIsSticky] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    if (window?.scrollY > 0) {
-      setIsSticky(window.scrollY > 0); // Sticky when scrolled down
-    } else {
-      setIsSticky(false);
-    }
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState('');
+  const pathname = usePathname();
+  const { t } = useTranslation('common');
 
   useEffect(() => {
-    if (window) {
-      window.addEventListener('scroll', handleScroll);
-    }
-    return () => {
-      if (window) {
-        window.removeEventListener('scroll', handleScroll);
-      }
+    const syncHash = () => {
+      setCurrentHash(window.location.hash);
     };
-  }, [handleScroll]);
+
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+
+    return () => {
+      window.removeEventListener('hashchange', syncHash);
+    };
+  }, []);
+
+  const translatedNavLinks = useMemo(
+    () =>
+      navLinks.map((item) => ({
+        ...item,
+        label: t(item.labelKey),
+      })),
+    [t]
+  );
+
+  const isActive = (href: string) => {
+    if (href.includes('#')) {
+      const [targetPath, targetHash] = href.split('#');
+      return pathname === targetPath && currentHash === `#${targetHash}`;
+    }
+
+    if (href === '/home') {
+      return (pathname === '/home' || pathname === '/') && currentHash === '';
+    }
+
+    if (href === '/services') {
+      return pathname === '/services' || pathname.startsWith('/services/');
+    }
+
+    if (href === '/workflow') {
+      return pathname === '/workflow';
+    }
+
+    if (href === '/about') {
+      return pathname === '/about';
+    }
+
+    if (href === '/reviews') {
+      return pathname === '/reviews';
+    }
+
+    return pathname === href;
+  };
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-  if (!isMounted) return null;
+    setMobileMenuOpen(false);
+  }, [pathname, currentHash]);
 
   return (
-    <>
-      <NavigationMenu
-        className={cn(
-          'duration-600 ml-auto hidden max-h-max w-full max-w-full items-center justify-between p-4 transition-transform ease-in-out md:block',
-          isSticky
-            ? 'animate-translate-once bg-green bg-transparent bg-opacity-70 shadow-lg backdrop-blur-md'
-            : 'animate-translate-default bg-neutral-100'
-        )}
-        style={{
-          position: isSticky ? 'fixed' : 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          transition: 'transform 0.6s ease-in-out',
-        }}
-      >
-        <div className='mx-auto flex w-full max-w-screen-xl items-center justify-between'>
-          <div className=''>
-            <Link href='/' className='flex items-center gap-1'>
-              <Image
-                src='/logos/white.png'
-                alt='Murphy Repos'
-                className='h-auto w-[40px] object-contain md:w-[150px]'
-                width={500}
-                height={250}
-                priority
-              />
-            </Link>
-          </div>
-          <div className='flex flex-1 items-center justify-center'>
-            <NavigationMenuList className='flex gap-2'>
-              {items.map(({ title, Icon, href, subMenu }, index) =>
-                title === 'Services' ? (
-                  // It may look a crazy hierarchy to use Nested Navigation Menu but this is a patch for an existing issue in ShadCn Menu https://github.com/shadcn-ui/ui/issues/418
-                  <NavigationMenu key={index}>
-                    <NavigationMenuItem key={index} className='relative'>
-                      <>
-                        <NavigationMenuTrigger
-                          key={index}
-                          className='flex gap-2 bg-neutral-100 text-muted-foreground hover:text-primary'
-                        >
-                          <span className='flex items-center justify-center gap-2 bg-neutral-100'>
-                            {Icon && <Icon className='hidden lg:block' />}
-                          </span>
-                          <p>{title}</p>
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent className='border-1 min-w-max border-muted-foreground bg-white p-4'>
-                          <ul>
-                            <NavigationMenuList
-                              className='bg-white text-white'
-                              asChild
-                            >
-                              <div className='grid grid-cols-2 gap-4'>
-                                {subMenu?.map((subItem, index) => (
-                                  <NavigationMenuItem
-                                    key={index}
-                                    className='text-muted-foreground'
-                                  >
-                                    <Link
-                                      href={subItem?.href}
-                                      legacyBehavior
-                                      passHref
-                                    >
-                                      <NavigationMenuLink
-                                        className={cn(
-                                          navigationMenuTriggerStyle(),
-                                          'border-1 flex gap-2 border-muted-foreground'
-                                        )}
-                                      >
-                                        <span className='flex items-center justify-center gap-2'>
-                                          {subItem.Icon && (
-                                            <subItem.Icon className='hidden lg:block' />
-                                          )}
-                                        </span>
-                                        <p>{subItem?.title}</p>
-                                      </NavigationMenuLink>
-                                    </Link>
-                                  </NavigationMenuItem>
-                                ))}
-                              </div>
-                            </NavigationMenuList>
-                          </ul>
-                        </NavigationMenuContent>
-                      </>
-                    </NavigationMenuItem>
-                  </NavigationMenu>
-                ) : (
-                  <NavigationMenuItem key={index}>
-                    <Link href={href} legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={cn(
-                          navigationMenuTriggerStyle(),
-                          'flex gap-2 bg-neutral-100 text-muted-foreground hover:text-primary'
-                        )}
-                      >
-                        <span className='flex items-center justify-center gap-2 bg-neutral-100'>
-                          {Icon && <Icon className='hidden lg:block' />}
-                        </span>
-                        <p>{title}</p>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                )
-              )}
-            </NavigationMenuList>
-          </div>
-          <Button
-            asChild
-            variant='outline'
-            className='rounded-full bg-neutral-100 text-muted-foreground shadow-none hover:bg-white hover:text-primary'
-          >
-            <Link href='/#footer'>Contact Us</Link>
-          </Button>
-        </div>
-      </NavigationMenu>
-      <div
-        className={cn(
-          'duration-600 z-10 ml-auto flex max-h-max w-full max-w-full items-center justify-between transition-transform ease-in-out md:hidden',
-          isSticky
-            ? 'animate-translate-once bg-green bg-transparent bg-opacity-70 py-3 shadow-lg backdrop-blur-md'
-            : 'animate-translate-default bg-neutral-100 py-3'
-        )}
-        style={{
-          position: isSticky ? 'fixed' : 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          transition: 'transform 0.6s ease-in-out',
-        }}
-      >
-        <Link href='/' className='ml-5 flex items-center gap-1'>
+    <header className='fixed top-0 right-0 left-0 z-50 border-b border-blue-100/40 bg-white/80 backdrop-blur-sm supports-[backdrop-filter]:bg-white/65'>
+      <nav className='mx-auto flex h-20 w-full max-w-[1240px] items-center justify-between gap-4 px-6 lg:px-8'>
+        <Link href='/home' onClick={() => setMobileMenuOpen(false)}>
           <Image
-            src='/logos/small_white.png'
-            alt='Murphy Repos'
-            className='h-auto w-[80px] object-contain md:w-[50px]'
-            width={140}
-            height={140}
+            src='/logos/white.png'
+            alt={t('navbar.brand')}
+            width={180}
+            height={48}
+            className='mx-auto h-12 w-auto object-contain'
             priority
           />
         </Link>
-        <div className='h-10 w-10'></div>
-        <Drawer open={open} onOpenChange={setOpen} />
-        <div className='flex items-center gap-2'>
-          <Button
-            asChild
-            variant='outline'
-            size={'sm'}
-            className='rounded-full bg-neutral-100 text-sm text-muted-foreground shadow-none hover:bg-white hover:text-primary'
+
+        <NavigationMenu className='hidden lg:flex'>
+          <NavigationMenuList className='gap-6 text-base text-slate-600'>
+            {translatedNavLinks.map((item) => (
+              <NavigationMenuItem key={item.href} className='relative'>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      'inline-flex h-10 items-center transition-colors hover:text-slate-900',
+                      isActive(item.href) && 'text-slate-900'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </NavigationMenuLink>
+                {isActive(item.href) && (
+                  <motion.div
+                    layoutId='activeNav'
+                    className='bg-primary-500 absolute right-0 -bottom-[0.6rem] left-0 h-0.5 rounded-full'
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <SheetTrigger asChild>
+            <Button
+              type='button'
+              variant='ghost'
+              size='icon'
+              className='text-slate-900 hover:bg-slate-100 lg:hidden'
+              aria-label={t('navbar.toggleMenu')}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side='top'
+            className='mx-4 mt-3 rounded-2xl border border-blue-100/60 bg-white p-0 shadow-xl sm:mx-8 lg:hidden'
           >
-            <Link href='/#footer'>Contact Us</Link>
-          </Button>
-          <Button
-            onClick={() => setOpen(true)}
-            size='icon'
-            variant='ghost'
-            className='mr-5 text-primary hover:text-primary/80'
-          >
-            <Menu className='!h-5 !w-5' />
-          </Button>
-        </div>
-      </div>
-    </>
+            <SheetHeader className='border-b border-slate-200/80 px-10 py-8'>
+              <SheetTitle className='sr-only'>{t('navbar.brand')}</SheetTitle>
+              <Link href='/home' onClick={() => setMobileMenuOpen(false)}>
+                <Image
+                  src='/logos/white.png'
+                  alt={t('navbar.brand')}
+                  width={180}
+                  height={48}
+                  className='mx-auto h-12 w-auto object-contain'
+                  priority
+                />
+              </Link>
+            </SheetHeader>
+
+            <div className='mx-auto flex w-full max-w-7xl flex-col items-center gap-2 px-10 py-8'>
+              {translatedNavLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'block w-full rounded-md px-3 py-3 text-center text-xl text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900',
+                    isActive(item.href) && 'text-primary-500 font-medium'
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
+      </nav>
+    </header>
   );
 };
 

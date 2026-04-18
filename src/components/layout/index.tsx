@@ -1,18 +1,22 @@
 import React from 'react';
 import NavigationBar from '../nav-bar';
-// import { ScrollArea } from '../ui/scroll-area';
+import Footer from '../footer';
+import { Toaster } from '../ui/toaster';
+import I18nProvider from '../i18n-provider';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 const Layout = ({ children }: LayoutProps) => {
   return (
-    // <ScrollArea>
-    <div className='relative'>
-      <NavigationBar />
-      <main>{children}</main>
-    </div>
-    // </ScrollArea>
+    <I18nProvider>
+      <div>
+        <NavigationBar />
+        <Toaster />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </I18nProvider>
   );
 };
 
