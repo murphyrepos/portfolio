@@ -10,16 +10,6 @@ type AboutTechnology = {
   category: string;
 };
 
-const technologiesContainerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
-    },
-  },
-};
-
 const technologyItemVariants = {
   hidden: { opacity: 0, y: 24, scale: 0.99 },
   visible: { opacity: 1, y: 0, scale: 1 },
@@ -39,20 +29,14 @@ const AboutTechnologiesSection = () => {
   return (
     <section className='bg-gray-50 py-20 lg:py-24'>
       <Container className='max-w-7xl px-6 lg:px-12'>
-        <motion.div
-          className='mx-auto max-w-5xl text-center'
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={shouldReduceMotion ? undefined : { duration: 0.5 }}
-        >
-          <h2 className='text-xl leading-tight font-bold text-gray-900 lg:text-4xl'>
+        <div className='mx-auto flex flex-col justify-center gap-2 text-center'>
+          <h3 className='text-4xl leading-tight font-bold text-gray-900 lg:text-5xl'>
             {t('title')}
-          </h2>
-          <p className='mt-4 text-xl text-balance text-gray-600 lg:text-2xl'>
+          </h3>
+          <p className='mx-auto max-w-3xl text-xl text-gray-600 lg:text-xl'>
             {t('description')}
           </p>
-        </motion.div>
+        </div>
 
         <div className='mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4'>
           {technologies.map((technology, index) => (
@@ -62,7 +46,7 @@ const AboutTechnologiesSection = () => {
               transition={shouldReduceMotion ? undefined : { duration: 0.42 }}
               whileHover={shouldReduceMotion ? undefined : { y: -6 }}
               className={cn(
-                'hover:border-primary/70 rounded-2xl border bg-white px-6 py-8 text-center hover:border-2 hover:shadow-lg'
+                'hover:border-primary/70 rounded-2xl border bg-white px-6 py-8 text-center hover:shadow-lg'
               )}
             >
               <h3 className='text-xl font-bold text-gray-900'>

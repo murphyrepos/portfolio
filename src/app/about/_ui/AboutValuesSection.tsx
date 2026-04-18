@@ -50,23 +50,17 @@ const AboutValuesSection = () => {
   return (
     <section className='bg-gray-50 py-20 lg:py-24'>
       <Container className='max-w-7xl px-6 lg:px-8'>
-        <motion.div
-          className='mx-auto max-w-4xl text-center'
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={shouldReduceMotion ? undefined : { duration: 0.5 }}
-        >
-          <h2 className='text-xl font-bold text-gray-900 lg:text-4xl'>
+        <div className='mx-auto flex flex-col justify-center gap-2'>
+          <h3 className='text-center text-4xl leading-tight font-bold text-gray-900 lg:text-5xl'>
             {t('title')}
-          </h2>
-          <p className='mt-3 text-balance text-gray-600 lg:text-xl'>
+          </h3>
+          <p className='mx-auto max-w-3xl text-xl text-gray-600 lg:text-xl'>
             {t('description')}
           </p>
-        </motion.div>
+        </div>
 
         <motion.div
-          className='mx-auto mt-14 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4'
+          className='mx-auto mt-20 grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4'
           variants={valuesContainerVariants}
           initial={shouldReduceMotion ? false : 'hidden'}
           whileInView={shouldReduceMotion ? undefined : 'visible'}
@@ -106,11 +100,11 @@ function AboutValueCard({
       transition={shouldReduceMotion ? undefined : { duration: 0.45 }}
       whileHover={shouldReduceMotion ? undefined : { y: -8 }}
     >
-      <div className='bg-primary mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl text-white'>
-        <Icon size={26} />
+      <div className='bg-primary mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl text-white'>
+        <Icon size={28} />
       </div>
-      <h3 className='text-2xl font-bold text-slate-900'>{item.title}</h3>
-      <p className='mt-2 text-balance text-slate-600'>{item.description}</p>
+      <h3 className='text-xl font-bold text-gray-900'>{item.title}</h3>
+      <p className='mt-2 text-balance text-gray-600'>{item.description}</p>
     </motion.article>
   );
 }

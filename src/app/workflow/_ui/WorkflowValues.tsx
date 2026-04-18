@@ -41,20 +41,14 @@ function WorkflowValues() {
   return (
     <section className='bg-gray-50 py-20 lg:py-24'>
       <Container className='max-w-7xl px-6 lg:px-12'>
-        <motion.div
-          className='mx-auto max-w-4xl text-center'
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={shouldReduceMotion ? undefined : { duration: 0.5 }}
-        >
+        <div className='mx-auto flex flex-col justify-center gap-2 text-center'>
           <h3 className='text-4xl leading-tight font-bold text-gray-900 lg:text-5xl'>
             {t('title')}
           </h3>
-          <p className='mx-auto mt-4 max-w-3xl text-xl text-gray-600 lg:text-xl'>
+          <p className='mx-auto max-w-3xl text-xl text-gray-600 lg:text-xl'>
             {t('description')}
           </p>
-        </motion.div>
+        </div>
         <Container className='mt-6 max-w-4xl'>
           <motion.div
             className='mt-8 grid gap-4 md:grid-cols-3 md:gap-6'
