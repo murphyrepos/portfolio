@@ -38,34 +38,7 @@ const Projects = () => {
 
         <div className='grid gap-8 md:grid-cols-2'>
           {featuredProjects.map((project, index) => (
-            <motion.div
-              key={project.key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className='cursor-pointer'
-            >
-              <Link href='/portfolio' className='group block'>
-                <div className='relative overflow-hidden rounded-2xl shadow-lg'>
-                  <Image
-                    src={project.image}
-                    alt={t(`items.${project.key}.title`)}
-                    className='h-80 w-full object-cover transition-transform duration-500 group-hover:scale-110'
-                  />
-                  <div className='absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent'>
-                    <div className='p-6 text-white'>
-                      <p className='text-primary-300 mb-2 text-sm'>
-                        {t(`items.${project.key}.category`)}
-                      </p>
-                      <h3 className='text-2xl font-bold'>
-                        {t(`items.${project.key}.title`)}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+            <ProjectCard key={project.key} project={project} index={index} />
           ))}
         </div>
 
@@ -78,11 +51,11 @@ const Projects = () => {
         >
           <Link
             href='/contact'
-            className='group bg-primary-500 hover:bg-primary-600 inline-flex items-center gap-2 rounded-xl px-8 py-4 text-white transition-colors'
+            className='group bg-primary hover:bg-primary/70 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-white transition-colors'
           >
             {t('cta')}
             <ArrowRight
-              size={20}
+              size={18}
               className='transition-transform group-hover:translate-x-1'
             />
           </Link>
@@ -93,3 +66,44 @@ const Projects = () => {
 };
 
 export default Projects;
+
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof featuredProjects)[number];
+  index: number;
+}) => {
+  const { t } = useTranslation('common', { keyPrefix: 'home.projects' });
+
+  return (
+    <motion.div
+      key={project.key}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className='cursor-pointer'
+    >
+      <Link href='/portfolio' className='group block'>
+        <div className='relative overflow-hidden rounded-2xl shadow-lg'>
+          <Image
+            src={project.image}
+            alt={t(`items.${project.key}.title`)}
+            className='h-80 w-full object-cover transition-transform duration-500 group-hover:scale-110'
+          />
+          <div className='absolute inset-0 flex items-end bg-linear-to-t from-black/70 via-black/20 to-transparent'>
+            <div className='p-6 text-white'>
+              <p className='text-primary-200 mb-2 text-sm'>
+                {t(`items.${project.key}.category`)}
+              </p>
+              <h3 className='text-2xl font-bold'>
+                {t(`items.${project.key}.title`)}
+              </h3>
+            </div>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  );
+};

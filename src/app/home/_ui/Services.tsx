@@ -40,7 +40,9 @@ const Services = () => {
         transition={{ duration: 0.6 }}
       >
         <Container className='flex w-full flex-col gap-2 text-center'>
-          <h1 className='text-6xl font-bold text-gray-900'>{t('title')}</h1>
+          <h2 className='text-4xl font-bold text-gray-900 lg:text-5xl'>
+            {t('title')}
+          </h2>
           <p className='mx-auto max-w-2xl text-xl text-gray-600'>
             {t('description')}
           </p>
@@ -90,7 +92,7 @@ const ServiceCards = ({ services }: { services: string[] }) => {
             className='h-full'
           >
             <Container className='group hover:bg-primary-100/50 flex h-full flex-col gap-8 rounded-2xl bg-gray-50 p-8 transition-colors'>
-              <CheckCircle2 className='text-primary-500 h-12 w-12 transition-all delay-100 group-hover:scale-110 group-hover:-rotate-6' />
+              <CheckCircle2 className='text-primary h-12 w-12 transition-all delay-100 group-hover:scale-110 group-hover:-rotate-6' />
               <Container className='flex flex-col gap-2 p-0'>
                 <h3 className='text-2xl font-bold text-gray-900'>
                   {t(`${service}.title`)}
