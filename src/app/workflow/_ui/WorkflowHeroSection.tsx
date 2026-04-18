@@ -14,7 +14,6 @@ const WorkflowHeroSection = () => {
             {t('title')}
           </h1>
           <p className='text-xl text-gray-600'>{t('description')}</p>
-          {t('description')}
         </div>
       </Container>
     </section>
