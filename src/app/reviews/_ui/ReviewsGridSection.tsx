@@ -18,14 +18,14 @@ const reviewsContainerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.04,
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
     },
   },
 };
 
 const reviewCardVariants = {
-  hidden: { opacity: 0, y: 24, scale: 0.99 },
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
@@ -43,16 +43,19 @@ const ReviewsGridSection = () => {
           variants={reviewsContainerVariants}
           initial={shouldReduceMotion ? false : 'hidden'}
           whileInView={shouldReduceMotion ? undefined : 'visible'}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.15 }}
         >
           {reviews.map((review) => (
             <motion.article
               key={review.name}
               className='h-full'
               variants={shouldReduceMotion ? undefined : reviewCardVariants}
-              transition={shouldReduceMotion ? undefined : { duration: 0.42 }}
+              transition={shouldReduceMotion ? undefined : { duration: 0.45 }}
+              whileHover={
+                shouldReduceMotion ? undefined : { y: -6, scale: 1.01 }
+              }
             >
-              <Card className='hover:border-primary flex h-full flex-col gap-4 rounded-2xl p-12'>
+              <Card className='hover:border-primary flex h-full flex-col gap-4 rounded-2xl p-12 transition-shadow hover:shadow-lg'>
                 <div className='flex items-center gap-4'>
                   <Skeleton className='h-12 w-12 rounded-full bg-gray-300' />
                   <div>

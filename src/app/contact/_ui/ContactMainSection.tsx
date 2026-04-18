@@ -60,30 +60,32 @@ const createContactFormSchema = (t: TFunction<'common'>) =>
       .min(1, { message: t('contactPage.form.validation.subjectRequired') })
       .min(2, { message: t('contactPage.form.validation.subjectMin') })
       .max(120, { message: t('contactPage.form.validation.subjectMax') }),
-    number: z.preprocess(
-      (value) => {
-        if (typeof value !== 'string') {
-          return value;
+    number: z
+      .string({ message: t('contactPage.form.validation.invalidPhone') })
+      .trim()
+      .optional()
+      .superRefine((value, context) => {
+        if (!value || value.length === 0) {
+          return;
         }
 
-        const trimmedValue = value.trim();
-        return trimmedValue.length === 0 ? undefined : trimmedValue;
-      },
-      z
-        .string({ message: t('contactPage.form.validation.invalidPhone') })
-        .regex(
-          new RegExp('\\d{2,}'),
-          t('contactPage.form.validation.phoneRegex')
-        )
-        .optional()
-    ),
+        if (!new RegExp('\\d{2,}').test(value)) {
+          context.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: t('contactPage.form.validation.phoneRegex'),
+          });
+        }
+      })
+      .transform((value) => (value && value.length > 0 ? value : undefined)),
     message: z
       .string({ message: t('contactPage.form.validation.messageRequired') })
       .trim()
       .min(10, { message: t('contactPage.form.validation.messageMin') }),
   });
 
-type ContactFormValues = z.infer<ReturnType<typeof createContactFormSchema>>;
+type ContactFormSchema = ReturnType<typeof createContactFormSchema>;
+type ContactFormInput = z.input<ContactFormSchema>;
+type ContactFormValues = z.output<ContactFormSchema>;
 
 const infoCardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -100,7 +102,7 @@ const ContactMainSection = () => {
     [t]
   );
 
-  const contactForm = useForm<ContactFormValues>({
+  const contactForm = useForm<ContactFormInput, undefined, ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     mode: 'onBlur',
     defaultValues: {
