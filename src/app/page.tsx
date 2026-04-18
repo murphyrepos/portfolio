@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import { redirect, RedirectType } from 'next/navigation';
+import common from '@/locales/en/common.json';
+
+const siteMeta = common.siteMeta;
 
 export const metadata: Metadata = {
-  title: 'Murphy Repos',
-  description:
-    'Transform your vision into reality with cutting-edge design and development solutions.',
+  title: siteMeta.title,
+  description: siteMeta.description,
   alternates: {
-    canonical: 'https://murphyrepos.com',
+    canonical: siteMeta.canonical,
   },
   openGraph: {
-    title: 'Murphy Repos',
-    description:
-      'Transform your vision into reality with cutting-edge design and development solutions.',
-    url: 'https://murphyrepos.com',
-    siteName: 'Murphy Repos',
+    title: siteMeta.openGraphTitle,
+    description: siteMeta.description,
+    url: siteMeta.canonical,
+    siteName: siteMeta.title,
     type: 'website',
   },
 };

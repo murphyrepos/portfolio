@@ -70,7 +70,7 @@ const ServiceCards = ({ services }: { services: string[] }) => {
       viewport={{ once: true, amount: 0.2 }}
       variants={serviceCardsContainerVariants}
     >
-      <Container className='flex flex-col justify-between gap-10 md:flex-row'>
+      <Container className='flex flex-col justify-between gap-6 md:flex-row'>
         {services.map((service) => (
           <motion.div
             key={service}

@@ -351,7 +351,7 @@ const ContactMainSection = () => {
               })}
             </div>
 
-            <Card className='rounded-2xl border-0 bg-linear-to-r from-blue-500 to-blue-600 p-8 text-white shadow-none'>
+            <Card className='bg-primary rounded-2xl border-0 p-8 text-white shadow-none'>
               <h3 className='text-xl leading-tight font-bold lg:text-2xl'>
                 {t('contactPage.officeHours.title')}
               </h3>

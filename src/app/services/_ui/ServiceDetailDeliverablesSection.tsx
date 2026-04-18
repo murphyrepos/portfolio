@@ -13,11 +13,13 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { Container } from '@/components/container';
-import { IServiceConstant } from '@/utils/constants/services.constant';
 import { Card } from '@/components/ui/card';
+import type { ServiceDetailContent } from '../service-detail.types';
 
 interface ServiceDetailDeliverablesSectionProps {
-  service: IServiceConstant;
+  service: ServiceDetailContent;
+  sectionTitle: string;
+  sectionDescription: string;
 }
 
 function getDeliverableIcon(title: string): LucideIcon {
@@ -67,16 +69,18 @@ function getDeliverableIcon(title: string): LucideIcon {
 
 const ServiceDetailDeliverablesSection = ({
   service,
+  sectionTitle,
+  sectionDescription,
 }: ServiceDetailDeliverablesSectionProps) => {
   return (
     <section className='bg-white py-20 lg:py-24'>
       <Container className='max-w-7xl px-6 lg:px-12'>
         <div className='mx-auto max-w-4xl text-center'>
           <h2 className='text-4xl font-bold leading-tight text-gray-900 lg:text-5xl'>
-            What We Deliver
+            {sectionTitle}
           </h2>
           <p className='mt-5 text-xl text-gray-600'>
-            Purpose-built capabilities tailored to your business goals.
+            {sectionDescription}
           </p>
         </div>
 
@@ -98,7 +102,7 @@ const ServiceDetailDeliverablesSection = ({
               </h3>
 
               <ul className='mt-6 space-y-3'>
-                {serviceCard.points.data.map((point) => (
+                {serviceCard.points.map((point) => (
                   <li
                     key={point}
                     className='flex items-start gap-2 text-base text-gray-700'

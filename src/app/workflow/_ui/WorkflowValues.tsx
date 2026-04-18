@@ -75,7 +75,7 @@ function WorkflowValues() {
                     shouldReduceMotion ? undefined : { y: -6, scale: 1.01 }
                   }
                 >
-                  <Card className='ou mx-auto flex h-full flex-col items-center justify-center gap-3 rounded-xl border px-18 py-6 text-center shadow-sm'>
+                  <Card className='mx-auto flex h-full flex-col items-center justify-center gap-3 rounded-xl border px-18 py-6 text-center shadow-sm'>
                     <h3 className='text-primary text-3xl font-bold'>
                       {valueItem.value}
                     </h3>

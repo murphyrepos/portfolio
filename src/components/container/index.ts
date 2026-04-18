@@ -1,1 +1,1 @@
-export { Container, containerVariants } from './Container';
+export { Container } from './Container';

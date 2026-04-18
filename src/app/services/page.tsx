@@ -1,23 +1,25 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { PRODUCTION_URL } from '@/utils/helper';
+import common from '@/locales/en/common.json';
 import ServicesHeroSection from './_ui/ServicesHeroSection';
 import ServicesShowcaseSection from './_ui/ServicesShowcaseSection';
 import ServicesCtaSection from './_ui/ServicesCtaSection';
 
+const servicesMeta = common.servicesPage.meta;
+const siteMeta = common.siteMeta;
+
 export const metadata: Metadata = {
-  title: 'Our Services',
-  description:
-    'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
+  title: servicesMeta.title,
+  description: servicesMeta.description,
   alternates: {
     canonical: `${PRODUCTION_URL}/services`,
   },
   openGraph: {
-    title: 'Murphy Repos | Our Services',
-    description:
-      'Comprehensive digital solutions tailored to your business needs, from web and mobile engineering to UI/UX design.',
+    title: servicesMeta.openGraphTitle,
+    description: servicesMeta.description,
     url: `${PRODUCTION_URL}/services`,
-    siteName: 'Murphy Repos',
+    siteName: siteMeta.title,
     type: 'website',
   },
 };
