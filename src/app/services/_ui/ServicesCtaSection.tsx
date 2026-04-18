@@ -14,7 +14,7 @@ const ServicesCtaSection = () => {
           <h2 className='text-4xl leading-tight font-bold lg:text-5xl'>
             {t('title')}
           </h2>
-          <p className='mx-auto mt-4 max-w-3xl text-lg text-blue-50 lg:text-xl'>
+          <p className='mx-auto mt-4 max-w-3xl text-xl text-blue-50 lg:text-xl'>
             {t('description')}
           </p>
           <div className='mt-8'>
