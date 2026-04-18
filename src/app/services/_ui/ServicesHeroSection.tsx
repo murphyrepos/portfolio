@@ -7,7 +7,10 @@ const ServicesHeroSection = () => {
   const { t } = useTranslation('common', { keyPrefix: 'servicesPage.hero' });
 
   return (
-    <section id='services' className='bg-gray-50 py-24 pt-40'>
+    <section
+      id='services'
+      className='bg-linear-to-br from-blue-100 via-white to-gray-50 py-24 pt-40'
+    >
       <Container className='max-w-7xl px-6 lg:px-12'>
         <div className='mx-auto max-w-4xl text-center'>
           <h1 className='text-5xl leading-[1.05] font-bold text-balance text-gray-900 lg:text-7xl'>

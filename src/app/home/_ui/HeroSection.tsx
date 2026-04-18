@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Skeleton } from '@/components/ui/skeleton';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Container } from '@/components/container';
 import { Badge } from '@/components/ui/badge';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const HeroSection = () => {
   const { t } = useTranslation('common', { keyPrefix: 'home.hero' });
@@ -66,7 +66,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className='relative'
           >
-            <Skeleton className='h-105 w-full rounded-4xl bg-linear-to-br from-slate-300 via-slate-200 to-slate-300 md:h-[620px]' />
+            <div className='h-105 overflow-hidden rounded-4xl md:h-[620px]'>
+              <DotLottieReact
+                src='/assets/hero.lottie'
+                autoplay
+                loop
+                className='h-full w-full'
+              />
+            </div>
           </motion.div>
         </Container>
       </motion.section>

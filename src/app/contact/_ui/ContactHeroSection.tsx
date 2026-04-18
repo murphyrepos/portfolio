@@ -9,7 +9,7 @@ const ContactHeroSection = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className='bg-gray-50 py-24 pt-40'>
+    <section className='bg-linear-to-br from-blue-100 via-white to-gray-50 py-24 pt-40'>
       <Container className='max-w-7xl px-6 lg:px-12'>
         <motion.div
           className='mx-auto max-w-4xl text-center'

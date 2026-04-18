@@ -94,7 +94,7 @@ const NavigationBar = () => {
   }, [pathname, currentHash]);
 
   return (
-    <header className='fixed top-0 right-0 left-0 z-50 border-b border-blue-100/40 bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/65'>
+    <header className='fixed top-0 right-0 left-0 z-50 border-b border-blue-100/40 bg-white/80 backdrop-blur-sm supports-[backdrop-filter]:bg-white/65'>
       <nav className='mx-auto flex h-20 w-full max-w-[1240px] items-center justify-between gap-4 px-6 lg:px-8'>
         <Link href='/home' onClick={() => setMobileMenuOpen(false)}>
           <Image
