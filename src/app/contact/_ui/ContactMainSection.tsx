@@ -7,8 +7,6 @@ import { z } from 'zod';
 import {
   LoaderIcon,
   Mail,
-  MapPin,
-  Phone,
   Send,
   type LucideIcon,
 } from 'lucide-react';
@@ -31,15 +29,13 @@ import {
 } from '@/components/ui/form';
 
 type ContactPageChannel = {
-  key: 'email' | 'phone' | 'address';
+  key: string;
   label: string;
   value: string;
 };
 
-const channelIconMap: Record<ContactPageChannel['key'], LucideIcon> = {
+const channelIconMap: Record<string, LucideIcon> = {
   email: Mail,
-  phone: Phone,
-  address: MapPin,
 };
 
 const createContactFormSchema = (t: TFunction<'common'>) =>
@@ -119,6 +115,12 @@ const ContactMainSection = () => {
   });
   const channels = Array.isArray(channelsRaw)
     ? (channelsRaw as ContactPageChannel[])
+    : [];
+  const nextStepsRaw = t('contactPage.nextSteps.items', {
+    returnObjects: true,
+  });
+  const nextSteps = Array.isArray(nextStepsRaw)
+    ? (nextStepsRaw as string[])
     : [];
 
   async function onContactSubmit(data: ContactFormValues) {
@@ -320,7 +322,7 @@ const ContactMainSection = () => {
 
             <div className='space-y-6'>
               {channels.map((channel, index) => {
-                const Icon = channelIconMap[channel.key];
+                const Icon = channelIconMap[channel.key] ?? Mail;
 
                 return (
                   <motion.div
@@ -353,13 +355,13 @@ const ContactMainSection = () => {
 
             <Card className='bg-primary rounded-2xl border-0 p-8 text-white shadow-none'>
               <h3 className='text-xl leading-tight font-bold lg:text-2xl'>
-                {t('contactPage.officeHours.title')}
+                {t('contactPage.nextSteps.title')}
               </h3>
-              <div className='mt-4 space-y-2 text-base lg:text-lg'>
-                <p>{t('contactPage.officeHours.weekdays')}</p>
-                <p>{t('contactPage.officeHours.saturday')}</p>
-                <p>{t('contactPage.officeHours.sunday')}</p>
-              </div>
+              <ul className='mt-4 space-y-2 text-base lg:text-lg'>
+                {nextSteps.map((step, index) => (
+                  <li key={`next-step-${index}`}>{step}</li>
+                ))}
+              </ul>
             </Card>
           </motion.div>
         </div>

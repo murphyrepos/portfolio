@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import ContactCtaSection from './_ui/ContactCtaSection';
 import ContactHeroSection from './_ui/ContactHeroSection';
 import ContactMainSection from './_ui/ContactMainSection';
-import ContactCtaSection from './_ui/ContactCtaSection';
 import common from '@/locales/en/common.json';
 import { PRODUCTION_URL } from '@/utils/helper';
 

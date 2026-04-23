@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { services } from '@/utils/constants/services.content';
 import { Container } from './container';
@@ -11,11 +11,13 @@ interface FooterProps {
   invertColors?: boolean;
 }
 
-const serviceLinkKeyByUrl: Record<string, string> = {
-  '/services/web-development': 'footer.serviceLinks.webDevelopment',
-  '/services/mobile-development': 'footer.serviceLinks.mobileDevelopment',
-  '/services/ui-ux-services': 'footer.serviceLinks.uiUxServices',
-  '/services/custom-solutions': 'footer.serviceLinks.customSolutions',
+const serviceLinkKeyByTitle: Record<string, string> = {
+  'Web Design and Development': 'footer.serviceLinks.webDevelopment',
+  'Mobile Development': 'footer.serviceLinks.mobileDevelopment',
+  'UI/UX Services': 'footer.serviceLinks.uiUxServices',
+  'MVP Design': 'footer.serviceLinks.customSolutions',
+  'Digital Marketing': 'footer.serviceLinks.digitalMarketing',
+  'Brand Strategy': 'footer.serviceLinks.brandStrategy',
 };
 
 const Footer = ({ invertColors: _invertColors }: FooterProps) => {
@@ -66,13 +68,13 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
             </h4>
             <ul className='space-y-2 text-lg text-slate-400'>
               {services.map((serviceItem) => (
-                <li key={serviceItem.url}>
+                <li key={serviceItem.title}>
                   <Link
                     href={serviceItem.url}
                     className='text-base transition-colors hover:text-white'
                   >
-                    {serviceLinkKeyByUrl[serviceItem.url]
-                      ? t(serviceLinkKeyByUrl[serviceItem.url])
+                    {serviceLinkKeyByTitle[serviceItem.title]
+                      ? t(serviceLinkKeyByTitle[serviceItem.title])
                       : serviceItem.title}
                   </Link>
                 </li>
@@ -87,14 +89,6 @@ const Footer = ({ invertColors: _invertColors }: FooterProps) => {
               <li className='flex items-start gap-2'>
                 <Mail className='mt-1 h-5 w-5 shrink-0' />
                 <span className='text-base'>{t('footer.contact.email')}</span>
-              </li>
-              <li className='flex items-start gap-2'>
-                <Phone className='mt-1 h-5 w-5 shrink-0' />
-                <span className='text-base'>{t('footer.contact.phone')}</span>
-              </li>
-              <li className='flex items-start gap-2'>
-                <MapPin className='mt-1 h-5 w-5 shrink-0' />
-                <span className='text-base'>{t('footer.contact.address')}</span>
               </li>
             </ul>
           </div>

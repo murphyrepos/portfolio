@@ -54,19 +54,67 @@
       "items": {
         "cureforu": {
           "title": "Cureforu",
-          "category": "Healthcare Platform"
+          "category": "Healthcare Platform",
+          "description": "A global-first healthcare product that helps practitioners discuss rare medical cases faster and learn collaboratively.",
+          "technologies": [
+            "React Native",
+            "TypeScript",
+            "Firebase",
+            "Android",
+            "IOS"
+          ]
+        },
+        "maahdhaa": {
+          "title": "Maahdhaa",
+          "category": "Civic Platform",
+          "description": "A civic web platform designed to improve political transparency with live updates, manifesto access, and public polling.",
+          "technologies": [
+            "NextJs",
+            "NestJs",
+            "Shadcn",
+            "CI/CD",
+            "Postgres",
+            "PrismaORM"
+          ]
         },
         "nalaPrep": {
           "title": "Nala Prep",
-          "category": "Education Platform"
+          "category": "Education Platform",
+          "description": "A modern SAT preparation platform delivering structured digital practice, progress tracking, and high-impact mentoring workflows.",
+          "technologies": [
+            "Nestjs",
+            "GraphQL",
+            "TypeOrm",
+            "Nextjs",
+            "ApolloClient",
+            "Redis"
+          ]
         },
         "savora": {
           "title": "Savora",
-          "category": "Restaurant System"
+          "category": "Restaurant System",
+          "description": "A contactless restaurant experience that combines QR ordering, payments, and streamlined back-of-house operations.",
+          "technologies": [
+            "NextJs",
+            "TRPC",
+            "PrismaOrm",
+            "Shadcn",
+            "Postgres",
+            "CI/CD"
+          ]
         },
         "strike": {
           "title": "Strike",
-          "category": "Crypto Product"
+          "category": "Crypto Product",
+          "description": "A crypto product refresh focused on usability, trust, and clearer transaction flows for everyday digital asset management.",
+          "technologies": [
+            "NestJS",
+            "React",
+            "TypeScript",
+            "Postgres DB",
+            "AWS",
+            "CI/CD"
+          ]
         }
       }
     }
@@ -84,7 +132,7 @@
     "showcase": {
       "items": {
         "webDevelopment": {
-          "title": "Web Development",
+          "title": "Web Applications",
           "description": "Custom web applications built with modern frameworks and best practices for optimal performance and scalability.",
           "points": [
             "Responsive Design",
@@ -114,7 +162,7 @@
           ]
         },
         "customSoftware": {
-          "title": "Custom Software",
+          "title": "MVP Design",
           "description": "Tailored software solutions designed to solve your unique business challenges and streamline operations.",
           "points": [
             "Business Automation",
@@ -174,7 +222,7 @@
     },
     "items": {
       "web-development": {
-        "title": "Web Development",
+        "title": "Web Design and Development",
         "description": "We create responsive web applications leveraging the most robust technologies to help you boost your business",
         "cards": [
           {
@@ -324,7 +372,7 @@
         "favorites": ["Figma", "Adobe XD", "React", "Next.js", "Tailwind CSS"]
       },
       "custom-solutions": {
-        "title": "Cloud Services and Solutions",
+        "title": "MVP Design",
         "description": "We offer a full range of cloud services, from infrastructure setup to application deployment and optimization. Our solutions help businesses scale, enhance performance, and reduce costs by leveraging modern cloud technologies.",
         "cards": [
           {
@@ -372,6 +420,111 @@
           "Serverless"
         ],
         "favorites": ["AWS", "Azure", "React", "Nest.js", "Node.js", "GraphQL"]
+      },
+      "digital-marketing": {
+        "title": "Digital Marketing",
+        "description": "Strategic, data-driven marketing campaigns designed to increase visibility, generate qualified traffic, and turn interest into measurable growth.",
+        "cards": [
+          {
+            "title": "SEO & Content Strategy",
+            "points": [
+              "Comprehensive keyword and competitor research",
+              "On-page optimization and technical SEO audits",
+              "Editorial planning aligned to conversion goals"
+            ]
+          },
+          {
+            "title": "Social Media Marketing",
+            "points": [
+              "Audience-specific campaigns for major social platforms",
+              "Creative testing for higher engagement and reach",
+              "Organic and paid strategy alignment"
+            ]
+          },
+          {
+            "title": "Email Campaigns",
+            "points": [
+              "Lifecycle and automated email funnels",
+              "Segmentation, personalization, and A/B testing",
+              "Performance optimization for opens and conversions"
+            ]
+          },
+          {
+            "title": "Analytics & Reporting",
+            "points": [
+              "Clear KPI frameworks tied to business objectives",
+              "Custom dashboards for campaign transparency",
+              "Continuous optimization based on real-time insights"
+            ]
+          }
+        ],
+        "technologies": [
+          "Google Analytics",
+          "Google Tag Manager",
+          "Google Ads",
+          "Meta Ads",
+          "Search Console",
+          "Semrush",
+          "Mailchimp",
+          "HubSpot",
+          "Looker Studio"
+        ],
+        "favorites": [
+          "Google Analytics",
+          "Meta Ads",
+          "Semrush",
+          "HubSpot",
+          "Looker Studio"
+        ]
+      },
+      "brand-strategy": {
+        "title": "Brand Strategy",
+        "description": "Comprehensive brand development that defines your positioning, sharpens your identity, and creates a consistent story customers remember.",
+        "cards": [
+          {
+            "title": "Brand Identity",
+            "points": [
+              "Purpose, values, and voice definition",
+              "Audience and market-fit alignment",
+              "Clear messaging pillars for consistency"
+            ]
+          },
+          {
+            "title": "Logo Design",
+            "points": [
+              "Distinctive logo concepts tailored to your market",
+              "Responsive lockups for digital and print use",
+              "Practical handoff assets for real-world deployment"
+            ]
+          },
+          {
+            "title": "Brand Guidelines",
+            "points": [
+              "Typography, color, and visual system standards",
+              "Usage examples for web, social, and collateral",
+              "Guardrails that keep teams aligned at scale"
+            ]
+          },
+          {
+            "title": "Market Positioning",
+            "points": [
+              "Differentiation strategy grounded in competitor research",
+              "Value proposition refinement for your ideal customer profile",
+              "Narrative direction that supports product and sales"
+            ]
+          }
+        ],
+        "technologies": [
+          "Figma",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "Miro",
+          "Notion",
+          "Canva",
+          "Framer",
+          "Google Workspace"
+        ],
+        "favorites": ["Figma", "Adobe Illustrator", "Miro", "Notion", "Framer"]
       }
     }
   },
@@ -469,6 +622,14 @@
           "category": "Cloud"
         },
         {
+          "name": "GCP",
+          "category": "Cloud"
+        },
+        {
+          "name": "Azure",
+          "category": "Cloud"
+        },
+        {
           "name": "Figma",
           "category": "Design"
         },
@@ -477,17 +638,33 @@
           "category": "DevOps"
         },
         {
+          "name": "Microservices",
+          "category": "Architecture"
+        },
+        {
+          "name": "GoLand",
+          "category": "IDE"
+        },
+        {
+          "name": "Cloud",
+          "category": "Infrastructure"
+        },
+        {
+          "name": "LLM Integration",
+          "category": "AI"
+        },
+        {
           "name": "GraphQL",
+          "category": "API"
+        },
+        {
+          "name": "REST API",
           "category": "API"
         },
         {
           "name": "MongoDB",
           "category": "Database",
           "featured": true
-        },
-        {
-          "name": "Firebase",
-          "category": "Backend"
         }
       ]
     }
@@ -529,46 +706,49 @@
     "grid": {
       "items": [
         {
-          "name": "Jennifer Martinez",
-          "role": "CEO, TechStart Inc.",
-          "review": "Working with this agency was an absolute pleasure. They transformed our outdated website into a modern, high-performing platform that has significantly increased our conversion rates. The team was professional, responsive, and truly understood our vision.",
+          "name": "Salman Saif",
+          "role": "Founder and CEO, CureForU",
+          "company": "CureForU",
+          "review": "Working with Murphy Repos on the CureForU app was a great experience. They combined creative ideas with solid technical execution, kept communication clear, and made collaboration easy from planning through delivery.",
           "rating": 5,
-          "highlighted": false
+          "logo": "/testimonials/cureforu_small.png"
         },
         {
-          "name": "Robert Chen",
-          "role": "Founder, GrowthLab",
-          "review": "Exceptional service from start to finish. The team delivered our mobile app ahead of schedule and exceeded all expectations. Their attention to detail and commitment to quality is unmatched. Highly recommend!",
+          "name": "Alan Jaw",
+          "role": "CoFounder, NalaPrep",
+          "company": "NalaPrep",
+          "review": "MurphyRepos did an exceptional job on our project. Their communication stayed clear throughout, they actively welcomed feedback, and they refined details quickly until everything matched our goals.",
           "rating": 5,
-          "highlighted": true
+          "logo": "/testimonials/nala_prep.png"
         },
         {
-          "name": "Amanda Thompson",
-          "role": "Marketing Director, BrightFuture",
-          "review": "We've worked with several agencies before, but none compare to the level of expertise and creativity this team brings. They not only met our requirements but also suggested improvements that made our project even better.",
-          "rating": 5,
-          "highlighted": false
+          "name": "Osamad Shihab Fitoria",
+          "role": "Upwork Client, Strike Vault",
+          "company": "Strike Vault",
+          "review": "It was my first time working with Murphy Repos, and they exceeded expectations. Communication was consistent, the process stayed smooth, and the final result was exactly what I was hoping for.",
+          "rating": 4.5,
+          "logo": "/testimonials/strike_vault.png"
         },
         {
-          "name": "David Kumar",
-          "role": "Product Manager, InnovateCo",
-          "review": "The entire process was smooth and transparent. Regular updates, clear communication, and a genuine interest in our success made this collaboration outstanding. The final product speaks for itself - it's exactly what we needed.",
-          "rating": 5,
-          "highlighted": false
+          "name": "Abdullah Khan",
+          "role": "Founder, Genzonic",
+          "company": "Genzonic",
+          "review": "Murphy Repos has been one of the best teams I’ve worked with on Genzonic. They were responsive, reliable, and transparent throughout the build, and they continued supporting updates even after delivery.",
+          "rating": 5
         },
         {
-          "name": "Sarah Williams",
-          "role": "Owner, Artisan Boutique",
-          "review": "As a small business owner, I was nervous about investing in a new website. The team made the entire experience easy and stress-free. They explained everything clearly and delivered a beautiful site that my customers love.",
-          "rating": 5,
-          "highlighted": false
+          "name": "Amjad",
+          "role": "Founder, Maahdha",
+          "company": "Maahdha",
+          "review": "Murphy Repos understood our product vision quickly and translated it into a polished platform. Communication was smooth, timelines were respected, and the final quality exceeded our expectations.",
+          "rating": 5
         },
         {
-          "name": "Michael Brown",
-          "role": "CTO, DataFlow Systems",
-          "review": "Impressive technical expertise combined with creative design thinking. They helped us modernize our entire digital infrastructure and the results have been phenomenal. Our team productivity has increased by 40%.",
-          "rating": 5,
-          "highlighted": true
+          "name": "Ali",
+          "role": "CEO, 916",
+          "company": "916",
+          "review": "Great experience working with the Murphy Repos team. They were organized, technically strong, and proactive with solutions, which made the entire delivery process efficient and stress-free.",
+          "rating": 5
         }
       ]
     },
@@ -581,8 +761,17 @@
   "contactPage": {
     "meta": {
       "title": "Contact",
-      "description": "Reach out to Murphy Repos to discuss your project, get a proposal, or ask questions about our digital services.",
+      "description": "Book a discovery call with Murphy Repos using our Calendly scheduler.",
       "openGraphTitle": "Murphy Repos | Contact"
+    },
+    "calendly": {
+      "kicker": "Schedule",
+      "title": "Book a Call",
+      "subtitle": "Pick a time that works for you and we will meet on a quick discovery call.",
+      "homeLink": "Go to Homepage",
+      "openCalendly": "Open in Calendly",
+      "missingUrlTitle": "Calendly URL not configured",
+      "missingUrlDescription": "Set NEXT_PUBLIC_CALENDLY_URL in your environment to load the official Calendly embedding widget."
     },
     "hero": {
       "title": "Get in Touch",
@@ -634,25 +823,17 @@
         {
           "key": "email",
           "label": "Email",
-          "value": "contact@murphyrepos.com"
-        },
-        {
-          "key": "phone",
-          "label": "Phone",
-          "value": "+1 (555) 123-4567"
-        },
-        {
-          "key": "address",
-          "label": "Address",
-          "value": "123 Creative Street, Design City, DC 12345"
+          "value": "hello@murphyrepos.com"
         }
       ]
     },
-    "officeHours": {
-      "title": "Office Hours",
-      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
-      "saturday": "Saturday: 10:00 AM - 4:00 PM",
-      "sunday": "Sunday: Closed"
+    "nextSteps": {
+      "title": "What Happens Next",
+      "items": [
+        "We review your inquiry and reply within one business day.",
+        "We schedule a quick call to understand your goals and priorities.",
+        "You receive a clear plan, timeline, and budget recommendation."
+      ]
     },
     "cta": {
       "title": "Let's Build Something Great Together",
@@ -670,9 +851,9 @@
     },
     "categories": {
       "defaultMobile": "Mobile Development",
-      "defaultWeb": "Web Development",
+      "defaultWeb": "Web Design and Development",
       "cureforu": "Mobile Development",
-      "maahdhaa": "Web Development",
+      "maahdhaa": "Web Design and Development",
       "nalaPrep": "Education Platform",
       "savora": "Hospitality Tech",
       "strike": "FinTech Platform"
@@ -772,15 +953,16 @@
       "about": "About"
     },
     "serviceLinks": {
-      "webDevelopment": "Web Development",
+      "webDevelopment": "Web Design and Development",
       "mobileDevelopment": "Mobile Development",
       "uiUxServices": "UI/UX Services",
-      "customSolutions": "Custom Software Services"
+      "customSolutions": "MVP Design",
+      "digitalMarketing": "Digital Marketing",
+      "brandStrategy": "Brand Strategy"
     },
     "contact": {
-      "email": "contact@murphyrepos.com",
-      "phone": "+1 (555) 123-4567",
-      "address": "123 Creative Street, Design City"
+      "email": "hello@murphyrepos.com",
+      "phone": "+1 (555) 123-4567"
     },
     "copyright": "Murphy Repos. All rights reserved."
   },

@@ -3,23 +3,21 @@
 import { Container } from '@/components/container';
 import { details } from '@/utils/constants/portfolio.content';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
-const featuredProjects = [
-  { key: 'cureforu', image: details[0].image },
-  { key: 'nalaPrep', image: details[2].image },
-  { key: 'savora', image: details[3].image },
-  { key: 'strike', image: details[4].image },
-] as const;
+const toStringList = (value: unknown): string[] => {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is string => typeof item === 'string');
+};
 
 const Projects = () => {
   const { t } = useTranslation('common', { keyPrefix: 'home.projects' });
 
   return (
-    <section className='bg-gray-50 py-16'>
+    <section className='bg-gray-50 py-24'>
       <Container className='px-6 lg:px-12'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,8 +34,8 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className='grid gap-8 md:grid-cols-2'>
-          {featuredProjects.map((project, index) => (
+        <div className='space-y-10'>
+          {details.map((project, index) => (
             <ProjectCard key={project.key} project={project} index={index} />
           ))}
         </div>
@@ -71,10 +69,17 @@ const ProjectCard = ({
   project,
   index,
 }: {
-  project: (typeof featuredProjects)[number];
+  project: (typeof details)[number];
   index: number;
 }) => {
   const { t } = useTranslation('common', { keyPrefix: 'home.projects' });
+  const shouldReduceMotion = useReducedMotion();
+  const roleLine = project.role;
+  const technologiesLine = toStringList(
+    t(`items.${project.key}.technologies`, {
+      returnObjects: true,
+    })
+  ).join(' | ');
 
   return (
     <motion.div
@@ -82,28 +87,62 @@ const ProjectCard = ({
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className='cursor-pointer'
+      transition={{ duration: 0.6, delay: index * 0.08 }}
     >
-      <Link href='/portfolio' className='group block'>
-        <div className='relative overflow-hidden rounded-2xl shadow-lg'>
-          <Image
-            src={project.image}
-            alt={t(`items.${project.key}.title`)}
-            className='h-80 w-full object-cover transition-transform duration-500 group-hover:scale-110'
-          />
-          <div className='absolute inset-0 flex items-end bg-linear-to-t from-black/70 via-black/20 to-transparent'>
-            <div className='p-6 text-white'>
-              <p className='text-primary-200 mb-2 text-sm'>
-                {t(`items.${project.key}.category`)}
-              </p>
-              <h3 className='text-2xl font-bold'>
-                {t(`items.${project.key}.title`)}
-              </h3>
+      <article
+        className={`overflow-hidden rounded-[2.25rem] border border-gray-200/70 p-6 md:p-10 ${project.tones.surface}`}
+      >
+        <div className='grid items-center gap-8 lg:grid-cols-[0.95fr_1.35fr] lg:gap-12'>
+          <div className='space-y-6'>
+            <p className='text-primary-700 text-sm font-semibold tracking-[0.2em] uppercase'>
+              {t(`items.${project.key}.category`)}
+            </p>
+            <h3 className='text-balance text-4xl font-bold text-slate-900 md:text-5xl'>
+              {t(`items.${project.key}.title`)}
+            </h3>
+            <p className='text-base leading-relaxed text-slate-600 md:text-lg'>
+              {t(`items.${project.key}.description`)}
+            </p>
+            <div className='space-y-2 border-t border-slate-300/70 pt-5'>
+              <p className='text-sm text-slate-500'>{technologiesLine}</p>
+              <p className='text-sm text-slate-600'>{roleLine}</p>
             </div>
           </div>
+
+          <motion.div
+            whileHover={
+              shouldReduceMotion
+                ? undefined
+                : {
+                    y: -8,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 220,
+                      damping: 20,
+                    },
+                  }
+            }
+            className={`overflow-hidden rounded-[1.6rem] border border-slate-200/80 p-4 shadow-[0_28px_60px_-32px_rgba(15,23,42,0.35)] ${project.tones.frame}`}
+          >
+            <div className='mb-4 flex items-center gap-1.5'>
+              <span className='h-2.5 w-2.5 rounded-full bg-rose-300' />
+              <span className='h-2.5 w-2.5 rounded-full bg-amber-300' />
+              <span className='h-2.5 w-2.5 rounded-full bg-emerald-300' />
+            </div>
+            <div className='relative aspect-[16/10] overflow-hidden rounded-xl bg-slate-50 p-2'>
+              <Image
+                src={project.image}
+                alt={t(`items.${project.key}.title`)}
+                fill
+                className='object-contain object-center'
+                style={
+                  project.imageScale ? { transform: `scale(${project.imageScale})` } : undefined
+                }
+              />
+            </div>
+          </motion.div>
         </div>
-      </Link>
+      </article>
     </motion.div>
   );
 };
