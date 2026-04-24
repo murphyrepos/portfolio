@@ -12,37 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${PRODUCTION_URL}/services/web-development`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
       url: `${PRODUCTION_URL}/services`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/services/mobile-development`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/services/ui-ux-services`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 0.7,
-    },
-    {
-      url: `${PRODUCTION_URL}/services/custom-solutions`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/portfolio`,
       lastModified,
       changeFrequency: 'daily',
       priority: 1,

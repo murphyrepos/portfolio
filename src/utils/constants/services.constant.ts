@@ -13,7 +13,7 @@ export interface IServiceConstant {
 export const webDevConstants = {
   key: 'web-development',
   testimonialConstants: {
-    title: 'Web Development',
+    title: 'Web Design and Development',
     description:
       'We create responsive web applications leveraging the most robust technologies to help you boost your business',
     buttonTitle: 'See Our work!',
@@ -211,7 +211,7 @@ export const uiDevConstants = {
 export const customerServicesConstants = {
   key: 'custom-solutions',
   testimonialConstants: {
-    title: 'Cloud Services and Solutions',
+    title: 'MVP Design',
     description:
       'We offer a full range of cloud services, from infrastructure setup to application deployment and optimization. Our solutions help businesses scale, enhance performance, and reduce costs by leveraging modern cloud technologies.',
     buttonTitle: 'See Our Solutions!',

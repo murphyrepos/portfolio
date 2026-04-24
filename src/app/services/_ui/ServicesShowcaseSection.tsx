@@ -12,11 +12,6 @@ import {
 import { motion, useReducedMotion } from 'motion/react';
 import { Container } from '@/components/container';
 import { useTranslation } from 'react-i18next';
-import {
-  mobDevConstants,
-  uiDevConstants,
-  webDevConstants,
-} from '@/utils/constants/services.constant';
 import { Card } from '@/components/ui/card';
 
 type ServiceItemKey =
@@ -29,7 +24,6 @@ type ServiceItemKey =
 
 interface ServicesShowcaseItem {
   key: ServiceItemKey;
-  href: string;
   Icon: LucideIcon;
 }
 
@@ -41,32 +35,26 @@ const toStringList = (value: unknown): string[] => {
 const servicesShowcase: ServicesShowcaseItem[] = [
   {
     key: 'webDevelopment',
-    href: `/services/${webDevConstants.key}`,
     Icon: Globe,
   },
   {
     key: 'uiUxDesign',
-    href: `/services/${uiDevConstants.key}`,
     Icon: Palette,
   },
   {
     key: 'mobileApps',
-    href: `/services/${mobDevConstants.key}`,
     Icon: Smartphone,
   },
   {
     key: 'customSoftware',
-    href: '/services/custom-solutions',
     Icon: FolderCode,
   },
   {
     key: 'digitalMarketing',
-    href: '/contact',
     Icon: ChartCandlestick,
   },
   {
     key: 'brandStrategy',
-    href: '/contact',
     Icon: Target,
   },
 ];
@@ -96,7 +84,7 @@ const ServicesShowcaseSection = () => {
     <section className='py-24'>
       <Container className='max-w-7xl px-6 lg:px-12'>
         <motion.div
-          className='grid gap-8 lg:grid-cols-3'
+          className='grid gap-6 lg:grid-cols-3'
           variants={showcaseCardsContainerVariants}
           initial={shouldReduceMotion ? false : 'hidden'}
           whileInView={shouldReduceMotion ? undefined : 'visible'}
@@ -142,7 +130,7 @@ const ServiceCard = ({ item }: { item: ServicesShowcaseItem }) => {
             }
       }
     >
-      <Card className='group hover:border-primary h-full rounded-2xl border border-gray-200 p-8 shadow-none transition-colors hover:shadow-lg'>
+      <Card className='hover:border-primary flex h-full flex-col rounded-2xl p-8 transition-shadow hover:shadow-lg'>
         <div className='bg-primary mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl text-white'>
           <item.Icon className='h-8 w-8 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6' />
         </div>

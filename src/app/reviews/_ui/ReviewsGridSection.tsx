@@ -2,9 +2,9 @@
 
 import { Container } from '@/components/container';
 import { Card } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
 import { Quote, Star } from 'lucide-react';
 import { motion, useReducedMotion } from 'motion/react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 type ReviewItem = {
@@ -12,6 +12,7 @@ type ReviewItem = {
   role: string;
   review: string;
   rating: number;
+  logo?: string;
 };
 
 const reviewsContainerVariants = {
@@ -27,6 +28,15 @@ const reviewsContainerVariants = {
 const reviewCardVariants = {
   hidden: { opacity: 0, y: 24, scale: 0.98 },
   visible: { opacity: 1, y: 0, scale: 1 },
+};
+
+const getInitials = (name: string): string => {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0]?.toUpperCase() ?? '')
+    .join('');
 };
 
 const ReviewsGridSection = () => {
@@ -57,7 +67,20 @@ const ReviewsGridSection = () => {
             >
               <Card className='hover:border-primary flex h-full flex-col gap-4 rounded-2xl p-12 transition-shadow hover:shadow-lg'>
                 <div className='flex items-center gap-4'>
-                  <Skeleton className='h-12 w-12 rounded-full bg-gray-300' />
+                  {review.logo ? (
+                    <div className='relative h-12 w-12 overflow-hidden rounded-full bg-gray-100'>
+                      <Image
+                        src={review.logo}
+                        alt={review.name}
+                        fill
+                        className='object-cover'
+                      />
+                    </div>
+                  ) : (
+                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-sky-200 via-indigo-200 to-emerald-200 text-sm font-semibold text-slate-700'>
+                      {getInitials(review.name)}
+                    </div>
+                  )}
                   <div>
                     <h2 className='text-lg font-bold text-gray-900'>
                       {review.name}

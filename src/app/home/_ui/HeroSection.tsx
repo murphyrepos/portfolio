@@ -34,7 +34,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className='flex flex-col gap-6'
           >
-            <Badge className='bg-primary-100 flex max-w-max justify-center gap-2 px-4 py-2'>
+            <Badge className='bg-primary-100 hover:bg-primary-200 flex max-w-max justify-center gap-2 px-4 py-2'>
               <Sparkles size={16} className='text-primary' />
               <span className='text-primary text-base font-normal'>
                 {t('badge')}
@@ -54,7 +54,7 @@ const HeroSection = () => {
               </Link>
               <Link
                 href='/services'
-                className='inline-flex items-center gap-2 rounded-xl border border-transparent px-4 py-2 hover:border-gray-300'
+                className='inline-flex items-center gap-2 rounded-xl border border-gray-300 px-4 py-2 transition-colors hover:bg-gray-100'
               >
                 {t('secondaryCta')}
               </Link>

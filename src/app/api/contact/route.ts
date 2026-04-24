@@ -686,7 +686,7 @@ function getTemplate({ email, content }: { email: string; content: string }) {
                                   <!--[if (mso)|(IE)]><td style="padding:5px 15px"><![endif]-->
 
                                   <a
-                                    href="https://murphyrepos.com/portfolio"
+                                    href="https://murphyrepos.com/workflow"
                                     target="_blank"
                                     style="
                                       padding: 5px 15px;
@@ -697,7 +697,7 @@ function getTemplate({ email, content }: { email: string; content: string }) {
                                     "
                                     class="v-padding v-font-size"
                                   >
-                                    Portfolio
+                                    Workflow
                                   </a>
 
                                   <!--[if (mso)|(IE)]></td><![endif]-->
