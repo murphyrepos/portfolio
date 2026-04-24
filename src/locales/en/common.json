@@ -541,7 +541,7 @@
     "story": {
       "title": "Our Story",
       "paragraphs": [
-        "Founded in 2016, our agency started with a simple mission: to help businesses succeed in the digital age through innovative design and development.",
+        "Founded in 2024, our agency started with a simple mission: to help businesses succeed in the digital age through innovative design and development.",
         "Over the years, we've grown from a small team of three to a diverse group of talented professionals. We've worked with startups, established brands, and everything in between, delivering solutions that drive real results.",
         "Today, we're proud to be a trusted partner for businesses looking to make their mark in the digital world."
       ]
@@ -761,7 +761,7 @@
   "contactPage": {
     "meta": {
       "title": "Contact",
-      "description": "Book a discovery call with Murphy Repos using our Calendly scheduler.",
+      "description": "Book a discovery call with Murphy Repos using our Cal.com scheduler.",
       "openGraphTitle": "Murphy Repos | Contact"
     },
     "calendly": {
@@ -769,52 +769,13 @@
       "title": "Book a Call",
       "subtitle": "Pick a time that works for you and we will meet on a quick discovery call.",
       "homeLink": "Go to Homepage",
-      "openCalendly": "Open in Calendly",
-      "missingUrlTitle": "Calendly URL not configured",
-      "missingUrlDescription": "Set NEXT_PUBLIC_CALENDLY_URL in your environment to load the official Calendly embedding widget."
+      "openCalendly": "Book on Cal.com",
+      "missingUrlTitle": "Cal.com URL not configured",
+      "missingUrlDescription": "Set your Cal.com link configuration to load the booking widget."
     },
     "hero": {
       "title": "Get in Touch",
-      "description": "Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
-    },
-    "form": {
-      "title": "Send us a message",
-      "labels": {
-        "fullName": "Name",
-        "email": "Email",
-        "subject": "Subject",
-        "number": "Phone",
-        "message": "Message"
-      },
-      "placeholders": {
-        "fullName": "Your name",
-        "email": "your.email@example.com",
-        "subject": "What can we help you with?",
-        "number": "+1 (555) 123-4567",
-        "message": "Tell us about your project..."
-      },
-      "submit": "Send Message",
-      "submitting": "Sending message...",
-      "toasts": {
-        "successTitle": "Message sent",
-        "successDescription": "Thanks for reaching out. We'll get back to you shortly.",
-        "errorTitle": "Something went wrong",
-        "errorDescription": "Looks like we are having some trouble. Please try again later."
-      },
-      "validation": {
-        "invalidName": "Please enter a valid name",
-        "nameMin": "Name should be at least 2 characters",
-        "nameMax": "Name should be at most 50 characters",
-        "emailRequired": "Please enter your email address",
-        "invalidEmail": "Please enter a valid email address",
-        "subjectRequired": "Please enter a subject",
-        "subjectMin": "Subject should be at least 2 characters",
-        "subjectMax": "Subject should be at most 120 characters",
-        "invalidPhone": "Please enter a valid number",
-        "phoneRegex": "Please enter a valid phone",
-        "messageRequired": "Please enter a message",
-        "messageMin": "Message should be at least 10 characters"
-      }
+      "description": "Have a project in mind? Book a quick call with us and we will walk through your goals."
     },
     "information": {
       "title": "Contact Information",

@@ -73,11 +73,12 @@ const ReviewsGridSection = () => {
                         src={review.logo}
                         alt={review.name}
                         fill
+                        sizes='48px'
                         className='object-cover'
                       />
                     </div>
                   ) : (
-                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-sky-200 via-indigo-200 to-emerald-200 text-sm font-semibold text-slate-700'>
+                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-sky-200 via-indigo-200 to-emerald-200 text-sm font-semibold text-slate-700'>
                       {getInitials(review.name)}
                     </div>
                   )}

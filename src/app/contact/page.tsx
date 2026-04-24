@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import ContactCtaSection from './_ui/ContactCtaSection';
-import ContactHeroSection from './_ui/ContactHeroSection';
-import ContactMainSection from './_ui/ContactMainSection';
 import common from '@/locales/en/common.json';
 import { PRODUCTION_URL } from '@/utils/helper';
+import Calendar from './_ui/Calendar';
+import { calEnv } from '@/env/dotenv';
 
 const contactMeta = common.contactPage.meta;
 
@@ -25,9 +24,12 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <div>
-      <ContactHeroSection />
-      <ContactMainSection />
-      <ContactCtaSection />
+      <Calendar
+        namespace={calEnv.namespace}
+        embedJsUrl={calEnv.embedJsUrl}
+        origin={calEnv.origin}
+        calLink={calEnv.link}
+      />
     </div>
   );
 };
