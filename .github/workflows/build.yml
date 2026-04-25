@@ -13,6 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    environment: production
 
     env:
       CAL_NAMESPACE: ${{ vars.CAL_NAMESPACE || '' }}
@@ -37,6 +38,13 @@ jobs:
 
       - name: Install dependencies
         run: HUSKY=0 pnpm install --frozen-lockfile
+
+      - name: Validate environment
+        run: |
+          test -n "$CAL_NAMESPACE"
+          test -n "$CAL_EMBED_JS_URL"
+          test -n "$CAL_ORIGIN"
+          test -n "$CAL_LINK"
 
       - name: Lint
         run: pnpm lint
