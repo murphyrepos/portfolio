@@ -1,13 +1,15 @@
 import 'dotenv/config';
 
-const getEnv = (key: string, fallback: string) => {
-  return process.env[key]?.trim() || fallback;
+type AppConfig = {
+  namespace: string;
+  embedJsUrl: string;
+  origin: string;
+  link: string;
 };
 
-export const calEnv = {
-  namespace: getEnv('CAL_NAMESPACE', '30min'),
-  embedJsUrl: getEnv('CAL_EMBED_JS_URL', 'https://app.cal.eu/embed/embed.js'),
-  origin: getEnv('CAL_ORIGIN', 'https://app.cal.eu'),
-  link: getEnv('CAL_LINK', 'murphy-repos/30min'),
-} as const;
-
+export const appConfig: AppConfig = {
+  namespace: process.env.CAL_NAMESPACE ?? '',
+  embedJsUrl: process.env.CAL_EMBED_JS_URL ?? '',
+  origin: process.env.CAL_ORIGIN ?? '',
+  link: process.env.CAL_LINK ?? '',
+};

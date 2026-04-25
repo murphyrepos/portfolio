@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import HeroSection from './_ui/HeroSection';
 import Projects from './_ui/Projects';
 import Services from './_ui/Services';
-import common from '@/locales/en/common.json';
+import { getServerTranslation } from '@/i18n/server';
 import { createPageMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createPageMetadata('/home', {
-  title: common.siteMeta.title,
-  description: common.siteMeta.description,
-  openGraphTitle: common.siteMeta.openGraphTitle,
+  title: getServerTranslation('siteMeta.title'),
+  description: getServerTranslation('siteMeta.description'),
+  openGraphTitle: getServerTranslation('siteMeta.openGraphTitle'),
 });
 
 async function Home() {

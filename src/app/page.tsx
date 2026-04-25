@@ -1,13 +1,11 @@
 import type { Metadata } from 'next';
 import { redirect, RedirectType } from 'next/navigation';
-import common from '@/locales/en/common.json';
+import { getServerTranslation } from '@/i18n/server';
 import { rootMetadata } from '@/utils/seo';
-
-const siteMeta = common.siteMeta;
 
 export const metadata: Metadata = {
   ...rootMetadata,
-  title: siteMeta.title,
+  title: getServerTranslation('siteMeta.title'),
 };
 
 // reroute to /home

@@ -824,7 +824,7 @@
         "discovery": {
           "title": "Discovery & Research",
           "description": "We start by understanding your business, goals, and target audience through comprehensive research and analysis.",
-          "duration": "1-2 weeks",
+          "duration": "1 week",
           "tasks": [
             "Stakeholder interviews",
             "Market analysis",
@@ -835,7 +835,7 @@
         "strategy": {
           "title": "Strategy & Planning",
           "description": "Develop a detailed roadmap and strategy aligned with your objectives, including timelines and deliverables.",
-          "duration": "1-2 weeks",
+          "duration": "1 week",
           "tasks": [
             "Project planning",
             "Technical architecture",
@@ -846,7 +846,7 @@
         "designDevelopment": {
           "title": "Design & Development",
           "description": "Our team brings your vision to life with stunning designs and robust development using cutting-edge technologies.",
-          "duration": "4-8 weeks",
+          "duration": "4-6 week",
           "tasks": [
             "UI/UX design",
             "Prototype creation",

@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import common from '@/locales/en/common.json';
+import { getServerTranslation } from '@/i18n/server';
 import { PRODUCTION_URL } from '@/utils/helper';
 
-type PageMeta = {
+export type PageMeta = {
   title: string;
   description: string;
   openGraphTitle: string;
 };
 
-const siteMeta = common.siteMeta;
+const siteMeta = getServerTranslation<PageMeta>('siteMeta');
 const siteName = siteMeta.title;
 const defaultImage = '/logos/white.png';
 const defaultKeywords = [

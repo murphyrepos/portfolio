@@ -11,7 +11,12 @@ type CalendarProps = {
   calLink: string;
 };
 
-const Calendar = ({ namespace, embedJsUrl, origin, calLink }: CalendarProps) => {
+const Calendar = ({
+  namespace,
+  embedJsUrl,
+  origin,
+  calLink,
+}: CalendarProps) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({
@@ -49,7 +54,7 @@ const Calendar = ({ namespace, embedJsUrl, origin, calLink }: CalendarProps) => 
         layout: 'month_view',
       });
     })();
-  }, [namespace, embedJsUrl]);
+  }, [embedJsUrl, namespace]);
 
   return (
     <Container className='mx-auto flex min-h-screen w-full max-w-7xl items-center justify-center py-24 pt-48'>
