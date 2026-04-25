@@ -26,7 +26,7 @@ const workflowStepConfig = [
   { key: 'designDevelopment', Icon: Code2 },
   { key: 'testingRefinement', Icon: CheckCircle },
   { key: 'launchSupport', Icon: Rocket },
-] as const;
+];
 
 type WorkflowStepKey = (typeof workflowStepConfig)[number]['key'];
 type WorkflowChartSteps = Record<WorkflowStepKey, WorkflowStepContent>;

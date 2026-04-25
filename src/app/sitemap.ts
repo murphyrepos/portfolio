@@ -1,45 +1,21 @@
 import type { MetadataRoute } from 'next';
-import { PRODUCTION_URL } from '@/utils/helper';
+import { siteUrl } from '@/utils/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-
-  return [
-    {
-      url: `${PRODUCTION_URL}`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/services`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/workflow`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/about`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/reviews`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${PRODUCTION_URL}/contact`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1,
-    },
+  const routes = [
+    { path: '/home', priority: 1 },
+    { path: '/services', priority: 0.9 },
+    { path: '/workflow', priority: 0.8 },
+    { path: '/about', priority: 0.8 },
+    { path: '/reviews', priority: 0.7 },
+    { path: '/contact', priority: 0.9 },
   ];
+
+  return routes.map(({ path, priority }) => ({
+    url: `${siteUrl}${path}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority,
+  }));
 }

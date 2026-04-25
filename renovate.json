@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "workarounds:typesNodeVersioning"],
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 20,
+  "automerge": false,
+  "recreateWhen": "auto",
+  "labels": ["dependencies"],
+  "rebaseWhen": "conflicted"
+}

@@ -1,33 +1,22 @@
 import type { Metadata } from 'next';
-import ContactCtaSection from './_ui/ContactCtaSection';
-import ContactHeroSection from './_ui/ContactHeroSection';
-import ContactMainSection from './_ui/ContactMainSection';
-import common from '@/locales/en/common.json';
-import { PRODUCTION_URL } from '@/utils/helper';
+import { appConfig } from '@/env/dotenv';
+import { getServerTranslation } from '@/i18n/server';
+import { createPageMetadata, type PageMeta } from '@/utils/seo';
+import Calendar from './_ui/Calendar';
 
-const contactMeta = common.contactPage.meta;
+const contactMeta = getServerTranslation<PageMeta>('contactPage.meta');
 
-export const metadata: Metadata = {
-  title: contactMeta.title,
-  description: contactMeta.description,
-  alternates: {
-    canonical: `${PRODUCTION_URL}/contact`,
-  },
-  openGraph: {
-    title: contactMeta.openGraphTitle,
-    description: contactMeta.description,
-    url: `${PRODUCTION_URL}/contact`,
-    siteName: 'Murphy Repos',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createPageMetadata('/contact', contactMeta);
 
 const ContactPage = () => {
   return (
     <div>
-      <ContactHeroSection />
-      <ContactMainSection />
-      <ContactCtaSection />
+      <Calendar
+        namespace={appConfig.namespace}
+        embedJsUrl={appConfig.embedJsUrl}
+        origin={appConfig.origin}
+        calLink={appConfig.link}
+      />
     </div>
   );
 };

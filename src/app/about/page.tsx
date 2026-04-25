@@ -4,25 +4,12 @@ import AboutStorySection from './_ui/AboutStorySection';
 import AboutValuesSection from './_ui/AboutValuesSection';
 import AboutStatsSection from './_ui/AboutStatsSection';
 import AboutTechnologiesSection from './_ui/AboutTechnologiesSection';
-import common from '@/locales/en/common.json';
-import { PRODUCTION_URL } from '@/utils/helper';
+import { getServerTranslation } from '@/i18n/server';
+import { createPageMetadata, type PageMeta } from '@/utils/seo';
 
-const aboutMeta = common.aboutPage.meta;
+const aboutMeta = getServerTranslation<PageMeta>('aboutPage.meta');
 
-export const metadata: Metadata = {
-  title: aboutMeta.title,
-  description: aboutMeta.description,
-  alternates: {
-    canonical: `${PRODUCTION_URL}/about`,
-  },
-  openGraph: {
-    title: aboutMeta.openGraphTitle,
-    description: aboutMeta.description,
-    url: `${PRODUCTION_URL}/about`,
-    siteName: 'Murphy Repos',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createPageMetadata('/about', aboutMeta);
 
 const AboutPage = () => {
   return (

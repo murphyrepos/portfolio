@@ -134,6 +134,7 @@ const ProjectCard = ({
                 src={project.image}
                 alt={t(`items.${project.key}.title`)}
                 fill
+                sizes='(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 92vw'
                 className='object-contain object-center'
                 style={
                   project.imageScale ? { transform: `scale(${project.imageScale})` } : undefined
